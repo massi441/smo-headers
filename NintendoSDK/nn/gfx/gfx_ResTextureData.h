@@ -2,6 +2,7 @@
 
 #include <nn/gfx/gfx_DescriptorSlot.h>
 #include <nn/gfx/gfx_ResUserData.h>
+#include <nn/gfx/gfx_TextureData-api.nvn.8.h>
 #include <nn/gfx/gfx_TextureInfoData.h>
 #include <nn/util/util_BinaryFormat.h>
 #include <nn/util/util_ResDic.h>
@@ -23,8 +24,8 @@ struct ResTextureData {
     nn::util::BinTPtr<ResTextureContainerData> pResTextureContainerData;
     nn::util::BinTPtr<nn::util::BinTPtr<void>> pMipPtrArray;
     nn::util::BinTPtr<ResUserData> pUserDataArray;
-    nn::util::BinTPtr<void> pTexture;
-    nn::util::BinTPtr<void> pTextureView;
+    nn::util::BinTPtr<TextureImplData<ApiVariationNvn8>> pTexture;
+    nn::util::BinTPtr<TextureViewImplData<ApiVariationNvn8>> pTextureView;
     DescriptorSlotData userDescriptorSlot;
     nn::util::BinTPtr<nn::util::ResDic> pUserDataDic;
 };

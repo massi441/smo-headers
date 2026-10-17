@@ -1,7 +1,5 @@
 #pragma once
 
-class IJudge;
-
 namespace rs {
 void resetJudge(IJudge* judge);
 void updateJudge(IJudge* judge);

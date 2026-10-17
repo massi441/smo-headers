@@ -3,17 +3,22 @@
 #include <basis/seadTypes.h>
 
 namespace al {
-class SimpleCameraInput;
+class ICameraInput;
 
 class CameraInputHolder {
 public:
     CameraInputHolder(s32 size);
     void initAfterPlacement();
-    SimpleCameraInput* getInput(s32 index) const;
+    ICameraInput* getInput(s32 index) const;
 
-public:
-    SimpleCameraInput* mDefaultInput = nullptr;
-    SimpleCameraInput** mInputs;
+private:
+    ICameraInput* mDefaultInput = nullptr;
+    ICameraInput** mInputs;
     s32 mInputsSize;
-};  // class CameraInputHolder
-}  // namespace al
+
+    friend class ml::MultiplayerCameraHolder;
+};
+
+}
+
+static_assert(sizeof(al::CameraInputHolder) == 0x18);

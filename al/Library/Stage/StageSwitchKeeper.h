@@ -1,7 +1,5 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 namespace al {
 class ExecuteDirector;
 class PlacementId;
@@ -18,8 +16,8 @@ struct StageSwitchAccesserList {
     StageSwitchAccesserList(const StageSwitchAccesser* accessers);
 
     const StageSwitchAccesser* accessers = nullptr;
-    s32 accesserSize = 0;
-    s32 accesserCapacity = 0;
+    int accesserSize = 0;
+    int accesserCapacity = 0;
 };
 
 class StageSwitchKeeper {
@@ -30,9 +28,15 @@ public:
 
     void setUseName(IUseName* useName) { mUseName = useName; }
 
-public:
+    // custom funcs
+
+    IUseName* getUseName() const { return mUseName; }
+    int getAccessersCount() const { return mAccesserCount; }
+    StageSwitchAccesser* getAccessers() const { return mAccessers;}
+
+private:
     StageSwitchAccesser* mAccessers = nullptr;
-    s32 mAccesserSize = 0;
+    int mAccesserCount = 0;
     IUseName* mUseName = nullptr;
 };
 

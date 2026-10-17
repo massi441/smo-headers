@@ -1,5 +1,7 @@
 #pragma once
 
+#include <basis/seadTypes.h>
+
 #include "Library/Nerve/NerveStateBase.h"
 
 class EnemyStateWander : public al::ActorStateBase {
@@ -17,7 +19,7 @@ public:
     bool isFall() const;
     void changeWalkAnim(const char* animName);
 
-public:
+private:
     const char* mStateName;
     s32 mMaxWaitTime = 0;
     f32 mWalkSpeed = -1.0f;

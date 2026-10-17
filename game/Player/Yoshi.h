@@ -31,11 +31,9 @@ public:
 
     void init(const al::ActorInitInfo& info) override;
     void initAfterPlacement() override;
-    void movement() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
-
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,al::HitSensor* self) override;
+    void movement() override;
     void control() override;
     void updateCollider() override;
 
@@ -43,11 +41,17 @@ public:
     void sendCollisionMsg();
     void appearEgg();
     void startFruitShineGetDemo();
+
+    YoshiStateEgg* getStateEgg() const { return mStateEgg; }
+    YoshiStateHack* getStateHack() const { return mStateHack; }
+    PlayerModelChangerYoshi* getModelChanger() const { return mModelChanger; }
+    PlayerModelHolder* getModelHolder() const { return mModelHolder; }
+
     void exeEgg();
     void exeNpc();
     void exeHack();
 
-public:
+private:
     PlayerConst* mPlayerConst = nullptr;
     PlayerModelHolder* mModelHolder = nullptr;
     PlayerModelChangerYoshi* mModelChanger = nullptr;

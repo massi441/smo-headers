@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Library/Nerve/NerveStateBase.h"
+#include "basis/seadTypes.h"
 
 namespace al {
 class GamePadSystem;

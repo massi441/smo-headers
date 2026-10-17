@@ -28,6 +28,7 @@ class JointSpringControllerHolder;
 class KuriboHack : public al::LiveActor {
 public:
     KuriboHack(const char*);
+
     void init(const al::ActorInitInfo&) override;
     void initAfterPlacement() override;
     void appear() override;
@@ -39,8 +40,7 @@ public:
     void startClipped() override;
     void endClipped() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self) override;
     void control() override;
     void updateCollider() override;
 
@@ -118,7 +118,7 @@ public:
     bool tryRideOnHack(const al::SensorMsg*, al::HitSensor*, al::HitSensor*);
     void notifyKillByShineGetToGroup(const al::SensorMsg*, al::HitSensor*, al::HitSensor*);
 
-public:
+private:
     CapTargetInfo* mCapTargetInfo;
     EnemyStateSwoon* mStateSwoon;
     EnemyStateReset* mStateReset;

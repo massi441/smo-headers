@@ -4,7 +4,6 @@
 
 #include "container/seadSafeArray.h"
 #include "controller/seadControlDevice.h"
-#include "controller/seadController.h"
 #include "heap/seadHeap.h"
 #include "thread/seadCriticalSection.h"
 #include "thread/seadThread.h"

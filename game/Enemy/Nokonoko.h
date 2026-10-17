@@ -13,14 +13,15 @@ class IUsePlayerHack;
 class Nokonoko : public al::LiveActor {
 public:
     Nokonoko(const char* name);
+
     void init(const al::ActorInitInfo& info) override;
     void control() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self) override;
 
     void endCapture();
 
+    // inline bool updateAccelStick(); // from decomp
 
     void exeWait();
     void exeSwoon();
@@ -37,7 +38,7 @@ public:
     void exeCaptureSpinEnd();
     void exeDie();
 
-public:
+private:
     CapTargetInfo* mCapTargetInfo = nullptr;
     EnemyStateSwoon* mStateSwoon = nullptr;
     IUsePlayerHack* mHackActor = nullptr;

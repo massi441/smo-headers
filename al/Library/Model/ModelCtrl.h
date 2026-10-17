@@ -3,6 +3,8 @@
 #include <basis/seadTypes.h>
 #include <math/seadMatrix.h>
 
+#include "Library/LiveActor/ActorModelShapeFunction.h"
+
 namespace nn::g3d {
 class ModelObj;
 }
@@ -31,6 +33,8 @@ public:
 
     ActorDitherAnimator* getActorDitherAnimator() const { return mActorDitherAnimator; }
 
+    ModelShapeCtrl* getModelShapeCtrl(int) const;
+
     s32 getCalcViewCore() const { return mCalcViewCore; }
 
     void setCalcViewCore(s32 core) { mCalcViewCore = core; }
@@ -39,7 +43,9 @@ public:
 
     void setModelOcclusionQuery(ModelOcclusionQuery* query) { mModelOcclusionQuery = query; }
 
-public:
+    void setDirtyTexture();
+
+private:
     nn::g3d::ModelObj* mModelObj;
     s32 _8;
     GpuMemAllocator* mGpuMemAllocator;
@@ -47,9 +53,9 @@ public:
     s32 mBlockBufferSize;
     unsigned char padding1[332];
     GraphicsQualityInfo* mGraphicsQualityInfo;
-    unsigned char padding2[514];
+    unsigned char padding2[512];
     ActorDitherAnimator* mActorDitherAnimator;
-    unsigned char padding3[36];
+    unsigned char padding3[44];
     s32 mCalcViewCore;
     s32 pad_3b0;
     unsigned char padding4[124];

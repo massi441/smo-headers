@@ -78,8 +78,7 @@ public:
         return false;
     }
 
-    virtual bool receiveMsgScreenPoint(const SensorMsg* message, ScreenPointer* source,
-                                       ScreenPointTarget* target) {
+    virtual bool receiveMsgScreenPoint(const SensorMsg* message, ScreenPointer* source, ScreenPointTarget* target) {
         return false;
     }
 
@@ -105,7 +104,7 @@ public:
 
     virtual void updateCollider();
 
-    ActorSceneInfo* getSceneInfo() const;
+    const ActorSceneInfo* getSceneInfo() const { return mSceneInfo; }
     void initPoseKeeper(ActorPoseKeeperBase* poseKeeper);
     void initExecuteInfo(ActorExecuteInfo* executeInfo);
     void initModelKeeper(ModelKeeper* modelKeeper);
@@ -170,7 +169,11 @@ public:
 
     void setCollisionParts(CollisionParts* collisionParts) { mCollisionParts = collisionParts; }
 
-public:
+    void setRailKeeper(RailKeeper* railKeeper) { mRailKeeper = railKeeper; }
+
+    friend class alActorFunction;
+
+private:
     const char* mName = nullptr;
     ActorPoseKeeperBase* mPoseKeeper = nullptr;
     ActorExecuteInfo* mExecuteInfo = nullptr;

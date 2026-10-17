@@ -66,15 +66,14 @@ public:
     bool isDemoFadeCloseEnd() const;
     bool isDemoFadeOpenEnd() const;
     bool isWipeStateEnableOpenMenuOrSnapShotMode() const;
-    DemoHackFirstDirector* tryCreateDemoHackFirstDirector(al::LiveActor*, s32,
-                                                          const al::ActorInitInfo&);
+    DemoHackFirstDirector* tryCreateDemoHackFirstDirector(al::LiveActor*, s32, const al::ActorInitInfo&);
     void noticeDemoStartToDemoHackFirstDirector();
     void setDemoEnvironmentChangeFlag(bool);
     void registerDemoChangeEffectObj(DemoChangeEffectObj*);
     bool startDemo(const char*) override;
     void endDemo(const char*) override;
 
-public:
+private:
     al::PlayerHolder* mPlayerHolder;
     al::GraphicsSystemInfo* mGfxSysInfo;
     ShineTowerRocket* mShineTowerRocket;

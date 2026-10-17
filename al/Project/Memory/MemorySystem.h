@@ -30,30 +30,29 @@ public:
     void addNamedHeap(sead::Heap* heap, const char* heapName);
     void removeNamedHeap(const char* heapName);
 
-    sead::Heap* getStationedHeap() { return mStationedHeap; }
+    sead::ExpHeap* getStationedHeap() const { return mStationedHeap; }
 
-    sead::Heap* getSequenceHeap() { return mSequenceHeap; }
+    sead::ExpHeap* getSequenceHeap() const { return mSequenceHeap; }
 
-    sead::Heap* getSceneResourceHeap() { return mSceneResourceHeap; }
+    sead::FrameHeap* getSceneResourceHeap() const { return mSceneResourceHeap; }
 
-    sead::Heap* getSceneHeap() { return mSceneHeap; }
+    sead::FrameHeap* getSceneHeap() const { return mSceneHeap; }
 
-    sead::Heap* getPlayerResourceHeap() { return mPlayerResourceHeap; }
+    sead::ExpHeap* getPlayerResourceHeap() const { return mPlayerResourceHeap; }
 
-    sead::Heap* getCourseSelectResourceHeap() { return mCourseSelectResourceHeap; }
+    sead::FrameHeap* getCourseSelectResourceHeap() const { return mCourseSelectResourceHeap; }
 
-    sead::Heap* getCourseSelectHeap() { return mCourseSelectHeap; }
+    sead::FrameHeap* getCourseSelectHeap() const { return mCourseSelectHeap; }
 
-    sead::Heap* getWorldResourceHeap() { return mWorldResourceHeap; }
+    sead::ExpHeap* getWorldResourceHeap() const { return mWorldResourceHeap; }
 
-    AudioResourceDirector* getAudioResourceDirector() { return mAudioResourceDirector; }
+    AudioResourceDirector* getAudioResourceDirector() const { return mAudioResourceDirector; }
 
     void setAudioResourceDirector(AudioResourceDirector* audioResourceDirector) {
         mAudioResourceDirector = audioResourceDirector;
     }
 
-public:
-
+private:
     sead::ExpHeap* mStationedHeap = nullptr;
     sead::ExpHeap* mSequenceHeap = nullptr;
     sead::FrameHeap* mSceneResourceHeap = nullptr;

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <gfx/seadCamera.h>
-#include <math/seadMatrix.h>
 #include <math/seadVector.h>
 #include <nn/album/album_types.h>
 
@@ -70,7 +69,9 @@ public:
 
     void setAspect(f32 aspect) { mAspect = aspect; }
 
-public:
+    al::CameraTicket* getTicket() const { return mTicket; }
+
+private:
     nn::album::ImageOrientation mSnapShotOrientation = nn::album::ImageOrientation_None;
 
     SceneCameraInfo* mSceneCamInfo = nullptr;

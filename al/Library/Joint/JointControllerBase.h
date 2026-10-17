@@ -29,7 +29,7 @@ public:
     bool findNextId(s32*, s32) const;
     bool isExistId(s32) const;
 
-public:
+private:
     sead::PtrArray<s32> _8;
     char filler[0x10];
 };

@@ -7,6 +7,9 @@
 namespace al {
 class LiveActor;
 
+    /**
+     * A container for executors for actors (e.g. all coins share the same Executor)
+     */
 class ExecutorActorExecuteBase : public HioNode {
 public:
     ExecutorActorExecuteBase(const char* name);

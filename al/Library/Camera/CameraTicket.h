@@ -36,7 +36,7 @@ public:
 
     void setActiveCamera(bool isActiveCamera) { mIsActiveCamera = isActiveCamera; }
 
-public:
+private:
     CameraPoser* mPoser;
     const CameraTicketId* mTicketId;
     s32 mPriority;

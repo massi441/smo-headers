@@ -5,7 +5,7 @@ class NerveKeeper;
 
 class IUseNerve {
 public:
-    inline IUseNerve() {}
+    IUseNerve() {}
 
     virtual NerveKeeper* getNerveKeeper() const = 0;
 };

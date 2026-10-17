@@ -16,7 +16,7 @@ struct SklAnimRetargettingInfo;
 
 class CapTargetInfo;
 class PlayerActorBase;
-class PlayerInitInfo;
+struct PlayerInitInfo;
 
 namespace rs {
 
@@ -157,5 +157,6 @@ f32 calcPlayerGuideOffsetY(const al::LiveActor*);
 bool isEnablePlayerHeadGuide(const al::LiveActor*);
 void calcPlayerGuidePos(sead::Vector3f*, const al::LiveActor*);
 void calcPlayerGuidePos(sead::Vector3f*, const al::LiveActor*, f32);
+void replaceDemoPlayer(const al::LiveActor* player, const sead::Vector3f& trans, const sead::Quatf& quat);
 
 }  // namespace rs

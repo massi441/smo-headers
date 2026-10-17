@@ -20,7 +20,7 @@ public:
     // TODO: rename `i`
     void requestEndWithNextCameraPose(CameraTicket* ticket, const CameraPoseInfo* poseInfo, s32 i);
 
-public:
+private:
     CameraSwitchRequestInfo* mStart = nullptr;
     CameraSwitchRequestInfo* mEnd = nullptr;
 };

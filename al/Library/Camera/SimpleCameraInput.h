@@ -14,7 +14,7 @@ public:
     bool isHoldSnapShotZoomIn() const override;
     bool isHoldSnapShotZoomOut() const override;
 
-public:
+private:
     s32 mPort;
 };
 

@@ -78,3 +78,5 @@ struct ActorInitInfo {
     const ViewIdHolder* viewIdHolder = nullptr;
 };
 }  // namespace al
+
+static_assert(sizeof(al::ActorInitInfo) == 0x108);

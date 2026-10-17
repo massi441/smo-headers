@@ -7,8 +7,14 @@
 #include <nn/g3d/ResFile.h>
 #include <nn/gfx/gfx_DescriptorSlot.h>
 
+namespace sead {
+    class Heap;
+}
 namespace agl {
-class UniformBlock;
+    class TextureSampler;
+    class DrawContext;
+    class ShaderProgram;
+    class UniformBlock;
 }
 
 namespace nn::gfx {
@@ -16,7 +22,9 @@ class ResTexture;
 }
 
 namespace al {
-class LayoutTextureRenderObj;
+    class UniformBlockLayout;
+    class UniformBlock;
+    class LayoutTextureRenderObj;
 class LiveActor;
 class ClippingDirector;
 
@@ -155,12 +163,10 @@ void getBoundingSphereCenterAndRadius(sead::Vector3f*, f32*, const LiveActor* ac
 void calcModelBoundingBox(sead::BoundBox3f*, const LiveActor* actor);
 void calcModelBoundingBoxMtx(sead::Matrix34f*, const LiveActor* actor);
 void submitViewModel(const LiveActor* actor, const sead::Matrix34f&);
-void replaceMaterialTextureRef(LiveActor* actor, nn::g3d::TextureRef*, const char*, const char*);
-void replaceMaterialResTexture(LiveActor* actor, nn::gfx::ResTexture*, const char*, const char*);
-void replaceMaterialResTexture(LiveActor*, const char*, const char*, nn::gfx::DescriptorSlot,
-                               const nn::gfx::TextureView*);
-void replaceMaterialLayoutTexture(LiveActor* actor, const LayoutTextureRenderObj*, const char*,
-                                  const char*);
+void replaceMaterialTextureRef(LiveActor* actor, nn::g3d::TextureRef*, const char* material, const char* materialTexture);
+void replaceMaterialResTexture(LiveActor* actor, nn::gfx::ResTexture*, const char* material, const char* materialTexture);
+void replaceMaterialResTexture(LiveActor*, const char* material, const char* materialTexture, nn::gfx::DescriptorSlot, const nn::gfx::TextureView*);
+void replaceMaterialLayoutTexture(LiveActor* actor, const LayoutTextureRenderObj*, const char*, const char*);
 void recreateModelDisplayList(const LiveActor* actor);
 void calcPolygonNum(const LiveActor* actor, s32);
 void calcPolygonNumCurrentLod(const LiveActor* actor);
@@ -200,4 +206,9 @@ bool isJudgedToClipFrustum(const LiveActor* actor, f32, f32);
 bool isJudgedToClipFrustumWithoutFar(const ClippingDirector*, const sead::Vector3f&, f32, f32);
 bool isJudgedToClipFrustumWithoutFar(const LiveActor* actor, const sead::Vector3f&, f32, f32);
 bool isJudgedToClipFrustumWithoutFar(const LiveActor* actor, f32, f32);
+
+al::UniformBlock* createUniformBlock(const al::UniformBlockLayout*, int, sead::Heap*, int);
+al::UniformBlock* createUniformBlockInstanceNum(const al::UniformBlockLayout*, int, int, sead::Heap*, int);
+void activateSampler(agl::DrawContext*, const agl::TextureSampler*, const agl::ShaderProgram*, const char*);
+
 }  // namespace al

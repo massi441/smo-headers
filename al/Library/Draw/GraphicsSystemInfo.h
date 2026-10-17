@@ -209,7 +209,7 @@ public:
 
     SubCameraRenderer* getSubCameraRenderer() const { return mSubCameraRenderer; }
 
-public:
+private:
     sead::StrTreeMap<128, const sead::PtrArray<UniformBlock>*> mViewIndexedUboArrayTree;
     GraphicsInitArg mInitArg;
     BloomDirector* mBloomDirector;
@@ -307,7 +307,7 @@ public:
     ReducedBufferRenderer* mReducedBufferRenderer;
     ModelOcclusionCullingDirector* mModelOcclusionCullingDirector;
     ModelLodAllCtrl* mModelLodAllCtrl;
-    ModelShaderHolder* mModelShaderHolder;
+    ModelShaderHolder* mModelShaderHolder; // 0x998
     PrepassTriangleCulling* mPrepassTriangleCulling;
     bool _9a8;
     ApplicationMessageReceiver* mApplicationMessageReceiver;

@@ -692,7 +692,7 @@ public:
 
     void setWarpHoleWorldId(s32 worldId) { mWarpHoleWorldId = worldId; }
 
-public:
+private:
     struct WorldHintList {
         sead::PtrArray<HintInfo> list;
         s32 index;

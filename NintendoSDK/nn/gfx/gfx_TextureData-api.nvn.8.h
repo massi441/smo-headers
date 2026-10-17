@@ -4,6 +4,7 @@
 #include <nn/gfx/gfx_Common.h>
 #include <nn/nn_BitTypes.h>
 #include <nn/util/util_BitPack.h>
+#include "nvn/nvn_Cpp.h"
 
 namespace nn::gfx {
 
@@ -15,8 +16,8 @@ struct TextureImplData<ApiVariationNvn8> {
     Bit8 state;
     nn::util::BitPack8 flags;
     char reserved[6];
-    detail::Ptr<void> pNvnTexture;
-    char nvnTexture[192];
+    detail::Ptr<nvn::Texture> pNvnTexture;
+    nvn::Texture nvnTexture;
     detail::Ptr<void> userPtr;
 };
 

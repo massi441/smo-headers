@@ -12,7 +12,11 @@ class SkeletonObj;
 // TODO
 class ModelObj {
 public:
+    ModelObj();
+
     SkeletonObj* GetSkeleton() const { return m_Skeleton; }
+
+    nn::g3d::MaterialObj* FindMaterial(char const* materialName);
 
     s32 GetNumShapes() const { return m_NumShapes; }
 
@@ -23,9 +27,14 @@ public:
 
     bool Initialize(const InitializeArgument& arg, void* buffer, size_t bufferSize);
 
+    u32 getMaterialVisFlag(int index) {
+        return mMaterialVisFlags[index];
+    }
+
+private:
     const ResModel* m_ResModel;
     void* _8;
-    void* _10;
+    u32* mMaterialVisFlags;
     u8 _18;
     u8 _19;
     u16 _1a;

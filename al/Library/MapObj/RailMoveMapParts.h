@@ -21,7 +21,7 @@ public:
     void exeMoveSign();
     void exeMove();
 
-public:
+private:
     SwitchKeepOnAreaGroup* mSwitchKeepOnAreaGroup = nullptr;
     SwitchOnAreaGroup* mSwitchOnAreaGroup = nullptr;
     sead::Vector3f mRailPos = {0.0f, 0.0f, 0.0f};

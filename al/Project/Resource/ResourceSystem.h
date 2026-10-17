@@ -15,13 +15,17 @@ class SeadAudioPlayer;
 
 class ResourceSystem {
 public:
+    static constexpr size_t MaxCategoryCount = 18;
+
     struct ResourceCategory {
+        static constexpr size_t MaxNameLength = 0x80;
+
         ResourceCategory(const sead::SafeString& categoryName, sead::Heap* categoryHeap) {
             name = categoryName;
             heap = categoryHeap;
         }
 
-        sead::FixedSafeString<0x80> name;
+        sead::FixedSafeString<MaxNameLength> name;
         sead::Heap* heap;
         sead::StrTreeMap<156, Resource*> treeMap;
     };
@@ -45,18 +49,15 @@ public:
     ResourceSystem(const char* name);
 
     ResourceCategory* addCategory(const sead::SafeString& name, s32 size, sead::Heap* heap);
-    Resource* findOrCreateResourceCategory(const sead::SafeString& name,
-                                           const sead::SafeString& category, const char* ext);
-    sead::RingBuffer<ResourceCategory*>::iterator
-    findResourceCategoryIter(const sead::SafeString& name);
+    Resource* findOrCreateResourceCategory(const sead::SafeString& name, const sead::SafeString& category, const char* ext);
+    sead::RingBuffer<ResourceCategory*>::iterator findResourceCategoryIter(const sead::SafeString& name);
     bool isEmptyCategoryResource(const sead::SafeString& name);
     void createCategoryResourceAll(const sead::SafeString& name);
-    Resource* createResource(const sead::SafeString& name, ResourceCategory* category,
-                             const char* ext);
+    // void createResourceCore(Resource* resource) {}; // from decomp
+    Resource* createResource(const sead::SafeString& name, ResourceCategory* category, const char* ext);
     void removeCategory(const sead::SafeString& name);
     Resource* findResource(const sead::SafeString& categoryName);
-    Resource* findResourceCore(const sead::SafeString& name,
-                               sead::RingBuffer<ResourceCategory*>::iterator* outIter);
+    Resource* findResourceCore(const sead::SafeString& name, sead::RingBuffer<ResourceCategory*>::iterator* outIter);
     Resource* findOrCreateResource(const sead::SafeString& categoryName, const char* name);
     ResourceCategory* findResourceCategory(const sead::SafeString& name);
     void loadCategoryArchiveAll(const sead::SafeString& name);
@@ -66,14 +67,17 @@ public:
     bool tryGetGraphicsInfoIter(ByamlIter* iter, const sead::SafeString& name) const;
 
     void resetCurrentCategoryName() { mCurrentCategoryName = nullptr; }
+    const char* getCurrentCategoryName() const { return mCurrentCategoryName; }
 
     void setAudioPlayer(SeadAudioPlayer* audioPlayerA, SeadAudioPlayer* audioPlayerB) {
         mAudioPlayerA = audioPlayerA;
         mAudioPlayerB = audioPlayerB;
     }
 
-public:
-    sead::FixedRingBuffer<ResourceCategory*, 18> mCategories;
+    const sead::FixedRingBuffer<ResourceCategory*, 18>& getCategories() { return mCategories; }
+
+private:
+    sead::FixedRingBuffer<ResourceCategory*, MaxCategoryCount> mCategories;
     ByamlIter* mResourceCategoryTable = nullptr;
     const char* mCurrentCategoryName = nullptr;
     // TODO: proper names for these two

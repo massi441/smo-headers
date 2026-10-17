@@ -23,11 +23,10 @@ public:
     f32 calcLoadPercent() const;
     s32 getLoadWorldId() const;
     al::Resource* tryLoadResource(const char* resPath, const char* ext, const char* category);
-    void loadWorldResource(s32 loadWorldId, s32 scenario, bool isScenarioResources,
-                           const char* resourceCategory);
+    void loadWorldResource(s32 loadWorldId, s32 scenario, bool isScenarioResources, const char* resourceCategory);
     f32 calcWorldResourceHeapSize() const;
 
-public:
+private:
     al::AsyncFunctorThread* mWorldResourceLoader = nullptr;  // WorldResourceLoader::loadResource
     sead::Heap* mWorldResourceHeap = nullptr;
     sead::FrameHeap* mCapWorldHeap = nullptr;
@@ -46,3 +45,5 @@ public:
     bool mIsLoadedPlayerModel = false;
     s32 unkInt6 = 0;
 };
+
+static_assert(sizeof(WorldResourceLoader) == 0x68);

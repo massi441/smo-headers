@@ -19,7 +19,7 @@ public:
     void setTypeToSphere(f32 radius, const sead::Vector3f* pos);
     void startClipped();
     void endClipped();
-    void updateClipping(const ClippingJudge* clippingJudge);
+    void updateClipping(const ClippingJudge* clippingJudge); // UNUSED
     bool judgeClipping(const ClippingJudge* clippingJudge) const;
     void updateClipping(ClippingRequestKeeper* clippingRequestKeeper,
                         const ClippingJudge* clippingJudge);

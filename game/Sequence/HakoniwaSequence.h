@@ -39,15 +39,22 @@ class EffectSystem;
 class HakoniwaSequence : public al::Sequence {
 public:
     HakoniwaSequence(const char* name);
+    ~HakoniwaSequence() override;
 
     void init(const al::SequenceInitInfo& initInfo) override;
     void update() override;
     void drawMain() const override;
+    bool isDisposable() const override;
+    al::Scene* getCurrentScene() const override;
 
     void updatePadSystem();
     void destroySceneHeap(bool destroyResource);
     void initSystem();
     bool isEnableSave() const;
+
+    al::WipeHolder* getWipeHolder() const { return mWipeHolder; }
+    const HakoniwaStateBootLoadData* getBootLoadDataState() const { return mStateBootLoadData; }
+    GameDataHolderAccessor getGameDataHolderAccessor() const { return mGameDataHolderAccessor; }
 
     void exeBootLoadData();
     void exeDemoOpening();
@@ -69,10 +76,7 @@ public:
     void exeWaitWriteDataModeChange();
     void exeWaitLoadDataModeChange();
 
-    bool isDisposable() const override;
-    al::Scene* getCurrentScene() const override;
-
-public:
+private:
     al::Scene* mCurrentScene;
     GameDataHolderAccessor mGameDataHolderAccessor;
     al::GamePadSystem* mGamePadSystem;

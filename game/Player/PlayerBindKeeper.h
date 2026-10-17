@@ -32,12 +32,12 @@ public:
 
     al::HitSensor* getBindSensor() const { return mBindSensor; }
 
-public:
+private:
     al::HitSensor* mBodyHitSensor;
     al::HitSensor* mBindSensor;
     PlayerBindableSensorList* mBindableSensorList;
     IUsePlayerPuppet* mPuppet;
-    s32 _20;
+    s32 mResetTimer;
     bool _24;
 };
 

@@ -379,6 +379,8 @@ static constexpr al::ExecuteOrder updateTableArr[] = {
     // Custom Tables
     {"PuppetActor", "ActorMovementCalcAnim", 512, "ボス"}};
 
+constexpr size_t DrawTableArrSize = sizeof(drawTableArr);
+
 constexpr bool strings_equal(const char* a, const char* b) {
     return *a == *b && (*a == '\0' || strings_equal(a + 1, b + 1));
 }
@@ -420,7 +422,7 @@ static constexpr al::ExecuteTable createDrawTable(const char* tableName, const c
     return drawTable;
 }
 
-constexpr al::ExecuteTable DrawTable[] = {
+constexpr al::ExecuteTable DrawTables[] = {
     createDrawTable("３Ｄ（カリング）", "カリング", "ActorModelDrawCulling", "カリング",
                     "ActorModelDrawCulling"),
     createDrawTable("３Ｄ（デプスシャドウ）", "デプスシャドウ[キャラクター]",
@@ -519,9 +521,9 @@ constexpr al::ExecuteTable DrawTable[] = {
     createDrawTable("２Ｄ（ミス）", "２Ｄミス", "LayoutDraw", "２Ｄミス", "LayoutDraw"),
 };
 
-constexpr s32 DrawTableSize = sizeof(DrawTable) / sizeof(DrawTable[0]);
+constexpr s32 DrawTableSize = sizeof(DrawTables) / sizeof(DrawTables[0]);
 
-constexpr al::ExecuteTable UpdateTable[] = {
+constexpr al::ExecuteTable UpdateTables[] = {
     createUpdateTable("更新", "ステージ同期カウンタ", "エフェクト（後処理）"),
     createUpdateTable("ビュー更新(コア1)", "ビュー更新(コア1)", "ビュー更新(コア1)"),
     createUpdateTable("ビュー更新(コア2)", "ビュー更新(コア2)", "ビュー更新(コア2)"),
@@ -529,4 +531,4 @@ constexpr al::ExecuteTable UpdateTable[] = {
                       "スナップショット[ActorMovement]"),
 };
 
-constexpr s32 UpdateTableSize = sizeof(UpdateTable) / sizeof(UpdateTable[0]);
+constexpr s32 UpdateTablesSize = sizeof(UpdateTables) / sizeof(UpdateTables[0]);

@@ -6,13 +6,17 @@ namespace al {
 class FixMapParts : public LiveActor {
 public:
     FixMapParts(const char* name);
+
     void init(const ActorInitInfo& info) override;
     void appear() override;
     void movement() override;
     void calcAnim() override;
     bool receiveMsg(const SensorMsg* message, HitSensor* other, HitSensor* self) override;
 
-public:
+    bool isStatic() const { return mIsStatic; }
+    void setIsStatic(bool isStatic) { mIsStatic = isStatic; }
+
+private:
     bool mIsStatic = false;
 };
 }  // namespace al

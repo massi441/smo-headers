@@ -35,7 +35,7 @@ public:
     void exeRideLand();
     void exeBindKeepDemo();
 
-public:
+private:
     IUsePlayerPuppet* mPlayerPuppet = nullptr;
     f32 mWeightL = 0.0f;
     f32 mWeightC = 0.0f;

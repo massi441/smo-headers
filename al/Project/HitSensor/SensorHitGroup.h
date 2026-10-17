@@ -16,7 +16,7 @@ public:
 
     s32 getSensorCount() const { return mSensorCount; }
 
-public:
+private:
     s32 mMaxSensors;
     s32 mSensorCount = 0;
     HitSensor** mSensors;

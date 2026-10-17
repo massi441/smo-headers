@@ -308,9 +308,9 @@ bool escapeFromPlayer(LiveActor* actor, sead::Vector3f* front, f32 forceFront, f
 bool walkAndTurnToPlayer(LiveActor* actor, f32 forceFront, f32 forceGravity, f32 decay, f32 deg,
                          bool turnAlongGround);
 bool isPlayerInSightFan(const LiveActor* actor, f32 maxDist, f32 angleH, f32 angleV);
-bool isFallOrDamageCodeNextMove(const LiveActor* actor, const sead::Vector3f& velocity, f32 gravity,
+bool isFallOrDamageCodeNextMove(const LiveActor* actor, const sead::Vector3f& velocity, f32 heightOffset,
                                 f32 searchDist);
-bool isFallNextMove(const LiveActor* actor, const sead::Vector3f& velocity, f32 gravity,
+bool isFallNextMove(const LiveActor* actor, const sead::Vector3f& velocity, f32 heightOffset,
                     f32 searchDist);
 
 }  // namespace al

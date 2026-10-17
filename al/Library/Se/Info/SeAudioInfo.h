@@ -10,7 +10,11 @@ class ByamlIter;
 class SeActionInfo;
 class SeEmitterInfo;
 class SeHitReactionInfo;
-class SePlayInfo;
+
+class SePlayInfo {
+public:
+    const char* name;
+};
 
 struct SeUserInfo {
     static SeUserInfo* createInfo(const ByamlIter&, const sead::SafeString&);

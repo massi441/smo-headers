@@ -8,6 +8,7 @@ class Rail;
 class RailRider {
 public:
     RailRider(const Rail* rail);
+
     void moveToRailStart();
     void move();
     void syncPosDir();
@@ -38,12 +39,14 @@ public:
 
     bool isMoveForwards() const { return mIsMoveForwards; }
 
-public:
+    float getSpeed() const { return mSpeed; }
+
+private:
     const Rail* mRail;
     sead::Vector3f mPosition = sead::Vector3f::zero;
     sead::Vector3f mDirection = sead::Vector3f::zero;
     f32 mCoord = 0.0f;
-    f32 mRate = 0.0f;
+    f32 mSpeed = 0.0f;
     bool mIsMoveForwards = true;
 };
 }  // namespace al

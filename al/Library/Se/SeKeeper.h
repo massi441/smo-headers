@@ -13,6 +13,8 @@ class SeRequestParam;
 class IAudioResourceLoader;
 class ModelKeeper;
 class CameraDirector;
+class SeEmitterHolder;
+struct SeUserInfo;
 
 class SeKeeper {
 public:
@@ -55,8 +57,14 @@ public:
     void setEmitterPosePosPtr(const sead::Vector3f*, const char*);
     void loadSe(IAudioResourceLoader*);
 
-public:
-    void* _0[0x78 / 8];
+    const SeUserInfo* getSeUserInfo() const { return mSeUserInfo; }
+
+private:
+    SeEmitterHolder* mEmitterHolder;
+    SeDirector* mSeDirector;
+    SeUserInfo* mSeUserInfo;
+    const char* mName;
+    void* _20[(0x78 - 0x20) / 8];
 };
 
 static_assert(sizeof(SeKeeper) == 0x78);

@@ -30,7 +30,7 @@ public:
     void exeCapHit();
     void exeBlowDown();
 
-public:
+private:
     ExternalForceKeeper* mForceKeeper = nullptr;
     EnemyStateWander* mStateWander = nullptr;
     sead::Vector3f mCapPos = sead::Vector3f::zero;

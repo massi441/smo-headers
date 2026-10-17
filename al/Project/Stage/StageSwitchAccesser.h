@@ -10,6 +10,12 @@ class PlacementId;
 
 class StageSwitchAccesser {
 public:
+    enum class SwitchKind : u32 {
+        Invalid = 0,
+        Read = 1,
+        Write = 2
+    };
+
     StageSwitchAccesser();
 
     bool init(StageSwitchDirector* director, const char* linkName, const PlacementId& placementId);
@@ -31,9 +37,7 @@ public:
 
     s32 getInfoIndex() const { return mInfoIndex; }
 
-public:
-    enum class SwitchKind : u32 { Invalid = 0, Read = 1, Write = 2 };
-
+private:
     StageSwitchDirector* mStageSwitchDirector = nullptr;
     IUseName* mUseName = nullptr;
     const char* mLinkName = "";

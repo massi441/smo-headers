@@ -81,6 +81,14 @@ public:
 
     bool isSubAnimPlaying() const { return mIsSubAnimPlaying; }
 
+    // CUSTOM
+
+    const sead::FixedSafeString<64>& getCurrentAnim() const { return mCurAnim; }
+    const sead::FixedSafeString<64>& getCurrentSubAnim() const { return mCurSubAnim; }
+    const sead::FixedSafeString<64>& getCurrentUpperAnim() const { return mCurUpperBodyAnim; }
+    float* getBlendWeights() const { return mSklAnimBlendWeights; }
+    PlayerAnimFrameCtrl* getFrameCtrl() const { return mAnimFrameCtrl; }
+
 public:
     PlayerModelHolder* mModelHolder;
     al::LiveActor* mPlayerDeco;

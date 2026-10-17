@@ -66,8 +66,12 @@ public:
         return reinterpret_cast<const ByamlContainerHeader*>(mRootNode);
     }
 
-public:
-    const u8* mData = nullptr;
+private:
+    union {
+        const u8* mData = nullptr;
+        const ByamlHeader* mHeader;
+    };
+
     const u8* mRootNode = nullptr;
 };
 }  // namespace al

@@ -6,9 +6,10 @@
 #include "Library/Nerve/NerveExecutor.h"
 
 namespace al {
-class LiveActor;
-class HitSensor;
-}  // namespace al
+    class LiveActor;
+    class HitSensor;
+}
+
 class IUsePlayerCollision;
 class PlayerAnimator;
 class IPlayerModelChanger;
@@ -18,10 +19,7 @@ class PlayerPushReceiver;
 
 class PlayerCarryKeeper : public al::NerveExecutor {
 public:
-    PlayerCarryKeeper(const al::LiveActor* player, al::HitSensor* carrySensor,
-                      PlayerAnimator* animator, const IPlayerModelChanger* modelChanger,
-                      const IUsePlayerCeilingCheck* ceilingCheck,
-                      PlayerJointParamHandLegAngle* handLegAngleParam);
+    PlayerCarryKeeper(const al::LiveActor* player, al::HitSensor* carrySensor, PlayerAnimator* animator, const IPlayerModelChanger* modelChanger, const IUsePlayerCeilingCheck* ceilingCheck, PlayerJointParamHandLegAngle* handLegAngleParam);
 
     void update();
     bool updateCollideLockUp(const IUsePlayerCollision* collider, PlayerPushReceiver* pushReceiver);
@@ -49,7 +47,7 @@ public:
     bool isThrowHandR() const;
     bool isThrowHold() const;
     bool isThrowRelease() const;
-    s32 getThrowReleaseFrame() const;
+    int getThrowReleaseFrame() const;
 
     const char* getCarryStartAnimName() const;
     const char* getCarryThrowAnimName() const;
@@ -61,7 +59,7 @@ public:
     void exeThrow();
     void exeRelease();
 
-public:
+private:
     al::LiveActor* mPlayer;
     PlayerAnimator* mAnimator;
     al::HitSensor* mCarrySensor;
@@ -69,11 +67,11 @@ public:
     IPlayerModelChanger* mModelChanger;
     IUsePlayerCeilingCheck* mCeilingCheck;
     PlayerJointParamHandLegAngle* mHandLegAngleParam;
-    s32 _48;
+    int _48;
     bool mIsCarryAbove;
     bool mIsCarryWallKeep;
     sead::Vector3f _50;
-    s32 _5c;
+    int _5c;
     sead::Vector3f _60;
 };
 

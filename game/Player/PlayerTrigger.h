@@ -5,47 +5,63 @@
 
 class PlayerTrigger {
 public:
-    enum ECollisionTrigger : u32 {
-        // used in PlayerStateHipDrop::isLandTrigger
+    enum class ECollisionTrigger : u32 {
+        // used in PlayerStateHipDrop
         ECollisionTrigger_val1 = 1,
-        // used in PlayerStateDamageLife::exeDead
+        // used in PlayerStateDamageLife
         ECollisionTrigger_val6 = 6,
-        // used in PlayerJudgeWallHitDown::judge
+        // used in PlayerJudgeWallHitDown
         ECollisionTrigger_val9 = 9,
         // used in PlayerTrigger::isOnYoshiHackEnd
         ECollisionTrigger_val1024 = 1024,
     };
 
-    enum EAttackSensorTrigger : u32 {
-        // used in PlayerCounterAfterCapCatch::isCapCatch
+    enum class EAttackSensorTrigger : u32 {
+        // used in PlayerCounterAfterCapCatch
         EAttackSensorTrigger_val0 = 0,
     };
 
-    enum EActionTrigger : u32 {
-        // used in PlayerStateHipDrop::exeStart
+    enum class  EActionTrigger : u32 {
+        // used in PlayerStateHipDrop
         EActionTrigger_val3 = 3,
-        // used in PlayerStateDamageLife::appear
+
+        // used in PlayerStateDamageLife
         EActionTrigger_val6 = 6,
-        // used in PlayerJudgeForceLand::judge
-        EActionTrigger_val11 = 11,
-        // used in PlayerStateSquat::appear
+
+        DiveInWater = 9,
+        Damage = 10,
+        Fall = 14,
+
+        // used in PlayerJudgeForceLand
+        EndJumpDownFall = 11,
+
+        // used in PlayerStateSquat
         EActionTrigger_val12 = 12,
-        // used in PlayerJudgeWallCatch::update, PlayerJudgeWallKeep::update
+
+        HipDropCancel = 17,
+
+        RollEndStandUp = 25,
+        GroundSpinClockwise = 27,
+        GroundSpinCounterClockwise = 28,
+
+        // used in PlayerJudgeWallCatch
         EActionTrigger_val30 = 30,
-        // used in PlayerCounterQuickTurnJump::isEnableTurnJump
+
+        WaterSurfaceRun = 33,
+
         EActionTrigger_QuickTurn = 34,
     };
 
-    enum EReceiveSensorTrigger : u32 {};
+    enum class EReceiveSensorTrigger : u32 {};
 
-    enum EPreMovementTrigger : u32 {
-        // used in PlayerStateDamageLife::appear
+    enum class EPreMovementTrigger : u32 {
+        // used in PlayerStateDamageLife
         EPreMovementTrigger_val2 = 2,
     };
 
-    enum EDemoEndTrigger : u32 {};
+    enum class EDemoEndTrigger : u32 {};
 
-    enum EMaterialChangeTrigger : u32 {};
+    enum class EMaterialChangeTrigger : u32 {};
 
     PlayerTrigger();
     void set(ECollisionTrigger flag);

@@ -17,8 +17,7 @@ class HackCap;
 
 class PlayerStateHack : public al::ActorStateBase {
 public:
-    PlayerStateHack(al::LiveActor* player, PlayerHackKeeper* hackKeeper,
-                    IPlayerModelChanger* modelChanger, PlayerAnimator* animator, HackCap* hackCap);
+    PlayerStateHack(al::LiveActor* player, PlayerHackKeeper* hackKeeper, IPlayerModelChanger* modelChanger, PlayerAnimator* animator, HackCap* hackCap);
 
     void appear() override;
     void prepareStartHack(const al::HitSensor* source, const al::HitSensor* target);
@@ -32,6 +31,8 @@ public:
     void exeHackDemoPuppetable();
     void exeHack();
     void exeEnd();
+
+    // TODO: Private
 
 public:
     PlayerHackKeeper* mHackKeeper;

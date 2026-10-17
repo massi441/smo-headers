@@ -34,7 +34,7 @@ public:
     void drawList(const char* tableName, const char* listName) const;
     bool isActiveDraw(const char* tableName) const;
 
-public:
+private:
     s32 mRequestCount;
     s32 mUpdateTableCount = 0;
     ExecuteTableHolderUpdate** mUpdateTables = nullptr;
@@ -43,6 +43,6 @@ public:
     ExecuteRequestKeeper* mRequestKeeper = nullptr;
 };
 
-static_assert(sizeof(ExecuteDirector) == 0x30);
+}
 
-}  // namespace al
+static_assert(sizeof(al::ExecuteDirector) == 0x30);

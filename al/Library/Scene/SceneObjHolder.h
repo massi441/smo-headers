@@ -17,12 +17,12 @@ public:
     void initAfterPlacementSceneObj(const ActorInitInfo& info);
 
     template <typename T>
-    inline T* tryGetObj() const {
+    T* tryGetObj() const {
         return static_cast<T*>(tryGetObj(T::sSceneObjId));
     }
 
     template <typename T>
-    inline T* getObj() const {
+    T* getObj() const {
         return static_cast<T*>(getObj(T::sSceneObjId));
     }
 

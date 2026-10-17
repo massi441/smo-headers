@@ -101,9 +101,6 @@ class PlayerJudgeForceSlopeSlide;
 class PlayerJudgeForceRolling;
 class PlayerJudgeGrabCeil;
 class PlayerJudgeInWater;
-class PlayerJudgeInWater;
-class PlayerJudgeInWater;
-class PlayerJudgeInWater;
 class PlayerJudgeInvalidateInputFall;
 class PlayerJudgeLongFall;
 class PlayerJudgeOutInWater;
@@ -137,8 +134,7 @@ public:
     void initAfterPlacement() override;
     void movement() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self) override;
     void control() override;
     void updateCollider() override;
     void initPlayer(const al::ActorInitInfo& actorInitInfo,
@@ -183,17 +179,24 @@ public:
     void startPlayerPuppet();
     void cancelHackPlayerPuppetDemo();
     void endPlayerPuppet();
+
+    PlayerModelChangerHakoniwa* getModelChanger() const { return mModelChanger; }
+    PlayerModelHolder* getModelHolder() const { return mModelHolder; }
+    PlayerConst* getPlayerConst() const { return mConst; }
+    PlayerInput* getPlayerInput() const { return mInput; }
+    PlayerAnimator* getAnimator() const { return mAnimator; }
+    HackCap* getHackCap() const { return mHackCap; }
+    PlayerExternalVelocity* getExternalVelocity() const { return mExternalVelocity; }
+    PlayerPushReceiver* getPushReceiver() const { return mPushReceiver; }
+    PlayerCapManHeroEyesControl* getHeroEyesControl() const { return mCapManHeroEyesControl; }
+    PlayerStainControl* getStainControl() const { return mStainControl; }
+
     void exeWait();
-    bool tryActionCapReturn();
-    bool tryActionCapSpinAttack();
     void exeSquat();
-    bool tryActionSeparateCapThrow();
     void exeRun();
     void exeSlope();
     void exeRolling();
     void exeSpinCap();
-    bool tryChangeNerveFromAir();
-    bool tryActionCapSpinAttackMiss();
     void exeJump();
     void exeCapCatchPop();
     void exeWallAir();
@@ -215,13 +218,20 @@ public:
     void exeHack();
     void exeEndHack();
     void exeBind();
-    bool tryActionCapSpinAttackBindEnd();
     void exeDemo();
     void exeCamera();
     void exeAbyss();
     void exeDead();
+
+    bool tryActionCapReturn();
+    bool tryActionCapSpinAttack();
+    bool tryActionSeparateCapThrow();
+    bool tryChangeNerveFromAir();
+    bool tryActionCapSpinAttackMiss();
+    bool tryActionCapSpinAttackBindEnd();
     bool tryActionCapSpinAttackImpl(bool);
 
+// TODO: make private
 public:
     PlayerInfo* mInfo;
     PlayerConst* mConst;

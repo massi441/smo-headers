@@ -79,14 +79,16 @@ public:
         mFollowPosOffset.y *= scaleY;
     }
 
-public:
+    HitSensorType getType() const { return mSensorType; }
+
+private:
     const char* mName;
     HitSensorType mSensorType;
     sead::Vector3f mPos = {0.0f, 0.0f, 0.0f};
     f32 mRadius;
     u16 mMaxSensorCount;
     u16 mSensorCount = 0;
-    HitSensor** mSensors = nullptr;
+    HitSensor** mCollidedSensors = nullptr;
     SensorSortCmpFunc* mSortFunctionPtr = nullptr;
     SensorHitGroup* mHitGroup = nullptr;
     bool mIsValidBySystem = false;
@@ -102,3 +104,5 @@ public:
     friend class HitSensorKeeper;
 };
 }  // namespace al
+
+static_assert(sizeof(al::HitSensor) == 0x68);

@@ -23,16 +23,15 @@ public:
     };
 
     IDisposer();
-    explicit IDisposer(Heap* disposer_heap,
-                       HeapNullOption option = HeapNullOption::UseSpecifiedOrCurrentHeap);
+    explicit IDisposer(Heap* disposer_heap, HeapNullOption option = HeapNullOption::UseSpecifiedOrCurrentHeap);
     virtual ~IDisposer();
 
-    static u32 getListNodeOffset() { return offsetof(IDisposer, mListNode); }
+    // static u32 getListNodeOffset() { return offsetof(IDisposer, mListNode); }
 
 public:
     Heap* getDisposerHeap_() const { return mDisposerHeap; }
 
-public:
+private:
     friend class Heap;
 
     Heap* mDisposerHeap;
@@ -63,7 +62,7 @@ public:                                                                         
     CLASS(CLASS&&) = delete;                                                                       \
     CLASS& operator=(CLASS&&) = delete;                                                            \
                                                                                                    \
-public:                                                                                         \
+private:                                                                                           \
     static CLASS* sInstance;                                                                       \
                                                                                                    \
     friend class SingletonDisposer_;                                                               \

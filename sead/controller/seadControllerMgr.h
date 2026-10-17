@@ -59,9 +59,7 @@ public:
     Controller* getControllerByOrder(ControllerDefine::ControllerId id, s32 index) const;
     ControlDevice* getControlDevice(ControllerDefine::DeviceId id) const;
     ControllerAddon* getControllerAddon(s32 index, ControllerDefine::AddonId id) const;
-    ControllerAddon* getControllerAddonByOrder(s32 controller_index,
-                                               ControllerDefine::AddonId addon_id,
-                                               int addon_index) const;
+    ControllerAddon* getControllerAddonByOrder(s32 controller_index, ControllerDefine::AddonId addon_id, int addon_index) const;
 
     template <typename T>
     T getControllerByOrderAs(s32 index) const;
@@ -76,7 +74,9 @@ public:
 
     Controller* getController(int port) { return mControllers[port]; }
 
-public:
+    s32 getControllerMaxCount() const { return mControllers.size(); }
+
+private:
     OffsetList<ControlDevice> mDevices;
     PtrArray<Controller> mControllers;
 };

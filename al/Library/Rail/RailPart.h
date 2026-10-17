@@ -29,7 +29,7 @@ public:
 
     bool isBezierCurve() const { return mBezierCurve != nullptr; }
 
-public:
+private:
     BezierCurve* mBezierCurve = nullptr;
     LinearCurve* mLinearCurve = nullptr;
     f32 mTotalDistance = 0;

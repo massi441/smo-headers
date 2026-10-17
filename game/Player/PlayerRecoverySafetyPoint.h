@@ -80,7 +80,7 @@ public:
     void endRecovery();
 
 public:
-    const al::LiveActor* mActor;
+    const al::LiveActor* mPlayer;
     const HackCap* mHackCap;
     const IUseDimension* mDimension;
     al::CollisionPartsFilterBase* mColFilter;

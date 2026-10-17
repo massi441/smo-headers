@@ -24,8 +24,7 @@ void CloseDirectory(DirectoryHandle handle);
     handle: Handle of directory to be opened.
     entryBufferLength: How many entries provided in the entriesOut argument.
 */
-Result ReadDirectory(s64* entryCountOut, DirectoryEntry* entriesOut, DirectoryHandle handle,
-                     s64 entryBufferLength);
+Result ReadDirectory(s64* entryCountOut, DirectoryEntry* entriesOut, DirectoryHandle handle, s64 entryBufferLength);
 
 /*
     Creates a directory at  given path.

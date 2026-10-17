@@ -259,6 +259,10 @@ void scaleVectorDirection(sead::Vector3f* outVec, const sead::Vector3f& inVec,
 void scaleVectorExceptDirection(sead::Vector3f* outVec, const sead::Vector3f& inVec,
                                 const sead::Vector3f& dir, f32 scale);
 void snapVecToDirAxisY(sead::Vector3f*, const sead::Vector3f&, s32);
+
+/**
+ * Warning: returns true on failure
+ */
 bool calcDir(sead::Vector3f* outVec, const sead::Vector3f& vecA, const sead::Vector3f& vecB);
 bool calcDirH(sead::Vector3f* outVec, const sead::Vector3f& vecA, const sead::Vector3f& vecB);
 bool calcDirOnPlane(sead::Vector3f* outVec, const sead::Vector3f& vecA, const sead::Vector3f& vecB,
@@ -379,9 +383,10 @@ bool turnQuatZDirWithYDirDegree(sead::Quatf* outQuat, const sead::Quatf& quat,
                                 const sead::Vector3f& axis, f32 degree);
 bool turnQuatZDirToTargetWithAxis(sead::Quatf*, const sead::Vector3f&, const sead::Vector3f&, f32);
 bool turnQuatFrontToDirDegreeH(sead::Quatf*, const sead::Vector3f&, f32);
-void rotateQuatAndTransDegree(sead::Quatf*, sead::Vector3f*, const sead::Quatf&,
-                              const sead::Vector3f&, const sead::Vector3f&, const sead::Vector3f&,
-                              f32);
+void rotateQuatAndTransDegree(sead::Quatf* outQuat, sead::Vector3f* outTrans,
+                              const sead::Quatf& baseQuat, const sead::Vector3f& baseTrans,
+                              const sead::Vector3f& axis, const sead::Vector3f& center,
+                              f32 degree);
 bool turnVecToVecDegree(sead::Vector3f* out, const sead::Vector3f& vec, const sead::Vector3f& other,
                         f32 degree);
 

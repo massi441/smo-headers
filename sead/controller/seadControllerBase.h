@@ -58,7 +58,7 @@ public:
     void setPointerBound(const BoundBox2f& bound);
     const BoundBox2f& getPointerBound() const { return mPointerBound; }
 
-public:
+private:
     bool isIdleBase_();
     void setIdleBase_();
     void setPointerWithBound_(bool is_on, bool touchkey_hold, const Vector2f& pos);
@@ -106,7 +106,7 @@ public:
     s32 mRightStickCrossStartBit;
     s32 mTouchKeyBit;
     s32 mIdleFrame;
-    BitFlag32 mPadHold;
+    BitFlag32 mPadHold; // which buttons are currently held
     Vector2f mPointer;
     Vector2f mLeftStick;
     Vector2f mRightStick;
@@ -120,5 +120,7 @@ public:
 #ifdef cafe
 static_assert(sizeof(ControllerBase) == 0x130, "sead::ControllerBase size mismatch");
 #endif  // cafe
+
+static_assert(sizeof(sead::ControllerBase) == 0x138);
 
 }  // namespace sead

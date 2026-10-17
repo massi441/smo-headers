@@ -95,7 +95,9 @@ public:
 
     bool isNoCollide() const;
 
-public:
+    void setHackCap(HackCap* hackCap) { mHackCap = hackCap; }
+
+private:
     al::LiveActor* mActor;
     HackCap* mHackCap;
     PlayerAnimator* mPlayerAnimator;

@@ -23,8 +23,7 @@ class ExecuteTableHolderUpdate : public HioNode {
 public:
     ExecuteTableHolderUpdate();
     virtual ~ExecuteTableHolderUpdate();
-    void init(const char* name, const ExecuteSystemInitInfo& initInfo, const ExecuteOrder* orders,
-              s32 orderCount);
+    void init(const char* name, const ExecuteSystemInitInfo& initInfo, const ExecuteOrder* orders, s32 orderCount);
     void registerExecutorListActor(ExecutorListActorExecuteBase* listActor);
     void registerExecutorListLayout(ExecutorListLayoutUpdate* listLayout);
     void registerExecutorListUser(ExecutorListIUseExecutorUpdate* listUser);
@@ -35,12 +34,17 @@ public:
     void tryRegisterUser(IUseExecutor* user, const char* listName);
     void tryRegisterFunctor(const FunctorBase& functor, const char* listName);
     void createExecutorListTable();
+
+    /**
+     * Calls the execute function of each ExecutorListBase in the mActiveExecutors list
+     */
     void execute() const;
+
     void executeList(const char* listName) const;
 
-    const char* getName() { return mName; }
+    const char* getName() const { return mName; }
 
-public:
+private:
     const char* mName;
     sead::PtrArray<ExecutorListBase> mActiveExecutors;
     sead::PtrArray<ExecutorListBase> mExecutorsAll;

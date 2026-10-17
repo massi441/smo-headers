@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Library/Nerve/NerveStateBase.h"
+#include <basis/seadTypes.h>
 
+#include "Library/Nerve/NerveStateBase.h"
 #include "System/GameDataHolderAccessor.h"
 
 namespace al {
@@ -27,7 +28,7 @@ class StageSceneStateStartSeparatePlay;
 
 class StageSceneStatePauseMenu : public al::HostStateBase<al::Scene> {
 public:
-    static const s32 cMenuItemAmount = 5;
+    static constexpr s32 cMenuItemAmount = 5;
     enum class StartType { Title, Normal, AfterTitle };
 
     StageSceneStatePauseMenu(const char* name, al::Scene* host,
@@ -66,6 +67,9 @@ public:
     bool isDrawViewRenderer() const;
     bool isDrawChromakey() const;
 
+    al::SimpleLayoutAppearWaitEnd* getMenuLayout() const { return mMenuLayout; }
+    MenuSelectParts* getMenuSelectParts() const { return mSelectParts; }
+
     void exeAppear();
     void setNormal();
     void appearMarioModel();
@@ -86,7 +90,7 @@ public:
     void startPauseCamera();
     void setAfterTitle();
 
-public:
+private:
     al::SimpleLayoutAppearWaitEnd* mMenuLayout = nullptr;
     al::SimpleLayoutAppearWaitEnd* mMenuGuide = nullptr;
     al::SimpleLayoutAppearWaitEnd* mMenuRight = nullptr;

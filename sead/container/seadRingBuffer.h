@@ -70,9 +70,9 @@ public:
         const T* operator->() const { return &buffer()(mIndex); }
         s32 getIndex() const { return mIndex; }
 
-    public:
         const RingBuffer& buffer() const { return *mBuffer; }
 
+    private:
         s32 mIndex;
         const RingBuffer* mBuffer;
     };

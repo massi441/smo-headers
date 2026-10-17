@@ -10,7 +10,7 @@ public:
 
     s32 getPort() const { return mPort; }
 
-public:
+private:
     s32 mPort;
 };
 

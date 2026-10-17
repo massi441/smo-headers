@@ -38,509 +38,509 @@ enum class PlayerStainType {
     SandMoon,
 };
 
-bool sendMsgAckCheckpoint(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgAckGetShine(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgAckLifeUp(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgAckLifeMaxUp(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgAskRailCollision(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBreakPartsBreak(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBirdFlyAway(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCameraAngleElevationResetFast(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgChorobonAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgConductLightning(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgDamageBallAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgDamageBallBodyAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgDonsukeAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgDonsukeGroundAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgDonsukePush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgDragonAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEatExplosion(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgElectricWireNoLimitDistance(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttack2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttack3D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttackDash(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackAttackFire(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttackFireCollision(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttackPoison(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttackTRex(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackAttackPoison(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgConfirmPaintObj(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgConfirmPaintObjForSeed(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPaintAttackPoison(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyKick(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRabbitKick(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingCancel(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingFishApproach(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingFishFloatTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingItemGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingLineTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFishingUpImmediatelyPrepare(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFireBrosFireBallCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFireSwitchFire(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgFrogHackTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGhostRecordStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGhostRecordEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGhostPlay(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGhostStop(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGiantWanderBossAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGiantWanderBossBulletAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGiantWanderBossBulletPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGhostReverse(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGhostCancel(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGrowFlowerSeedDisablePush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGrowFlowerSeedNear(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGrowPlantPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGrowerAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGrowerWallAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGunetterAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGunetterBodyTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHammerAttackDown(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHammerAttackSide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHammerAttackSideCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgItemAmiiboKoopa(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgIsExistPukupuku(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgJangoAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgJangoRemoveCap(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKakkuKick(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillByBossBattleDemo(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillByHackFirstDemo(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillByHomeDemo(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEndHomeDemo(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillByMoonRockDemo(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillByShineGet(al::HitSensor* receiver, al::HitSensor* sender);
+bool sendMsgAckCheckpoint(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgAckGetShine(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgAckLifeUp(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgAckLifeMaxUp(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgAskRailCollision(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBreakPartsBreak(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBirdFlyAway(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCameraAngleElevationResetFast(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgChorobonAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgConductLightning(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgDamageBallAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgDamageBallBodyAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgDonsukeAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgDonsukeGroundAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgDonsukePush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgDragonAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEatExplosion(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgElectricWireNoLimitDistance(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttack2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttack3D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttackDash(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackAttackFire(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttackFireCollision(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttackPoison(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttackTRex(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackAttackPoison(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgConfirmPaintObj(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgConfirmPaintObjForSeed(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPaintAttackPoison(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyKick(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRabbitKick(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingCancel(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingFishApproach(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingFishFloatTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingItemGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingLineTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFishingUpImmediatelyPrepare(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFireBrosFireBallCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFireSwitchFire(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgFrogHackTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGhostRecordStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGhostRecordEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGhostPlay(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGhostStop(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGiantWanderBossAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGiantWanderBossBulletAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGiantWanderBossBulletPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGhostReverse(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGhostCancel(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGrowFlowerSeedDisablePush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGrowFlowerSeedNear(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGrowPlantPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGrowerAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGrowerWallAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGunetterAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGunetterBodyTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHammerAttackDown(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHammerAttackSide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHammerAttackSideCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgItemAmiiboKoopa(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgIsExistPukupuku(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgJangoAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgJangoRemoveCap(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKakkuKick(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillByBossBattleDemo(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillByHackFirstDemo(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillByHomeDemo(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEndHomeDemo(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillByMoonRockDemo(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillByShineGet(al::HitSensor* target, al::HitSensor* source);
 bool sendMsgKillBySwitchTimer(al::LiveActor* receiver);
-bool sendMsgKoopaBindStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPlayerFocusTarget(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchFinishL(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchFinishR(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchInvincibleL(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchInvincibleR(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchKnockBackL(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchKnockBackR(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchL(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapPunchR(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCapSpinAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaCatchKoopaCap(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaDashPunchAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaFire2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaFireBallAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaHackDamage(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaHackPunch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaHackPunchCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaHackTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaInvalidHackPunchFaceToCollision(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaRingBeamInvalidTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaTailAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKoopaTouchFloor(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKouraAttack2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKouraItemGet2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgLaunchBlow(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMeganeAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMeganeHackTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMofumofuBulletUnexplosion(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMoonBasementAttackMeteor(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMoonBasementBreakShockwaveMeteor(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMoonBasementRockSyncClippingRegist(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMoonBasementRockSyncClippingInvalidate(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMoonBasementRockSyncClippingValidate(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgAttachCactusNeedle(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCactusNeedleAttack(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgKoopaBindStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPlayerFocusTarget(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchFinishL(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchFinishR(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchInvincibleL(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchInvincibleR(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchKnockBackL(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchKnockBackR(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchL(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapPunchR(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCapSpinAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaCatchKoopaCap(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaDashPunchAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaFire2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaFireBallAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaHackDamage(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaHackPunch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaHackPunchCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaHackTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaInvalidHackPunchFaceToCollision(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaRingBeamInvalidTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaTailAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKoopaTouchFloor(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKouraAttack2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKouraItemGet2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgLaunchBlow(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMeganeAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMeganeHackTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMofumofuBulletUnexplosion(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMoonBasementAttackMeteor(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMoonBasementBreakShockwaveMeteor(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMoonBasementRockSyncClippingRegist(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMoonBasementRockSyncClippingInvalidate(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMoonBasementRockSyncClippingValidate(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgAttachCactusNeedle(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCactusNeedleAttack(al::HitSensor* target, al::HitSensor* source,
                                al::ComboCounter* pComboCounter);
-bool sendMsgCactusNeedleAttackStrong(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCactusNeedleAttackStrong(al::HitSensor* target, al::HitSensor* source,
                                      al::ComboCounter* pComboCounter);
-bool sendMsgPlayerBallToss(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCarryCameraSubjectiveStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCarryCameraSubjectiveEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCarryShineGetStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCarryShineGetEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCapCatch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCapHipDrop(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCapPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCapRecovery(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCapTouchJump(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCapTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerCoinDashGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerEyePriorityTarget(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerDisregardHomingAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerDisregardTargetMarker(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerEquipKoopaCap(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerFireBallAttack2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerFireBallAttack3D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerHipDropDemoTrigger(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerHipDropHipDropSwitch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerItemGet2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerJumpTakeOffFloor(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerObjectWallHit(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerObjLeapFrog(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerPenguinAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerPenguinAttackReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerPoleClimbKeep(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerPoleClimbReaction(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerRabbitGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerRollingObjHit(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerRollingWallHitDown(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerRollingWallHitMove(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerStartGrabCeil(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerStartWallJump(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerEndGrabCeil(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerSwordAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerTouchFloorJumpCode(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerTrample2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerUpperPunch2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerObjUpperPunch2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPukupukuDash(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPukupukuKiss(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPukupukuRollingAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPush2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPushToFish(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPushToMotorcycle(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPushToPlayer(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRadishAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRadishReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestChangeKinokoSuper(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestChangeFireFlower(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestPlayerSandMoon(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestPlayerSnow(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestPlayerWet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStartHack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSunshineAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCancelHack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCancelHackArea(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCancelHackByDokan(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPackunEatStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackAttackKick(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackAttackMapObj(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackDeathAreaSelfCheck(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackDemoEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackDemoStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackInvalidEscape(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackInvalidEscapeNoReaction(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackMarioCheckpointFlagWarp(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackMarioDead(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackMarioDemo(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackMarioInWater(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackMoveRockForestPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackSelfCeilingCheckMiss(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackSyncDamageVisibility(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWeaponItemGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapAttackCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapAttackStayRolling(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapAttackStayRollingCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapAttackRailMove(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapGiantAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapReflectCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapStartLockOn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapKeepLockOn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapCancelLockOn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapHipDrop(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapObjHipDrop(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapObjHipDropReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapIgnoreCancelLockOn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapIgnoreCancelMissReaction(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapIgnoreCollisionCheck(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapItemGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCapTrampolineAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCatchBombThrough(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCheckCarObstacle(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCheckIsCardboardBox(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBullHackAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBullEnemyAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyAttackStrong(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnemyObjBreak(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWhipAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgNoLimitTouchJump(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgNoticePlayerDamage(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStatueDrop(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStatueTrampleReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStatuePush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStatueSnap(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHitGrowFlowerPot(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHitGrowPlantPot(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgImplantGrowFlowerSeed(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgIcicleAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgIgnoreMirrorWarp(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgIgnoredByRunawayNpc(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgIgnorePushMotorcycle(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSandSharkAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSeedAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSeedAttackBig(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSeedAttackHold(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSeedItemGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSeedReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSenobiTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSenobiCancelStretch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSenobiPunchBlockTransparent(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgShibakenApproach(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgShibakenKick(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackUpperPunch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackObjUpperPunch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgShineGet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgShineGet2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSpherePush(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgPlayerBallToss(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCarryCameraSubjectiveStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCarryCameraSubjectiveEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCarryShineGetStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCarryShineGetEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCapCatch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCapHipDrop(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCapPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCapRecovery(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCapTouchJump(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCapTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerCoinDashGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerEyePriorityTarget(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerDisregardHomingAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerDisregardTargetMarker(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerEquipKoopaCap(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerFireBallAttack2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerFireBallAttack3D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerHipDropDemoTrigger(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerHipDropHipDropSwitch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerItemGet2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerJumpTakeOffFloor(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerObjectWallHit(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerObjLeapFrog(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerPenguinAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerPenguinAttackReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerPoleClimbKeep(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerPoleClimbReaction(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerRabbitGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerRollingObjHit(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerRollingWallHitDown(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerRollingWallHitMove(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerStartGrabCeil(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerStartWallJump(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerEndGrabCeil(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerSwordAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerTouchFloorJumpCode(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerTrample2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerUpperPunch2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerObjUpperPunch2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPukupukuDash(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPukupukuKiss(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPukupukuRollingAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPush2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPushToFish(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPushToMotorcycle(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPushToPlayer(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRadishAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRadishReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestChangeKinokoSuper(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestChangeFireFlower(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestPlayerSandMoon(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestPlayerSnow(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestPlayerWet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStartHack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSunshineAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCancelHack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCancelHackArea(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCancelHackByDokan(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPackunEatStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackAttackKick(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackAttackMapObj(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackDeathAreaSelfCheck(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackDemoEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackDemoStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackInvalidEscape(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackInvalidEscapeNoReaction(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackMarioCheckpointFlagWarp(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackMarioDead(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackMarioDemo(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackMarioInWater(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackMoveRockForestPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackSelfCeilingCheckMiss(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackSyncDamageVisibility(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWeaponItemGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapAttackCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapAttackStayRolling(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapAttackStayRollingCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapAttackRailMove(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapGiantAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapReflectCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapStartLockOn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapKeepLockOn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapCancelLockOn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapHipDrop(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapObjHipDrop(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapObjHipDropReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapIgnoreCancelLockOn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapIgnoreCancelMissReaction(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapIgnoreCollisionCheck(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapItemGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCapTrampolineAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCatchBombThrough(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCheckCarObstacle(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCheckIsCardboardBox(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBullHackAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBullEnemyAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyAttackStrong(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnemyObjBreak(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWhipAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgNoLimitTouchJump(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgNoticePlayerDamage(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStatueDrop(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStatueTrampleReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStatuePush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStatueSnap(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHitGrowFlowerPot(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHitGrowPlantPot(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgImplantGrowFlowerSeed(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgIcicleAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgIgnoreMirrorWarp(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgIgnoredByRunawayNpc(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgIgnorePushMotorcycle(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSandSharkAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSeedAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSeedAttackBig(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSeedAttackHold(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSeedItemGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSeedReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSenobiTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSenobiCancelStretch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSenobiPunchBlockTransparent(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgShibakenApproach(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgShibakenKick(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackUpperPunch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackObjUpperPunch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgShineGet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgShineGet2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSpherePush(al::HitSensor* target, al::HitSensor* source,
                        const sead::Vector3f& pCenter, f32 pRadius);
-bool sendMsgSphinxJumpAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSphinxQuizRouteKill(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSphinxRideAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSphinxRideAttackReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPechoSpot(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBelowObjBroken(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBindCollidedGround(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBindKeepDemoStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBindKeepDemoExecute(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBindKeepDemoEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBindRecoveryLife(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMayorItemReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMayorItemCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBlowObjAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBlowObjAttackReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgConfirmFrailBox(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgConfirmBrokenFrailBox(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankLookOn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankKickHack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankKickEnemy(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankBullet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankBulletNoReaction(al::HitSensor* receiver, al::HitSensor* sender);
+bool sendMsgSphinxJumpAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSphinxQuizRouteKill(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSphinxRideAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSphinxRideAttackReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPechoSpot(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBelowObjBroken(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBindCollidedGround(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBindKeepDemoStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBindKeepDemoExecute(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBindKeepDemoEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBindRecoveryLife(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMayorItemReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMayorItemCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBlowObjAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBlowObjAttackReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgConfirmFrailBox(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgConfirmBrokenFrailBox(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankLookOn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankKickHack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankKickEnemy(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankBullet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankBulletNoReaction(al::HitSensor* target, al::HitSensor* source);
 bool sendMsgTimerAthleticDemoStart(al::LiveActor* receiver);
-bool sendMsgRideOnStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRideOnEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRideOnRelease(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHipDropTransformTransform(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHipDropTransformReverse(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHipDropTransformingUp(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHipDropTransformingDown(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHipDropTransformingFinish(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgClearFire(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgCollectAnimalTouchCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossKnuckleCounter(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossKnuckleFallAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossKnuckleHackAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossKnuckleKillerAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossKnuckleIceConflict(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossKnuckleIceFallToMummy(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSkaterAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnableInSaucePan(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEnableMapCheckPointWarp(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStartInSaucePan(al::HitSensor* receiver, al::HitSensor* sender, bool pIsSpawnShine);
-bool sendMsgEndInSaucePan(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgLineDancerLink(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgLongPushSensorHit(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgLongPushBoxHit(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGoldHammerAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTrashBoxIn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTouchDoorDrumn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuribo2DTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboCollisionDamage(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboCollisionKill(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboFlick(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboTowerOn(al::HitSensor* receiver, al::HitSensor* sender, u32 pNum);
-bool sendMsgPartyPopperSoundAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYokinBallAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYoshiDirectEat(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYoshiTongueAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYoshiTongueEatBind(al::HitSensor* receiver, al::HitSensor* sender, f32* pRadiusPtr,
+bool sendMsgRideOnStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRideOnEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRideOnRelease(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHipDropTransformTransform(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHipDropTransformReverse(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHipDropTransformingUp(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHipDropTransformingDown(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHipDropTransformingFinish(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgClearFire(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgCollectAnimalTouchCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossKnuckleCounter(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossKnuckleFallAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossKnuckleHackAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossKnuckleKillerAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossKnuckleIceConflict(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossKnuckleIceFallToMummy(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSkaterAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnableInSaucePan(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEnableMapCheckPointWarp(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStartInSaucePan(al::HitSensor* target, al::HitSensor* source, bool pIsSpawnShine);
+bool sendMsgEndInSaucePan(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgLineDancerLink(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgLongPushSensorHit(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgLongPushBoxHit(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGoldHammerAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTrashBoxIn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTouchDoorDrumn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuribo2DTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboCollisionDamage(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboCollisionKill(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboFlick(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboTowerOn(al::HitSensor* target, al::HitSensor* source, u32 pNum);
+bool sendMsgPartyPopperSoundAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYokinBallAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYoshiDirectEat(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYoshiTongueAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYoshiTongueEatBind(al::HitSensor* target, al::HitSensor* source, f32* pRadiusPtr,
                                f32* pOffsetPtr, f32* pScalePtr);
-bool sendMsgYoshiTongueEatBindCancel(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYoshiTongueEatBindFinish(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYoshiTongueEatHomingTarget(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgYukimaruPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPunchMachinePunchStraight(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPunchMachinePunchHook(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPunchMachinePunchUpper(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMorningStarWarpStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMorningStarWarpEnd(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGemyAim(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHammerBrosHammerEnemyAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHammerBrosHammerHackAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHammerBrosHammerSearch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHackBrosContact(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMotorcycleAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMotorcycleCollideParkingLot(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMotorcycleDashAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgMotorcycleDashCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWanwanEnemyAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWanwanPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWanwanReboundAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWanwanBlockAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWanwanHoleIn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWaterRoadIn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWaterRoadNear(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBreedaSlap(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBreedaPush(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGamaneBullet(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGamaneBulletThrough(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGamaneBulletForCoinFlower(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgVolleyballNpcScareByEnemy(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRocketFlowerExtension(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgWanderBossCameraRange(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboGirlAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboGirlLove(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKuriboTop(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTRexAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTRexAttackCollideBody(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTRexAttackCollideHead(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTRexDashAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTRexScrollPartsBreakWith(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTsukkunNoTrace(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTouchFireDrum2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPropellerAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankExplosion(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTankHackTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgUtsuboAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillerAttackNoExplode(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillerMagnumAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgKillerMagnumHackAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGabuzouAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStackerRollingAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgStackerCapBoostAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgIgnoreIgnitionBomb(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgExplosionReflectBomb(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGolemStampPress(al::HitSensor* receiver, al::HitSensor* sender);
+bool sendMsgYoshiTongueEatBindCancel(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYoshiTongueEatBindFinish(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYoshiTongueEatHomingTarget(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgYukimaruPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPunchMachinePunchStraight(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPunchMachinePunchHook(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPunchMachinePunchUpper(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMorningStarWarpStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMorningStarWarpEnd(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGemyAim(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHammerBrosHammerEnemyAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHammerBrosHammerHackAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHammerBrosHammerSearch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHackBrosContact(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMotorcycleAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMotorcycleCollideParkingLot(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMotorcycleDashAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgMotorcycleDashCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWanwanEnemyAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWanwanPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWanwanReboundAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWanwanBlockAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWanwanHoleIn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWaterRoadIn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWaterRoadNear(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBreedaSlap(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBreedaPush(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGamaneBullet(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGamaneBulletThrough(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGamaneBulletForCoinFlower(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgVolleyballNpcScareByEnemy(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRocketFlowerExtension(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgWanderBossCameraRange(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboGirlAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboGirlLove(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKuriboTop(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTRexAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTRexAttackCollideBody(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTRexAttackCollideHead(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTRexDashAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTRexScrollPartsBreakWith(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTsukkunNoTrace(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTouchFireDrum2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPropellerAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankExplosion(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTankHackTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgUtsuboAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillerAttackNoExplode(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillerMagnumAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgKillerMagnumHackAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGabuzouAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStackerRollingAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgStackerCapBoostAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgIgnoreIgnitionBomb(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgExplosionReflectBomb(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGolemStampPress(al::HitSensor* target, al::HitSensor* source);
 bool sendMsgSwitchOnWithSaveRequest(al::LiveActor* receiver, SaveObjInfo* Info);
-bool sendMsgWanwanReboundAttackToCollided(const al::LiveActor* actor, al::HitSensor* receiver);
-bool sendMsgWanwanBlockAttackToCollided(const al::LiveActor* actor, al::HitSensor* receiver);
-bool sendMsgDigPointSmell(al::HitSensor* receiver, al::HitSensor* sender, DigPoint* pDigPoint);
-bool sendMsgMofumofuBodyChainExplode(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgWanwanReboundAttackToCollided(const al::LiveActor* actor, al::HitSensor* target);
+bool sendMsgWanwanBlockAttackToCollided(const al::LiveActor* actor, al::HitSensor* target);
+bool sendMsgDigPointSmell(al::HitSensor* target, al::HitSensor* source, DigPoint* pDigPoint);
+bool sendMsgMofumofuBodyChainExplode(al::HitSensor* target, al::HitSensor* source,
                                      s32 pDelayStep);
-bool sendMsgMoonBasementRockThroughCollision(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgMoonBasementRockThroughCollision(al::HitSensor* target, al::HitSensor* source,
                                              bool pIsFallOrBreak);
-bool sendMsgFishingWait(al::HitSensor* receiver, al::HitSensor* sender, al::HitSensor* pHookSensor);
-bool sendMsgFishingUpImmediately(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgFishingWait(al::HitSensor* target, al::HitSensor* source, al::HitSensor* pHookSensor);
+bool sendMsgFishingUpImmediately(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Matrix34f& mtx, const sead::Vector3f& trans,
                                  const char* materialCode);
-bool sendMsgGunetterPush(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgGunetterPush(al::HitSensor* target, al::HitSensor* source,
                          const sead::Vector3f& pCenter, f32 pRadius);
-bool sendMsgTestPunch(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pInfo,
+bool sendMsgTestPunch(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pInfo,
                       s32 pHitId, s32 pTeamId);
-bool sendMsgTestPunchStrong(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTestPunchStrong(al::HitSensor* target, al::HitSensor* source,
                             const sead::Vector3f& pInfo, s32 pHitId, s32 pTeamId);
-bool sendMsgPunchGuard(al::HitSensor* receiver, al::HitSensor* sender, s32 pPunchGuard,
+bool sendMsgPunchGuard(al::HitSensor* target, al::HitSensor* source, s32 pPunchGuard,
                        s32 pTeamId);
-bool sendMsgTsukkunThrust(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrust(al::HitSensor* target, al::HitSensor* source,
                           const sead::Vector3f& pDir, s32 pHitId, bool pIsNonEnemy);
-bool sendMsgTsukkunThrustSpin(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrustSpin(al::HitSensor* target, al::HitSensor* source,
                               const sead::Vector3f& pDir, s32 pHitId, bool pIsNonEnemy);
-bool sendMsgTsukkunThrustReflect(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrustReflect(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Vector3f& pDir, s32 pHitId, bool pIsNonEnemy);
-bool sendMsgTsukkunThrustCollide(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrustCollide(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Vector3f& pDir, s32 pHitId, bool pIsNonEnemy);
-bool sendMsgTsukkunThrustHitReflectCollide(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrustHitReflectCollide(al::HitSensor* target, al::HitSensor* source,
                                            const sead::Vector3f& pDir, s32 pHitId,
                                            bool pIsNonEnemy);
-bool sendMsgTsukkunThrustReflectCollide(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrustReflectCollide(al::HitSensor* target, al::HitSensor* source,
                                         const sead::Vector3f& pDir, s32 pHitId, bool pIsNonEnemy);
-bool sendMsgTsukkunThrustHole(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTsukkunThrustHole(al::HitSensor* target, al::HitSensor* source,
                               const sead::Vector3f& pTsukkunPos, const sead::Vector3f& pBeakPos);
-bool sendMsgTsukkunThroughCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTsukkunHoldCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTsukkunForceCancelCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgNetworkShootingShot(al::HitSensor* receiver, al::HitSensor* sender, s32 pUnk);
-bool sendMsgNetworkShootingChargeShot(al::HitSensor* receiver, al::HitSensor* sender, s32 pUnk);
-bool sendMsgRequestPlayerJumpBreakFloor(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestPlayerJump(al::HitSensor* receiver, al::HitSensor* sender, f32 pPower);
-bool sendMsgRequestPlayerTrampleJump(al::HitSensor* receiver, al::HitSensor* sender, f32 pPower);
-bool sendMsgRequestPlayerSpinJump(al::HitSensor* receiver, al::HitSensor* sender, f32 pPower);
-bool sendMsgRequestSphinxJump(al::HitSensor* receiver, al::HitSensor* sender, f32 pPower);
-bool sendMsgIgnoreTouchTarget(al::HitSensor* receiver, al::HitSensor* sender);
+bool sendMsgTsukkunThroughCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTsukkunHoldCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTsukkunForceCancelCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgNetworkShootingShot(al::HitSensor* target, al::HitSensor* source, s32 pUnk);
+bool sendMsgNetworkShootingChargeShot(al::HitSensor* target, al::HitSensor* source, s32 pUnk);
+bool sendMsgRequestPlayerJumpBreakFloor(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestPlayerJump(al::HitSensor* target, al::HitSensor* source, f32 pPower);
+bool sendMsgRequestPlayerTrampleJump(al::HitSensor* target, al::HitSensor* source, f32 pPower);
+bool sendMsgRequestPlayerSpinJump(al::HitSensor* target, al::HitSensor* source, f32 pPower);
+bool sendMsgRequestSphinxJump(al::HitSensor* target, al::HitSensor* source, f32 pPower);
+bool sendMsgIgnoreTouchTarget(al::HitSensor* target, al::HitSensor* source);
 bool sendMsgIgnoreTouchTarget(al::ScreenPointer* pointer, al::ScreenPointTarget* sender);
-bool sendMsgInitTouchTargetInfo(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgInitTouchTargetInfo(al::HitSensor* target, al::HitSensor* source,
                                 TouchTargetInfo* pInfo, const sead::Vector3f* pCollisionTouchPos);
 bool sendMsgInitTouchTargetInfo(al::ScreenPointer* pointer, al::ScreenPointTarget* sender,
                                 TouchTargetInfo* info, const sead::Vector3f* collisionTouchPos);
-bool sendMsgCollisionImpulse(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCollisionImpulse(al::HitSensor* target, al::HitSensor* source,
                              sead::Vector3f* pVecPtr, const sead::Vector3f& pConstVec,
                              f32 pFloatVal, const sead::Vector3f& pConstVec2, f32 pFloatVal2);
-bool sendMsgWhipHold(al::HitSensor* receiver, al::HitSensor* sender, WhipTargetInfo* pInfo);
-bool sendMsgWhipBind(al::HitSensor* receiver, al::HitSensor* sender, WhipTargetInfo* pInfo);
-bool sendMsgWhipThrow(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pDir);
-bool sendMsgMagnet(al::HitSensor* receiver, al::HitSensor* sender, bool pIsPower);
-bool sendMsgMagnetBulletAttack(al::HitSensor* receiver, al::HitSensor* sender, f32 pUnk);
-bool sendMsgDashPanel(al::HitSensor* receiver, al::HitSensor* sender, s32 pUnk);
-bool sendMsgTrampolineCrackJump(al::HitSensor* receiver, al::HitSensor* sender, f32 pUnk,
+bool sendMsgWhipHold(al::HitSensor* target, al::HitSensor* source, WhipTargetInfo* pInfo);
+bool sendMsgWhipBind(al::HitSensor* target, al::HitSensor* source, WhipTargetInfo* pInfo);
+bool sendMsgWhipThrow(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pDir);
+bool sendMsgMagnet(al::HitSensor* target, al::HitSensor* source, bool pIsPower);
+bool sendMsgMagnetBulletAttack(al::HitSensor* target, al::HitSensor* source, f32 pUnk);
+bool sendMsgDashPanel(al::HitSensor* target, al::HitSensor* source, s32 pUnk);
+bool sendMsgTrampolineCrackJump(al::HitSensor* target, al::HitSensor* source, f32 pUnk,
                                 f32 pUnk2);
-bool sendMsgCapTouchWall(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCapTouchWall(al::HitSensor* target, al::HitSensor* source,
                          const sead::Vector3f& pHitPos, const sead::Vector3f& pNormal);
-bool sendMsgCapRethrow(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pos,
+bool sendMsgCapRethrow(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pos,
                        const sead::Vector3f& front, const sead::Vector3f& up);
-bool sendMsgCapRethrowReturnOnly(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCapRethrowReturnOnly(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Vector3f& pos, const sead::Vector3f& front,
                                  const sead::Vector3f& up);
-bool sendMsgCapChangeGiant(al::HitSensor* receiver, al::HitSensor* sender, f32 pUnk, s32 pUnk2);
-bool sendMsgPackunEatCancel(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCapChangeGiant(al::HitSensor* target, al::HitSensor* source, f32 pUnk, s32 pUnk2);
+bool sendMsgPackunEatCancel(al::HitSensor* target, al::HitSensor* source,
                             const sead::Vector3f& pPos, const sead::Vector3f& pFront);
-bool sendMsgPackunEatEnd(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pPos,
+bool sendMsgPackunEatEnd(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pPos,
                          const sead::Vector3f& pDir);
-bool sendMsgPackunEatStartFollow(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgPackunEatStartFollow(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Vector3f* pPosPtr);
-bool sendMsgFireBlowerAttack(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgFireBlowerAttack(al::HitSensor* target, al::HitSensor* source,
                              const sead::Vector3f& pPos, const sead::Vector3f& pDir, f32 pRadius);
-bool sendMsgPaint(al::HitSensor* receiver, al::HitSensor* sender, const sead::Color4u8& pColor,
-                  s32 pSize, s32 pDrawType);
-bool sendMsgPaintTexture(al::HitSensor* receiver, al::HitSensor* sender, s32 pSize, f32 pRotation,
-                         s32 pDrawType);
-bool sendMsgCheckPaintClear(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgPaint(al::HitSensor* target, al::HitSensor* source, const sead::Color4u8& pColor,
+                  s32 paintSize, s32 paintType);
+bool sendMsgPaintTexture(al::HitSensor* target, al::HitSensor* source, s32 paintSize, f32 rotation,
+                         s32 paintType);
+bool sendMsgCheckPaintClear(al::HitSensor* target, al::HitSensor* source,
                             const sead::Color4u8& pColor, const sead::Vector3f& pPos,
-                            s32 pDrawType);
-bool sendMsgCheckPaintAlpha(al::HitSensor* receiver, al::HitSensor* sender,
+                            s32 clearMode);
+bool sendMsgCheckPaintAlpha(al::HitSensor* target, al::HitSensor* source,
                             const sead::Vector3f& pPos);
-bool sendMsgByugoBlow(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pForce);
-bool sendMsgHackDirectStageInit(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgByugoBlow(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pForce);
+bool sendMsgHackDirectStageInit(al::HitSensor* target, al::HitSensor* source,
                                 IUsePlayerHack* pHack);
-bool sendMsgObjSnapForce(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgObjSnapForce(al::HitSensor* target, al::HitSensor* source,
                          const sead::Vector3f& pForce);
-bool sendMsgCapBeamerBeam(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiAttackCollide(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiAttackNoEffect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiAttackStrong(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiTrample(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiTrampleReflect(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgHosuiTrampleReflectHigh(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleAttack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleAttackToPecho(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleReflectH(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleReflectV(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleWallTouch(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleGroundTouchTrigger(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBubbleLauncherStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSenobiPartsMove(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCapBeamerBeam(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiAttackCollide(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiAttackNoEffect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiAttackStrong(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiTrample(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiTrampleReflect(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgHosuiTrampleReflectHigh(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleAttack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleAttackToPecho(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleReflectH(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleReflectV(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleWallTouch(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleGroundTouchTrigger(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBubbleLauncherStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSenobiPartsMove(al::HitSensor* target, al::HitSensor* source,
                             const sead::Vector3f& pCollidedNormal, f32 pDistance);
-bool sendMsgStampTo2D(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pForce);
-bool sendMsgAirExplosion(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgStampTo2D(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pForce);
+bool sendMsgAirExplosion(al::HitSensor* target, al::HitSensor* source,
                          const sead::Vector3f& pForce);
-bool sendMsgPushVelocity(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgPushVelocity(al::HitSensor* target, al::HitSensor* source,
                          const sead::Vector3f& pVelocity);
-bool sendMsgGhostRecordStartOk(al::HitSensor* receiver, al::HitSensor* sender, const char* pObjId);
-bool sendMsgSandGeyserRaise(al::HitSensor* receiver, al::HitSensor* sender, f32 pUnk, f32 pUnk2);
+bool sendMsgGhostRecordStartOk(al::HitSensor* target, al::HitSensor* source, const char* pObjId);
+bool sendMsgSandGeyserRaise(al::HitSensor* target, al::HitSensor* source, f32 pUnk, f32 pUnk2);
 bool sendMsgRaceWait(al::LiveActor* receiver);
 bool sendMsgRaceStart(al::LiveActor* receiver);
 bool sendMsgRaceStop(al::LiveActor* receiver);
 bool sendMsgRaceReturnToCourse(al::LiveActor* receiver, const sead::Vector3f& pos,
                                const sead::Vector3f& front);
-bool sendMsgPlayerLookAtPosition(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgPlayerLookAtPosition(al::HitSensor* target, al::HitSensor* source,
                                  sead::Vector3f* pPos);
-bool sendMsgTargetMarkerPosition(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgTargetMarkerPosition(al::HitSensor* target, al::HitSensor* source,
                                  sead::Vector3f* pPos);
-bool sendMsgHackBlowJump(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& pEnd,
+bool sendMsgHackBlowJump(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& pEnd,
                          f32 pHeight);
-bool sendMsgGolemStampPushV(al::HitSensor* receiver, al::HitSensor* sender, f32 pVelocity);
-bool sendMsgGolemStampPushH(al::HitSensor* receiver, al::HitSensor* sender, f32 pVelocity);
-bool sendMsgRequestPlayerWaitAnimDigPoint(al::HitSensor* receiver, al::HitSensor* sender);
-void sendMsgEventFlowScareCheck(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgGolemStampPushV(al::HitSensor* target, al::HitSensor* source, f32 pVelocity);
+bool sendMsgGolemStampPushH(al::HitSensor* target, al::HitSensor* source, f32 pVelocity);
+bool sendMsgRequestPlayerWaitAnimDigPoint(al::HitSensor* target, al::HitSensor* source);
+void sendMsgEventFlowScareCheck(al::HitSensor* target, al::HitSensor* source,
                                 al::EventFlowExecutor* executor);
-bool sendMsgPlayerItemGetAll(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgPlayerItemGetAll2D(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgTRexAttackAll(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgSeedTouch(al::HitSensor* receiver, al::HitSensor* sender, const sead::Vector3f& punk,
+bool sendMsgPlayerItemGetAll(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgPlayerItemGetAll2D(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgTRexAttackAll(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgSeedTouch(al::HitSensor* target, al::HitSensor* source, const sead::Vector3f& punk,
                       const sead::Vector3f& punk2);
-bool sendMsgSphinxRideAttackTouchThrough(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgSphinxRideAttackTouchThrough(al::HitSensor* target, al::HitSensor* source,
                                          const sead::Vector3f& pPos, const sead::Vector3f& pNormal);
-bool sendMsgSphinxRideAttackTouch(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgSphinxRideAttackTouch(al::HitSensor* target, al::HitSensor* source,
                                   const sead::Vector3f& pPos, const sead::Vector3f& pNormal);
 
 bool isMsgAckCheckpoint(const al::SensorMsg* msg);
@@ -997,7 +997,7 @@ bool isMsgThrowObjHit(const al::SensorMsg* msg);
 bool isMsgThrowObjHitReflect(const al::SensorMsg* msg);
 bool isMsgPlayerAndCapHipDropAll(const al::SensorMsg* msg);
 bool isMsgUpperPunchAll(const al::SensorMsg* msg);
-bool sendMsgBlockUpperPunch2D(al::HitSensor* receiver, al::HitSensor* sender);
+bool sendMsgBlockUpperPunch2D(al::HitSensor* target, al::HitSensor* source);
 bool isMsgBlockReaction2D(const al::SensorMsg* msg);
 bool isMsgBlockReaction3D(const al::SensorMsg* msg);
 bool isMsgBlockReactionAll(const al::SensorMsg* msg);
@@ -1006,16 +1006,16 @@ bool isMsgDamageFrailBox(const al::SensorMsg* msg);
 bool isMsgChorobonReaction(const al::SensorMsg* msg);
 bool isMsgBreakSignBoard(const al::SensorMsg* msg);
 bool isMsgBreakCollapseSandHill(const al::SensorMsg* msg);
-void calcBlowDownDir(sead::Vector3f* dir, const al::SensorMsg* pMsg, al::HitSensor* receiver,
-                     al::HitSensor* sender);
+void calcBlowDownDir(sead::Vector3f* dir, const al::SensorMsg* pMsg, al::HitSensor* target,
+                     al::HitSensor* source);
 bool tryGetTsukkunThrustDir(sead::Vector3f* dir, const al::SensorMsg* pMsg);
 bool isMsgPlayerDamage(const al::SensorMsg* msg);
 bool isMsgPlayerDamage2D(const al::SensorMsg* msg);
 bool isMsgPlayerDamageBlowDown(const al::SensorMsg* msg);
 bool isMsgPlayerJumpRequestAll(const al::SensorMsg* msg);
-bool trySendMsgHackPunchToCeil(al::LiveActor* sender, al::HitSensor* receiver);
-bool trySendMsgHackPunchToSensor(al::LiveActor* actor, al::HitSensor* receiver,
-                                 al::HitSensor* sender);
+bool trySendMsgHackPunchToCeil(al::LiveActor* sender, al::HitSensor* target);
+bool trySendMsgHackPunchToSensor(al::LiveActor* actor, al::HitSensor* target,
+                                 al::HitSensor* source);
 bool isMsgDashPanel(const al::SensorMsg* pMsg, s32* unk);
 bool isMsgNetworkShootingShot(const al::SensorMsg* pMsg, s32 unk);
 bool isMsgNetworkShootingChargeShot(const al::SensorMsg* pMsg, s32 unk);
@@ -1087,25 +1087,25 @@ bool tryGetSenobiPartsCollidedNormal(sead::Vector3f* collidedNormal, const al::S
 bool tryGetStampTo2DForce(sead::Vector3f* force, const al::SensorMsg* pMsg);
 bool tryGetGhostStartOkObjId(sead::BufferedSafeString* objId, const al::SensorMsg* pMsg);
 bool tryGetAirExplosionForce(sead::Vector3f* force, const al::SensorMsg* pMsg);
-bool sendMsgGotogotonOn(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGotogotonGetJumpPath(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgGotogotonOn(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGotogotonGetJumpPath(al::HitSensor* target, al::HitSensor* source,
                                  al::ParabolicPath* pPath);
-bool sendMsgGotogotonGoalExist(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgGotogotonGoalMatch(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgGotogotonGoalExist(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgGotogotonGoalMatch(al::HitSensor* target, al::HitSensor* source,
                                const GotogotonMark* pMark);
 bool isMatchGotogotonGoal(const al::SensorMsg* pMsg, const GotogotonMark* mark);
 bool isMsgGotogotonOn(const al::SensorMsg* msg);
 bool isMsgGotogotonGoalExist(const al::SensorMsg* msg);
-bool sendMsgBossMagmaBreathForce(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgBossMagmaBreathForce(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Vector3f& pForce);
-bool sendMsgBossMagmaCatchPlayer(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossMagmaReleasePlayer(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossMagmaDeadDemoStart(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgBossMagmaDeadDemoEnd(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgBossMagmaCatchPlayer(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossMagmaReleasePlayer(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossMagmaDeadDemoStart(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgBossMagmaDeadDemoEnd(al::HitSensor* target, al::HitSensor* source,
                                  const sead::Vector3f& pTargetPos);
-bool sendMsgBossMagmaResetPos(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgBossMagmaResetPos(al::HitSensor* target, al::HitSensor* source,
                               const sead::Vector3f& pResetPos);
-bool sendMsgBossMagmaQueryToBubble(al::HitSensor* receiver, al::HitSensor* sender);
+bool sendMsgBossMagmaQueryToBubble(al::HitSensor* target, al::HitSensor* source);
 bool isMsgBossMagmaCatchPlayer(const al::SensorMsg* msg);
 bool isMsgBossMagmaReleasePlayer(const al::SensorMsg* msg);
 bool isMsgBossMagmaDeadDemoStart(const al::SensorMsg* msg);
@@ -1120,7 +1120,7 @@ void calcFishingUpJugemDir(sead::Vector3f* jugemDir, const al::SensorMsg* pMsg);
 const sead::Vector3f* getFishingUpFloatPos(const al::SensorMsg* pMsg);
 const char* tryGetFishingUpFloatMaterialCode(const al::SensorMsg* pMsg);
 al::HitSensor* getFishingHookSensor(const al::SensorMsg* pMsg);
-bool sendMsgCheckFishingTarget(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgCheckFishingTarget(al::HitSensor* target, al::HitSensor* source,
                                const FishingFish* pFish);
 bool isMsgCheckFishingTarget(const al::SensorMsg* msg);
 const FishingFish* getCheckFishingTarget(const al::SensorMsg* pMsg);
@@ -1133,12 +1133,12 @@ bool isMsgTargetMarkerPosition(const al::SensorMsg* msg);
 void setMsgTargetMarkerPosition(const al::SensorMsg* pMsg, const sead::Vector3f& pos);
 bool isMsgSandGeyserRaise(const al::SensorMsg* msg);
 bool tryGetSandGeyserRaise(const al::SensorMsg* pMsg, f32* unk, f32* unk2);
-void tryTreasureBoxPlayerTrampleJump(al::LiveActor* treasureBox, al::HitSensor* receiver,
-                                     al::HitSensor* sender, f32 power);
-bool sendMsgPushToPlayerAndKillVelocityToTarget(al::LiveActor* actor, al::HitSensor* receiver,
-                                                al::HitSensor* sender);
-bool sendMsgPushToPlayerAndKillVelocityToTargetH(al::LiveActor* actor, al::HitSensor* receiver,
-                                                 al::HitSensor* sender);
+void tryTreasureBoxPlayerTrampleJump(al::LiveActor* treasureBox, al::HitSensor* target,
+                                     al::HitSensor* source, f32 power);
+bool sendMsgPushToPlayerAndKillVelocityToTarget(al::LiveActor* actor, al::HitSensor* target,
+                                                al::HitSensor* source);
+bool sendMsgPushToPlayerAndKillVelocityToTargetH(al::LiveActor* actor, al::HitSensor* target,
+                                                 al::HitSensor* source);
 bool tryReceivePushAndAddVelocity(al::LiveActor* actor, const al::SensorMsg* pMsg);
 bool tryReceiveMsgPushToPlayerAndAddVelocity(al::LiveActor* actor, const al::SensorMsg* pMsg,
                                              const al::HitSensor* other, const al::HitSensor* self,
@@ -1165,16 +1165,16 @@ bool tryReceiveMsgPushToGrowPlantAndCalcPushTrans(sead::Vector3f* trans, const a
                                                   const al::LiveActor* actor,
                                                   const al::HitSensor* other,
                                                   const al::HitSensor* self, f32 power);
-bool sendMsgInitCapTarget(al::HitSensor* receiver, al::HitSensor* sender,
+bool sendMsgInitCapTarget(al::HitSensor* target, al::HitSensor* source,
                           const CapTargetInfo** pInfo);
 bool isMsgInitCapTarget(const al::SensorMsg* msg);
 void setCapTargetInfo(const al::SensorMsg* pMsg, const CapTargetInfo* info);
 bool tryReceiveMsgInitCapTargetAndSetCapTargetInfo(const al::SensorMsg* msg,
                                                    const CapTargetInfo* info);
-bool sendMsgTransferHack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgRequestTransferHack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgInitHack(al::HitSensor* receiver, al::HitSensor* sender);
-bool sendMsgEndHack(al::HitSensor* receiver, al::HitSensor* sender, const HackEndParam* pParam);
+bool sendMsgTransferHack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgRequestTransferHack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgInitHack(al::HitSensor* target, al::HitSensor* source);
+bool sendMsgEndHack(al::HitSensor* target, al::HitSensor* source, const HackEndParam* pParam);
 bool isMsgTransferHack(const al::SensorMsg* msg);
 bool isMsgRequestTransferHack(const al::SensorMsg* msg);
 bool isMsgInitHack(const al::SensorMsg* msg);
@@ -1184,7 +1184,7 @@ bool isMsgKillByBossBattleDemo(const al::SensorMsg* msg);
 bool isMsgKillByHackFirstDemo(const al::SensorMsg* msg);
 bool isMsgKillByMoonRockDemo(const al::SensorMsg* msg);
 // TODO: rename parameter
-bool sendMsgNpcScareByEnemy(al::HitSensor* receiver, al::HitSensor* sender, s32 pUnk);
+bool sendMsgNpcScareByEnemy(al::HitSensor* target, al::HitSensor* source, s32 pUnk);
 bool tryReceiveMsgNpcScareByEnemyIgnoreTargetHack(const al::SensorMsg* pMsg,
                                                   const CapTargetInfo* info);
 bool tryIncrementComboCount(s32* count, const al::SensorMsg* msg);
@@ -1194,7 +1194,7 @@ bool isRideOn(const al::HitSensor* other, const al::HitSensor* self);
 bool isMsgKillBySwitchTimer(const al::SensorMsg* msg);
 bool isVisibleChameleon(const al::SensorMsg* msg);
 bool isMsgRequestPlayerStainWet(const al::SensorMsg* pMsg, s32* stainType);
-s32 tryGetKuriboTowerNum(al::HitSensor* receiver, al::HitSensor* sender);
+s32 tryGetKuriboTowerNum(al::HitSensor* target, al::HitSensor* source);
 void setKuriboTowerNum(const al::SensorMsg* pMsg, s32 num);
 const sead::Vector3f& getSpherePushCenter(const al::SensorMsg* pMsg);
 f32 getSpherePushRadius(const al::SensorMsg* pMsg);

@@ -53,18 +53,17 @@ public:
     void endInit(const PlayerHolder*);
 
     CameraPoseUpdater* getPoseUpdater(s32 index) const;
-    CameraTicket* createCameraFromFactory(const char*, const PlacementId*, const char*, s32,
-                                          const sead::Matrix34f&);
-    CameraTicket* createCamera(CameraPoser*, const PlacementId*, const char*, s32,
-                               const sead::Matrix34f&, bool);
-    CameraTicket* createObjectCamera(const PlacementId*, const char*, const char*, s32,
-                                     const sead::Matrix34f&);
-    CameraTicket* createObjectEntranceCamera(const PlacementId*, const char*,
-                                             const sead::Matrix34f&);
-    CameraTicket* createMirrorObjectCamera(const PlacementId*, const char*, s32,
-                                           const sead::Matrix34f&);
+    CameraTicket* createCameraFromFactory(const char*, const PlacementId*, const char*, s32, const sead::Matrix34f&);
+    CameraTicket* createCamera(CameraPoser*, const PlacementId*, const char*, s32, const sead::Matrix34f&, bool registerInHolder);
+    CameraTicket* createObjectCamera(const PlacementId*, const char*, const char*, s32, const sead::Matrix34f&);
+    CameraTicket* createObjectEntranceCamera(const PlacementId*, const char*, const sead::Matrix34f&);
+    CameraTicket* createMirrorObjectCamera(const PlacementId*, const char*, s32, const sead::Matrix34f&);
 
-    ICameraInput* getCameraInput(s32) const;
+    ICameraInput* getCameraInput(int index) const;
+    CameraTargetHolder* getCameraTargetHolder() const { return mTargetHolder; }
+    CameraInputHolder* getCameraInputHolder() const { return mInputHolder; }
+    CameraTicketHolder* getTicketHolder() const { return mTicketHolder; }
+
     void setCameraInput(const ICameraInput* input);
     void setViewCameraInput(const ICameraInput* input, s32);
     void registerCameraRailHolder(CameraRailHolder* railHolder);
@@ -83,10 +82,12 @@ public:
 
     SceneCameraCtrl* getSceneCameraCtrl() const { return mSceneCameraCtrl; }
 
-    CameraFlagCtrl* getFlagCtrl() const { return mFlagCtrl; }
+    const CameraFlagCtrl* getFlagCtrl() const { return mFlagCtrl; }
 
-public:
-    s32 mCountCameraPoseUpdaters;
+    int getCameraPoseUpdatersCount() const { return mCameraPoseUpdatersCount;}
+
+private:
+    s32 mCameraPoseUpdatersCount;
     SceneCameraInfo* mSceneCameraInfo;
     SceneCameraCtrl* mSceneCameraCtrl;
     CameraPoseUpdater** mPoseUpdaters;

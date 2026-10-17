@@ -17,13 +17,13 @@ class Viewport;
 }  // namespace sead
 
 namespace al {
+
 class Effect;
 class EffectUserInfo;
 class MtxPtrHolder;
 class EffectSystemInfo;
 class EffectPrefixType;
 class EffectSystem;
-class EffectSystemInfo;
 class EffectResourceInfo;
 class IUseEffectKeeper;
 class ModelKeeper;
@@ -37,7 +37,6 @@ public:
     void tryUpdateMaterial(const char*);
     void updatePrefix(const EffectPrefixType&, bool);
     void emitEffectCurrentPos(const char*);
-    Effect* findEffect(const char*) const;
     void emitEffect(const char*, const sead::Vector3f*);
     bool tryEmitEffect(const char*, const sead::Vector3f*);
     void deleteEffect(const char*);
@@ -57,11 +56,16 @@ public:
     void setParticleColor(const char*, const sead::Color4f&);
     void setParticleLifeScale(const char*, f32);
     sead::Matrix34f* findMtxPtr(const char*);
+
+    Effect* findEffect(const char*) const;
     Effect* tryFindEffect(const char*) const;
 
     bool get_21() const { return field_21; }
+    u32 getEffectCount() const { return mEffectCount; }
+    Effect* getEffect(u32 index) const { return mEffects[index]; }
+    const char* getName() const { return mName; }
 
-public:
+private:
     const char* mName;
     u32 mEffectCount;
     Effect** mEffects;

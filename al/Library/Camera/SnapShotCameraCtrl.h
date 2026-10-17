@@ -21,12 +21,14 @@ class IUseCollision;
 class SnapShotCameraCtrl : public NerveExecutor, public IUseAudioKeeper {
 public:
     SnapShotCameraCtrl(const SnapShotCameraSceneInfo*);
+
     void start(f32);
     void load(const ByamlIter& iter);
     void startReset(s32);
     void update(const sead::LookAtCamera&, const IUseCollision*, const ICameraInput*);
     void makeLookAtCameraPost(sead::LookAtCamera*) const;
     void makeLookAtCameraLast(sead::LookAtCamera*) const;
+
     void exeWait();
     void exeReset();
 
@@ -46,14 +48,16 @@ public:
 
     f32 getRollDegree() const { return mRollDegree; }
 
-    const sead::Vector3f& getLookAtOffset() const { return mLookAtOffset; }
+    const sead::Vector3f& getLookAtOffset() const { return mCurrentLookAtOffset; }
 
-public:
+    void addTargetOffset(const sead::Vector3f& offset) { mDesiredLookAtOffset += offset; }
+
+private:
     SnapShotCameraSceneInfo* mCameraSceneInfo;
     CameraParam* mParam;
     bool mIsValidLookAtOffset;
-    sead::Vector3f mLookAtOffset;
-    sead::Vector3f unk1;
+    sead::Vector3f mCurrentLookAtOffset;
+    sead::Vector3f mDesiredLookAtOffset;
     bool mIsValidZoomFovy;
     f32 mFovyDegree;
     f32 _4c;

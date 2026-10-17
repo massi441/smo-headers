@@ -38,7 +38,7 @@ public:
 
     bool isEmpty() const { return mChangeStageName.isEmpty(); }
 
-    const char* getChangeStageId() const { return mChangeStageId.cstr(); }
+    const char* getStageId() const { return mChangeStageId.cstr(); }
 
     const char* getStageName() const { return mChangeStageName.cstr(); }
 

@@ -94,7 +94,7 @@ public:
     ActorParamSight* findParamSight(const char* name) const;
     ActorParamRebound* findParamRebound(const char* name) const;
 
-public:
+private:
     ActorParamHolder(LiveActor* actor, const Resource* resource, const char* suffix);
     ActorParamInfo* tryFindParamInfoByName(const char* name) const;
 

@@ -49,7 +49,7 @@ public:
 
     void disableTarget() { mIsActiveTarget = false; }
 
-public:
+private:
     bool mIsActiveTarget = false;
 };
 

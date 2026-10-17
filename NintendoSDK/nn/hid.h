@@ -112,7 +112,7 @@ enum class MouseButton { Left, Right, Middle, Forward, Back };
 
 enum class MouseAttribute { Transferable, IsConnected };
 
-enum class KeyboardKey {
+enum class KeyboardKey : int {
     A = 4,
     B = 5,
     C = 6,

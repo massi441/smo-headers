@@ -1,4 +1,4 @@
-#pragma once
+M#pragma once
 
 #include <container/seadPtrArray.h>
 #include <container/seadStrTreeMap.h>

@@ -24,11 +24,11 @@ bool isInAreaObjPlayerAll(const LiveActor* actor, const AreaObjGroup* areaGroup)
 bool isInAreaObjPlayerAnyOne(const LiveActor* actor, const AreaObj* areaObj);
 bool isInAreaObjPlayerAnyOne(const LiveActor* actor, const AreaObjGroup* areaGroup);
 AreaObj* createAreaObj(const ActorInitInfo& actorInitInfo, const char* name);
-void initAreaInitInfo(AreaInitInfo* areaInitInfo, const ActorInitInfo& actorInitInfo);
-AreaObj* createLinkArea(const ActorInitInfo& initInfo, const char* name, const char* areaName);
-void initAreaInitInfo(AreaInitInfo* areaInitInfo, const PlacementInfo& placementInfo,
-                      const ActorInitInfo& actorInitInfo);
-AreaObj* tryCreateLinkArea(const ActorInitInfo& initInfo, const char* name, const char* areaName);
+void initAreaInitInfo(AreaInitInfo* areaInfo, const ActorInitInfo& actorInfo);
+AreaObj* createLinkArea(const ActorInitInfo& initInfo, const char* name, const char* linkName);
+void initAreaInitInfo(AreaInitInfo* areaInfo, const PlacementInfo& placementInfo,
+                      const ActorInitInfo& actorInfo);
+AreaObj* tryCreateLinkArea(const ActorInitInfo& initInfo, const char* name, const char* linkName);
 AreaObjGroup* createLinkAreaGroup(const ActorInitInfo& initInfo, const char* name,
                                   const char* groupName, const char* areaName);
 AreaObjGroup* createLinkAreaGroup(LiveActor* actor, const ActorInitInfo& initInfo, const char* name,

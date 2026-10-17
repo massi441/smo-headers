@@ -13,9 +13,15 @@ class RailKeeper : public HioNode, public IUseRail {
 public:
     RailKeeper(const PlacementInfo& info);
 
-    RailRider* getRailRider() const override { return mRailRider; }
+    RailKeeper(RailRider* rider) {
+        mRailRider = rider;
+    }
 
-public:
+    RailRider* getRailRider() const override {
+        return mRailRider;
+    }
+
+private:
     RailRider* mRailRider = nullptr;
 };
 

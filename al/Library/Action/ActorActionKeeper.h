@@ -38,7 +38,7 @@ public:
 
     ActionPadAndCameraCtrl* getPadAndCameraCtrl() const { return mPadAndCameraCtrl; }
 
-public:
+private:
     LiveActor* mParentActor;
     const char* mActorName;
     bool mIsActionRunning = false;

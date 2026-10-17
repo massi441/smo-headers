@@ -18,7 +18,7 @@ public:
         : mFactoryName(factoryName), mFactoryEntries(nullptr), mNumFactoryEntries(0) {}
 
     template <s32 N>
-    inline Factory(const char* factoryName, const NameToCreator<T> (&entries)[N])
+    Factory(const char* factoryName, const NameToCreator<T> (&entries)[N])
         : mFactoryName(factoryName) {
         initFactory(entries);
     }
@@ -51,6 +51,20 @@ public:
         }
         return -1;
     }
+
+    T getCreateFunc(const char* entryName) const {
+        s32 nFactoryEntries = mNumFactoryEntries;
+        const NameToCreator<T>* entries = mFactoryEntries;
+        for (s32 i = 0; i < nFactoryEntries; i++) {
+            if (isEqualString(entryName, entries[i].name)) {
+                return entries[i].creationFunction;
+            }
+        }
+
+        return nullptr;
+    }
+
+// TODO: Private with friend class
 
 public:
     const char* mFactoryName;

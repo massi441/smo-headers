@@ -1,6 +1,5 @@
 #pragma once
 
-#include "basis/seadTypes.h"
 #include "container/seadFreeList.h"
 #include "container/seadTreeMap.h"
 #include "prim/seadDelegate.h"
@@ -14,7 +13,7 @@ template <s32 MaxKeyLength, typename Value>
 class StrTreeMap : public TreeMapImpl<SafeString>
 {
 public:
-    using MapImpl = TreeMapImpl<SafeString>;
+    using MapImpl = TreeMapImpl;
     class Node : public MapImpl::Node
     {
     public:
@@ -72,8 +71,11 @@ public:
     template <typename Callable>
     void forEach(const Callable& delegate) const;
 
-public:
-    void eraseNodeForClear_(typename MapImpl::Node* node);
+    s32 size() const { return mSize; }
+    s32 capacity() const { return mCapacity; }
+
+private:
+    void eraseNodeForClear_(MapImpl::Node* node);
 
     FreeList mFreeList;
     s32 mSize = 0;
@@ -81,7 +83,7 @@ public:
 };
 
 template <s32 N, typename Value>
-inline void StrTreeMap<N, Value>::Node::erase_()
+void StrTreeMap<N, Value>::Node::erase_()
 {
     StrTreeMap* const map = mMap;
     void* const this_ = this;
@@ -91,7 +93,7 @@ inline void StrTreeMap<N, Value>::Node::erase_()
 }
 
 template <s32 N, typename Value>
-inline void StrTreeMap<N, Value>::allocBuffer(s32 node_max, Heap* heap, s32 alignment)
+void StrTreeMap<N, Value>::allocBuffer(s32 node_max, Heap* heap, s32 alignment)
 {
     s32 node_size = sizeof(Node);
 
@@ -109,14 +111,14 @@ inline void StrTreeMap<N, Value>::allocBuffer(s32 node_max, Heap* heap, s32 alig
 }
 
 template <s32 N, typename Value>
-inline void StrTreeMap<N, Value>::setBuffer(s32 node_max, void* buffer)
+void StrTreeMap<N, Value>::setBuffer(s32 node_max, void* buffer)
 {
     mCapacity = node_max;
     mFreeList.setWork(buffer, sizeof(Node), node_max);
 }
 
 template <s32 N, typename Value>
-inline void StrTreeMap<N, Value>::freeBuffer()
+void StrTreeMap<N, Value>::freeBuffer()
 {
     void* buffer = mFreeList.work();
     if (!buffer)
@@ -164,9 +166,9 @@ inline Value* StrTreeMap<N, Value>::insert(const SafeString& key, const Value& v
 }
 
 template <s32 N, typename Value>
-inline void StrTreeMap<N, Value>::clear()
+void StrTreeMap<N, Value>::clear()
 {
-    Delegate1<StrTreeMap<N, Value>, typename MapImpl::Node*> delegate(
+    Delegate1<StrTreeMap, MapImpl::Node*> delegate(
         this, &StrTreeMap::eraseNodeForClear_);
     MapImpl::forEach(delegate);
     mSize = 0;
@@ -174,7 +176,7 @@ inline void StrTreeMap<N, Value>::clear()
 }
 
 template <s32 N, typename Value>
-inline typename StrTreeMap<N, Value>::Node* StrTreeMap<N, Value>::find(const SafeString& key) const
+StrTreeMap<N, Value>::Node* StrTreeMap<N, Value>::find(const SafeString& key) const
 {
     return static_cast<Node*>(MapImpl::find(key));
 }
@@ -192,7 +194,7 @@ inline void StrTreeMap<N, Value>::forEach(const Callable& callback) const
 }
 
 template <s32 N, typename Value>
-inline void StrTreeMap<N, Value>::eraseNodeForClear_(typename MapImpl::Node* node)
+void StrTreeMap<N, Value>::eraseNodeForClear_(MapImpl::Node* node)
 {
     // Note: Nintendo does not call the destructor, which is dangerous...
     mFreeList.free(node);

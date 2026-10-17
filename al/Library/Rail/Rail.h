@@ -43,7 +43,12 @@ public:
 
     bool isClosed() const { return mIsClosed; }
 
-public:
+    PlacementInfo** begin() { return mRailPoints; }
+    PlacementInfo** end() { return mRailPoints + mRailPointsCount; }
+    PlacementInfo* const* begin() const { return mRailPoints; }
+    PlacementInfo* const* end() const { return mRailPoints + mRailPointsCount; }
+
+private:
     PlacementInfo** mRailPoints = nullptr;
     RailPart* mRailPart = nullptr;
     s32 mRailPartCount = 0;

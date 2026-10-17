@@ -52,6 +52,26 @@ al::initNerveAction(this, "Hide", &NrvExampleUseCase.collector, 0);
 
 #define NERVE_IMPL(Class, Action) NERVE_IMPL_(Class, Action, Action)
 
+#define NERVE_HOST_IMPL(Class, Action)                                        \
+    class Class##Nrv##Action : public al::Nerve {                             \
+    public:                                                                   \
+        void execute(al::NerveKeeper* keeper) const override {                \
+            exe##Action(keeper->getParent<Class>());                          \
+        }                                                                     \
+    };
+
+#define NERVE_HOST_END_IMPL(Class, Action)                                    \
+    class Class##Nrv##Action : public al::Nerve {                             \
+    public:                                                                   \
+        void execute(al::NerveKeeper* keeper) const override {                \
+            exe##Action(keeper->getParent<Class>());                          \
+        }                                                                     \
+                                                                              \
+        void executeOnEnd(al::NerveKeeper* keeper) const override {           \
+            end##Action(keeper->getParent<Class>());                          \
+        }                                                                     \
+    };
+
 #define NERVE_END_IMPL_(Class, Action, ActionFunc)                                                 \
     class Class##Nrv##Action : public al::Nerve {                                                  \
     public:                                                                                        \

@@ -1,14 +1,19 @@
 #pragma once
 
 #include <prim/seadSafeString.h>
-
 #include "Library/LiveActor/LiveActor.h"
 
+class PlayerActorBase;
+namespace ml {
+    class HackCapKeeper;
+}
+
 namespace al {
-class ActorDitherAnimator;
-class WaterSurfaceFinder;
-class PadRumbleKeeper;
-}  // namespace al
+    class ActorDitherAnimator;
+    class WaterSurfaceFinder;
+    class PadRumbleKeeper;
+}
+
 class PlayerInput;
 class PlayerAreaChecker;
 class PlayerWallActionHistory;
@@ -36,89 +41,165 @@ class HackCap : public al::LiveActor {
 public:
     enum class SwingHandType { /*TODO: missing values*/ };
 
-    HackCap(const al::LiveActor*, const char*, const PlayerInput*, const PlayerAreaChecker*,
-            const PlayerWallActionHistory*, const PlayerCapActionHistory*,
-            const PlayerEyeSensorHitHolder*, const PlayerSeparateCapFlag*,
-            const IUsePlayerCollision*, const IUsePlayerHeightCheck*, const PlayerWetControl*,
-            const PlayerJointControlKeeper*, HackCapJudgePreInputSeparateThrow*,
-            HackCapJudgePreInputSeparateJump*);
-
+    HackCap(const al::LiveActor* liveActor,
+        const char* capTypeName,
+        const PlayerInput* playerInput,
+        const PlayerAreaChecker* areaChecker,
+        const PlayerWallActionHistory* wallActionHistory,
+        const PlayerCapActionHistory* capActionHistory,
+        const PlayerEyeSensorHitHolder* eyeSensorHitHolder,
+        const PlayerSeparateCapFlag* separateCapFlag,
+        const IUsePlayerCollision* usePlayerCollision,
+        const IUsePlayerHeightCheck* usePlayerHeightCheck,
+        const PlayerWetControl* wetControl,
+        const PlayerJointControlKeeper* jointControlKeeper,
+        HackCapJudgePreInputSeparateThrow* judgePreInputSeparateThrow,
+        HackCapJudgePreInputSeparateJump* judgePreInputSeparateJump);
+    
     void init(const al::ActorInitInfo& info) override;
-    void hide(bool);
     void movement() override;
-    void updateShadowMaskOffset();
     void control() override;
-    bool isFlying() const;
-    void updateTargetLayout();
-    void updateCollider() override;
-    void updateFrameOutLayout();
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self) override;
     void attackSpin(al::HitSensor*, al::HitSensor*, f32);
-    void prepareLockOn(al::HitSensor*);
-    bool sendMsgStartHack(al::HitSensor*);
-    bool receiveRequestTransferHack(al::HitSensor*, al::HitSensor*);
-    void startThrowSeparatePlayHack(al::HitSensor*, const sead::Vector3f&, const sead::Vector3f&,
-                                    f32);
+    
+    void calcReturnTargetPos(sead::Vector3f*) const;
+    void hide(bool);
+    void forcePutOn();
+    void updateCapPose();
+    
     void startHack();
-    void emitHackStartEffect();
+    void endHack();
+    void forceHack(al::HitSensor*, const CapTargetInfo*);
+    void recordHack();
     void noticeHackMarioEnter();
     void noticeHackDemoPuppetableEnd();
-    void recordHack();
+    bool sendMsgStartHack(al::HitSensor*);
     void addHackStartDemo();
-    void addLockOnKeepDemo();
+    void emitHackStartEffect();
+    void startHackShineGetDemo();
+    void endHackShineGetDemo();
     void syncHackDamageVisibility(bool);
-    void endHack();
-    void startSpinAttack(const char*);
-    void startThrow(bool, const sead::Vector3f&, const sead::Vector3f&, f32, const sead::Vector2f&,
-                    const sead::Vector2f&, const sead::Vector3f&, bool, const sead::Vector3f&,
-                    SwingHandType, bool, f32, s32);
-    void startThrowSeparatePlay(const sead::Vector3f&, const sead::Vector3f&, f32, bool);
-    void startThrowSeparatePlayJump(const sead::Vector3f&, const sead::Vector3f&, f32);
+    
     void startCatch(const char*, bool, const sead::Vector3f&);
-    bool isNoPutOnHide() const;
-    void forcePutOn();
-    void forceHack(al::HitSensor*, const CapTargetInfo*);
-    void resetLockOnParam();
+    void exeCatch();
+    
+    void startThrow(bool, const sead::Vector3f&, const sead::Vector3f&, f32, const sead::Vector2f&, const sead::Vector2f&, const sead::Vector3f&, bool, const sead::Vector3f&, SwingHandType, bool, f32, s32);
+    void exeThrow();
+    void exeThrowStart();
+    void setupThrowStart();
+    void exeThrowStay();
+    void exeThrowBrake();
+    void exeThrowAppend();
+    bool tryAppendAttack();
+    void exeThrowSpiral();
+    void endThrowSpiral();
+    void exeThrowRolling();
+    void exeThrowRollingBrake();
+    void rollingGround();
+    void exeThrowTornado();
+    void endHackThrow();
+    void endHackThrowAndReturnHack();
+    void endHackThrowAndReturnHackOrHide();
+    void clearThrowType();
+    void updateThrowJoint();
+    bool changeThrowParamInWater(s32, bool);
+    bool checkEnableThrowStartSpace(sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, const sead::Vector3f&, f32, f32, bool, const sead::Vector3f&);
+    void collideThrowStartArrow(al::HitSensor*, const sead::Vector3f&, const sead::Vector3f&, const sead::Vector3f&);
+    
+    void startThrowSeparatePlay(const sead::Vector3f&, const sead::Vector3f&, f32, bool);
+    void startThrowSeparatePlayHack(al::HitSensor*, const sead::Vector3f&, const sead::Vector3f&, f32);
+    void startThrowSeparatePlayJump(const sead::Vector3f&, const sead::Vector3f&, f32);
+    bool tryChangeSeparateThrow();
+    void updateSeparateMode(const PlayerSeparateCapFlag*);
+    void prepareCooperateThrow();
+    void requestForceFollowSeparateHide();
+    
+    void exeSpinAttack();
+    void startSpinAttack(const char*);
+    
+    void prepareLockOn(al::HitSensor*);
     void setupStartLockOn();
+    void exeLockOn();
+    void exeTrampleLockOn();
+    void resetLockOnParam();
+    void prepareTransferLockOn(al::HitSensor*);
+    bool receiveRequestTransferHack(al::HitSensor*, al::HitSensor*);
+    bool requestLockOnHitReaction(const CapTargetInfo*, const char*);
+    bool tryCollideWallLockOn();
+    void addLockOnKeepDemo();
+    void updateTargetLayout();
+    
+    void exeRebound();
+    void exeTrample();
+    void exeBlow();
+    
+    void exeReturn();
+    bool tryReturn(bool, bool*);
+    bool requestReturn(bool*);
+    void endMove();
+    void followTarget();
+    void addCurveOffset();
+    
+    void exeRescue();
+    void startRescuePlayer();
+    
+    void exeHide();
+    
+    void startPuppet();
+    void endPuppet();
+    void showPuppetCap();
+    void hidePuppetCap();
+    void syncPuppetSilhouette();
+    void showPuppetCapSilhouette();
+    void hidePuppetCapSilhouette();
+    void startPuppetCheckpointWarp();
+    
+    void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
+    bool trySendAttackCollideAndReaction(bool*);
+    
+    void updateCollider() override;
+    bool stayWallHit();
+    bool tryCollideWallReaction();
+    bool tryCollideWallReactionStay();
+    bool tryCollideWallReactionSpiral();
+    bool tryCollideWallReactionReflect();
+    bool tryCollideWallReactionRollingGround();
+    bool tryCollideReflectReaction();
+    bool stayRollingOrReflect();
+    
+    void updateWaterArea();
+    void updateLavaSurfaceMove();
+    
     bool cancelCapState();
+    void updateCapEyeShowHide(bool, s32);
+    void startThrowCapEyeThrowAction();
+    void updateFrameOutLayout();
+    void updateShadowMaskOffset();
+    void updateModelAlphaForSnapShot();
+    
+    void activateInvincibleEffect();
+    void syncInvincibleEffect(bool);
+    
+    void recordCapJump(PlayerWallActionHistory*);
+    
+    bool isFlying() const;
+    bool isThrowTypeSpiral() const;
+
+    bool isNoPutOnHide() const;
     bool isEnableThrow() const;
     bool isEnableSpinAttack() const;
     bool isSpinAttack() const;
-    bool requestReturn(bool*);
-    bool tryReturn(bool, bool*);
-    void updateCapPose();
-    void followTarget();
-    void syncPuppetSilhouette();
-    void recordCapJump(PlayerWallActionHistory*);
     f32 getFlyingSpeedMax() const;
     f32 getThrowSpeed() const;
-    bool requestLockOnHitReaction(const CapTargetInfo*, const char*);
-    void startPuppet();
-    void endPuppet();
-    void hidePuppetCap();
-    void showPuppetCap();
-    void hidePuppetCapSilhouette();
-    void showPuppetCapSilhouette();
-    void startPuppetCheckpointWarp();
-    void startHackShineGetDemo();
-    void endHackThrowAndReturnHack();
-    void endHackShineGetDemo();
     void calcHackFollowTrans(sead::Vector3f*, bool) const;
     void makeFollowMtx(sead::Matrix34f*) const;
-    void updateCapEyeShowHide(bool, s32);
-    void activateInvincibleEffect();
-    void syncInvincibleEffect(bool);
-    void updateSeparateMode(const PlayerSeparateCapFlag*);
     bool isEnableRescuePlayer() const;
     bool isRescuePlayer() const;
     bool isEnableHackThrow(bool*) const;
     bool isSeparateHipDropLand() const;
     bool isSeparateHide() const;
     bool isSeparateThrowFlying() const;
-    void startRescuePlayer();
-    void prepareCooperateThrow();
-    void requestForceFollowSeparateHide();
     f32 calcSeparateHideSpeedH(const sead::Vector3f&) const;
-    void updateModelAlphaForSnapShot();
     s32 getPadRumblePort() const;
     bool isEnableThrowSeparate() const;
     bool isHoldInputKeepLockOn() const;
@@ -132,81 +213,31 @@ public:
     bool isEnablePreInput() const;
     bool isForceCapTouchJump() const;
     bool isHackInvalidSeparatePlay() const;
-    void exeLockOn();
-    void updateThrowJoint();
     void exeHack();
-    void exeSpinAttack();
-    void exeCatch();
-    void exeTrample();
     bool isHoldSpinCapStay() const;
-    void exeTrampleLockOn();
-    void exeRescue();
-    void exeHide();
-    void exeThrowStart();
-    bool isThrowTypeSpiral() const;
     bool isThrowTypeRolling() const;
-    void setupThrowStart();
     f32 getThrowHeight() const;
-    bool checkEnableThrowStartSpace(sead::Vector3f*, sead::Vector3f*, sead::Vector3f*,
-                                    const sead::Vector3f&, f32, f32, bool, const sead::Vector3f&);
-    void updateWaterArea();
     f32 getThrowRange() const;
     s32 getThrowBrakeTime() const;
-    void startThrowCapEyeThrowAction();
-    void exeThrow();
-    bool tryCollideReflectReaction();
-    bool tryCollideWallReaction();
-    bool changeThrowParamInWater(s32, bool);
-    void addCurveOffset();
-    void exeThrowBrake();
-    bool tryAppendAttack();
-    void exeThrowSpiral();
-    bool tryCollideWallReactionSpiral();
-    void endThrowSpiral();
-    void exeThrowTornado();
-    bool tryCollideWallReactionReflect();
-    void exeThrowRolling();
-    bool tryCollideWallReactionRollingGround();
-    void rollingGround();
-    void exeThrowRollingBrake();
-    void exeThrowStay();
-    bool tryChangeSeparateThrow();
     f32 getThrowBackSpeed() const;
-    void updateLavaSurfaceMove();
-    bool tryCollideWallReactionStay();
     bool isEnableHackThrowAutoCatch() const;
     s32 getThrowStayTime() const;
     s32 getThrowStayTimeMax() const;
-    void exeThrowAppend();
     f32 getThrowSpeedAppend() const;
     f32 getThrowRangeAppend() const;
-    void exeBlow();
-    bool tryCollideWallLockOn();
-    void endHackThrowAndReturnHackOrHide();
-    void clearThrowType();
-    void exeRebound();
-    void exeReturn();
-    void calcReturnTargetPos(sead::Vector3f*) const;
-    void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool stayRollingOrReflect();
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
-    void endMove();
     bool isEnableCapTouchJumpInput() const;
-    void prepareTransferLockOn(al::HitSensor*);
-    void collideThrowStartArrow(al::HitSensor*, const sead::Vector3f&, const sead::Vector3f&,
-                                const sead::Vector3f&);
-    bool trySendAttackCollideAndReaction(bool*);
-    bool stayWallHit();
-    void endHackThrow();
-
     CapTargetInfo* getCapTargetInfo() const { return mCapTargetInfo1; }
-
     bool isSeparateFlying() const { return mIsSeparateFlying; }
-
     void setIsHide(bool isHide) { mIsHide = isHide; }
 
-public:
+    // Custom section
+
+    friend class ml::HackCapKeeper;
+
+    const LiveActor* getPlayerActor() const { return mPlayerActor; }
+    const HackCapJointControlKeeper* getJointControlKeeper() const { return mHackCapJointControlKeeper; }
+
+private:
     al::LiveActor* mEquipmentHat;
     al::LiveActor* mEquipmentHatDepthShadow;
     al::LiveActor* mLockOnCapEyes;

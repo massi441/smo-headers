@@ -9,6 +9,7 @@
 namespace sead {
 class DisplayBuffer;
 class DrawContext;
+class Viewport;
 }  // namespace sead
 
 namespace agl {
@@ -27,8 +28,9 @@ public:
 
     void copyToDisplayBuffer(sead::DrawContext* draw_context,
                              const sead::DisplayBuffer* display_buffer) const override;
-    void clear(sead::DrawContext* draw_context, u32 clr_flag, const sead::Color4f& color, f32 depth,
-               u32 stencil) const override;
+    void clear(sead::DrawContext* draw_context, u32 clr_flag, const sead::Color4f& color, f32 depth, u32 stencil) const override;
+    void clear(agl::DrawContext*, u32 index, u32 mask, const sead::Color4f&, float, u32) const;
+    void fastClear(agl::DrawContext*, u32, u32, const sead::Color4f&, float, u32, const sead::Viewport&, bool) const;
     void bindImpl_(sead::DrawContext* draw_context) const override;
 
     void initialize_();

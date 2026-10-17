@@ -10,15 +10,16 @@ class ShaderProgram;
 
 class ShaderLocation {
 public:
-    void setLocation(s32);
-    void setLocation(ShaderType, s32);
-    void setRegisterLocation(ShaderType, s32);
+    // sets location for all
+    void setLocation(s32 loc);
+    void setLocation(ShaderType shaderType, s32 loc);
+    void setRegisterLocation(ShaderType shaderType, s32 loc);
 
 public:
-    union {
-        s8 mLocation[cShaderType_Num];
-        s16 mRegisterLocation[2];
-    };
+    u8 mVertex = -1;
+    u8 mFragment = -1;
+    u8 mGeometry = -1;
+    u8 mCompute = -1;
 };
 
 class UniformBlockLocation : public ShaderLocation, public sead::INamable {

@@ -91,7 +91,7 @@ public:
     void startDemo();
     void endDemo();
 
-    al::LiveActor* getParent() const { return mParent; }
+    al::LiveActor* getParent() const { return mPlayer; }
 
     HackCap* getHackCap() const { return mHackCap; }
 
@@ -119,12 +119,13 @@ public:
 
     bool isStartedHacking() const { return mIsStartedHacking; }
 
-    al::LiveActor* getHack() const { return mHackActor; }
+    al::LiveActor* getCurrentHackActor() const { return mCurrentHackActor; }
+    al::HitSensor* getUnkHitSensor() const { return mUnkHitSensor; }
 
-    al::HitSensor* getHackSensor() const { return mHackHitSensor; }
+    // TODO: Private
 
 public:
-    al::LiveActor* mParent;
+    al::LiveActor* mPlayer;
     HackCap* mHackCap;
     PlayerRecoverySafetyPoint* mRecoverySafePoint;
     void* field_18;
@@ -143,8 +144,8 @@ public:
     bool mIsHack;
     bool mIsTookDamage;
     al::CollisionPartsFilterBase* mCollisionFilter;
-    al::LiveActor* mHackActor;
-    al::HitSensor* mHackHitSensor;
+    al::LiveActor* mCurrentHackActor;
+    al::HitSensor* mUnkHitSensor;
     HackObjInfo* mHackObjectInfo;
     al::HitSensor* mStageStartActorSensor;
     al::LiveActor* mStageStartActor;

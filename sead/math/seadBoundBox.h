@@ -93,7 +93,7 @@ struct BoundBox3
     void scaleY(T sy);
     void scaleZ(T sz);
 
-public:
+private:
     Vector3 mMin;
     Vector3 mMax;
 

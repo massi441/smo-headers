@@ -16,9 +16,9 @@ namespace rs {
 IUsePlayerPuppet* startPuppet(al::HitSensor* actorHitSensor, al::HitSensor* playerHitSensor);
 void endBindAndPuppetNull(IUsePlayerPuppet** playerPuppet);
 void endBindOnGroundAndPuppetNull(IUsePlayerPuppet** playerPuppet);
-void endBindJumpAndPuppetNull(IUsePlayerPuppet** playerPuppet, const sead::Vector3f& endTrans,
+void endBindJumpAndPuppetNull(IUsePlayerPuppet** playerPuppet, const sead::Vector3f& velocity,
                               s32 timeBeforeEnd);
-void endBindWallJumpAndPuppetNull(IUsePlayerPuppet** playerPuppet, const sead::Vector3f& endTrans,
+void endBindWallJumpAndPuppetNull(IUsePlayerPuppet** playerPuppet, const sead::Vector3f& velocity,
                                   s32 timeBeforeEnd);
 void endBindCapThrow(IUsePlayerPuppet** playerPuppet);
 bool tryReceiveBindCancelMsgAndPuppetNull(IUsePlayerPuppet** playerPuppet,

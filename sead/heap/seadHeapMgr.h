@@ -51,8 +51,8 @@ public:
     void setAllocFromNotSeadThreadHeap(Heap* heap);
     static void removeFromFindContainHeapCache_(Heap* heap);
 
-    Heap* findHeapByName(const SafeString& name, int index) const;
-    static Heap* findHeapByName_(Heap*, const SafeString&, int* index);
+    Heap* findHeapByName(const SafeString& name, int occurrence) const;
+    static Heap* findHeapByName_(Heap*, const SafeString&, int* occurrence);
     Heap* getCurrentHeap() const;
 
     static void removeRootHeap(Heap*);
@@ -64,16 +64,17 @@ public:
     static s32 getRootHeapNum() { return sRootHeaps.size(); }
 
     static Heap* getRootHeap(s32 index) { return sRootHeaps[index]; }
+    static CriticalSection* getHeapTreeLockCS() { return &sHeapTreeLockCS; }
 
-    // TODO: these should be private
+    static HeapMgr* InstancePtr() { return sInstancePtr;}
+
+private:
     static Arena* sArena;
     static HeapMgr sInstance;
     static HeapMgr* sInstancePtr;
 
     using RootHeaps = FixedPtrArray<Heap, 4>;
     using IndependentHeaps = FixedPtrArray<Heap, 4>;
-
-public:
     friend class ScopedCurrentHeapSetter;
 
     /// Set the current heap to the specified heap and returns the previous "current heap".
@@ -110,7 +111,7 @@ public:
             HeapMgr::instance()->setCurrentHeap_(getPreviousHeap_());
     }
 
-public:
+private:
     /// @warning Only call this if hasPreviousHeap returns true.
     Heap* getPreviousHeap_() const { return reinterpret_cast<Heap*>(mPreviousHeap); }
     void setPreviousHeap_(Heap* heap) { mPreviousHeap = reinterpret_cast<uintptr_t>(heap); }

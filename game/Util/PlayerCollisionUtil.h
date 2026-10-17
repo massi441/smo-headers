@@ -122,6 +122,8 @@ void calcMovePowerGround(sead::Vector3f*, const IUsePlayerCollision*, const sead
 void calcMovePowerWall(sead::Vector3f*, const IUsePlayerCollision*, const sead::Vector3f&);
 void calcMovePowerCeiling(sead::Vector3f*, const IUsePlayerCollision*, const sead::Vector3f&);
 bool isOnGround(const al::LiveActor*, const IUsePlayerCollision*);
+bool isPlayerOnGround(const al::LiveActor*);
+void calcGroundNormalOrGravityDir(sead::Vector3f*, const al::LiveActor*, const IUsePlayerCollision*);
 bool isOnGroundAndGravity(const al::LiveActor*, const IUsePlayerCollision*);
 bool isCollidedWallVelocity(const al::LiveActor*, const IUsePlayerCollision*);
 bool isCollidedCeilingVelocity(const al::LiveActor*, const IUsePlayerCollision*);

@@ -3,6 +3,7 @@
 #include "Library/Factory/Factory.h"
 
 namespace al {
+
 class CameraPoser;
 class CameraPoserEntrance;
 
@@ -17,9 +18,11 @@ public:
 public:
     s32 _1c = 0;
 };
+
 }  // namespace al
 
 namespace alCameraPoserFactoryFunction {
+
 void initAndCreateTableFromOtherTable2(
     al::CameraPoserFactory* factory,
     const al::NameToCreator<al::CameraPoserCreatorFunction>* table1, s32 table1Count,
@@ -27,15 +30,17 @@ void initAndCreateTableFromOtherTable2(
 void initAndCreateTableWithAnotherFactory(
     al::CameraPoserFactory* factory, const al::CameraPoserFactory* otherFactory,
     const al::NameToCreator<al::CameraPoserCreatorFunction>* table, s32 tableCount);
+
 void initAndCreateTableWithPresetPosers(
     al::CameraPoserFactory* factory, const al::NameToCreator<al::CameraPoserCreatorFunction>* table,
     s32 tableCount);
 
 template <s32 N1, s32 N2>
-inline void initAndCreateTableFromOtherTable(
+void initAndCreateTableFromOtherTable(
     al::CameraPoserFactory* out,
     const al::NameToCreator<al::CameraPoserCreatorFunction> (&table1)[N1],
     const al::NameToCreator<al::CameraPoserCreatorFunction> (&table2)[N2]) {
     initAndCreateTableFromOtherTable2(out, table1, N1, table2, N2);
 }
+
 }  // namespace alCameraPoserFactoryFunction

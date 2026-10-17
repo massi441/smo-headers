@@ -18,6 +18,6 @@ public:
 
     GameDataHolder* operator->() const { return mData; }
 
-public:
+private:
     GameDataHolder* mData;
 };

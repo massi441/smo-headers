@@ -44,7 +44,7 @@ public:
 
     bool isValid() const { return mIsValid; }
 
-public:
+private:
     const char* mName;
     AreaShape* mAreaShape = nullptr;
     StageSwitchKeeper* mStageSwitchKeeper = nullptr;

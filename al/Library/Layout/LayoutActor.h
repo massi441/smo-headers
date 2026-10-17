@@ -85,7 +85,9 @@ public:
 
     LayoutSceneInfo* getLayoutSceneInfo() const { return mLayoutSceneInfo; }
 
-public:
+    LayoutPartsActorKeeper* getLayoutPartsActorKeeper() const { return mLayoutPartsActorKeeper; }
+
+private:
     sead::FixedSafeString<0x80> mName;
     NerveKeeper* mNerveKeeper;
     LayoutKeeper* mLayoutKeeper;

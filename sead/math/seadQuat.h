@@ -1,8 +1,6 @@
 #pragma once
 
 #include <basis/seadTypes.h>
-#include <cmath>
-#include <limits>
 #include <math/seadMathPolicies.h>
 #include <math/seadVector.h>
 

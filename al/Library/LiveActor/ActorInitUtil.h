@@ -34,16 +34,11 @@ void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& initInfo,
 void initChildActorWithArchiveNameWithPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo,
                                                     const sead::SafeString& archiveName,
                                                     const char* suffix);
-void initChildActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo,
-                                                  const sead::SafeString& archiveName,
-                                                  const char* suffix);
-LiveActor* createChildLinkSimpleActor(const char* actorName, const char* linkName,
-                                      const ActorInitInfo& initInfo, bool alive);
-LiveActor* createChildLinkMapPartsActor(const char* actorName, const char* linkName,
-                                        const ActorInitInfo& initInfo, s32 linkIndex, bool alive);
+void initChildActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo, const sead::SafeString& archiveName, const char* suffix);
+LiveActor* createChildLinkSimpleActor(const char* actorName, const char* linkName, const ActorInitInfo& initInfo, bool alive);
+LiveActor* createChildLinkMapPartsActor(const char* actorName, const char* linkName, const ActorInitInfo& initInfo, s32 linkIndex, bool alive);
 void initMapPartsActor(LiveActor* actor, const ActorInitInfo& initInfo, const char* suffix);
-void initLinksActor(LiveActor* actor, const ActorInitInfo& initInfo, const char* suffix,
-                    s32 linkIndex);
+void initLinksActor(LiveActor* actor, const ActorInitInfo& initInfo, const char* suffix, s32 linkIndex);
 ActorInitInfo* createLinksPlayerActorInfo(LiveActor* actor, const ActorInitInfo& initInfo);
 const char* getLinksActorClassName(const ActorInitInfo& initInfo, const char* linkName,
                                    s32 linkIndex);
@@ -56,22 +51,14 @@ void initCreateActorWithPlacementInfo(LiveActor* actor, const ActorInitInfo& ini
                                       const PlacementInfo& placementInfo);
 void initCreateActorNoPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo);
 void initCreateActorNoPlacementInfoNoViewId(LiveActor* actor, const ActorInitInfo& initInfo);
-LiveActor* createPlacementActorFromFactory(const ActorInitInfo& initInfo,
-                                           const PlacementInfo* placementInfo);
-LiveActor* createLinksActorFromFactory(const ActorInitInfo& initInfo, const char* linkName,
-                                       s32 linkNum);
-LiveActorGroup* createLinksActorGroupFromFactory(const ActorInitInfo& initInfo,
-                                                 const char* linkName, const char* groupName);
-LiveActorGroup* tryCreateLinksActorGroupFromFactory(const ActorInitInfo& initInfo,
-                                                    const char* linkName, const char* groupName);
-LiveActor* tryCreateLinksActorFromFactorySingle(const ActorInitInfo& initInfo,
-                                                const char* linkName);
-void createAndRegisterLinksActorFromFactory(LiveActorGroup* group, const ActorInitInfo& initInfo,
-                                            const char* linkName);
-void makeMapPartsModelName(sead::BufferedSafeString* modelName, sead::BufferedSafeString* path,
-                           const PlacementInfo& placementInfo);
-void makeMapPartsModelName(sead::BufferedSafeString* modelName, sead::BufferedSafeString* path,
-                           const ActorInitInfo& initInfo);
+LiveActor* createPlacementActorFromFactory(const ActorInitInfo& initInfo, const PlacementInfo* placementInfo);
+LiveActor* createLinksActorFromFactory(const ActorInitInfo& initInfo, const char* linkName, s32 linkNum);
+LiveActorGroup* createLinksActorGroupFromFactory(const ActorInitInfo& initInfo, const char* linkName, const char* groupName);
+LiveActorGroup* tryCreateLinksActorGroupFromFactory(const ActorInitInfo& initInfo, const char* linkName, const char* groupName);
+LiveActor* tryCreateLinksActorFromFactorySingle(const ActorInitInfo& initInfo, const char* linkName);
+void createAndRegisterLinksActorFromFactory(LiveActorGroup* group, const ActorInitInfo& initInfo, const char* linkName);
+void makeMapPartsModelName(sead::BufferedSafeString* modelName, sead::BufferedSafeString* path, const PlacementInfo& placementInfo);
+void makeMapPartsModelName(sead::BufferedSafeString* modelName, sead::BufferedSafeString* path, const ActorInitInfo& initInfo);
 const char* tryGetMapPartsSuffix(const ActorInitInfo& initInfo, const char* suffix);
 void initMapPartsActorWithArchiveName(LiveActor* actor, const ActorInitInfo& initInfo,
                                       const char* fileName, const char* suffix);

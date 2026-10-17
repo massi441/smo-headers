@@ -25,7 +25,7 @@ public:
 
     bool hasAnimData() const { return mHasAnimData; }
 
-public:
+private:
     sead::FixedSafeString<128> mName = {""};
     Resource* mModelRes;
     Resource* mAnimRes;

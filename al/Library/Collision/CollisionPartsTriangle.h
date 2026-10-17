@@ -25,8 +25,7 @@ public:
     Triangle();
     Triangle(const CollisionParts& parts, const KCPrismData* data, const KCPrismHeader* header);
 
-    void fillData(const CollisionParts& parts, const KCPrismData* data,
-                  const KCPrismHeader* header);
+    void fillData(const CollisionParts& parts, const KCPrismData* data, const KCPrismHeader* header);
     void fill(const sead::Vector3f& pos1, const sead::Vector3f& pos2, const sead::Vector3f& pos3);
     const LiveActor* getHostActor() const;
     bool isHostMoved() const;

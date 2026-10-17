@@ -22,5 +22,6 @@ struct SceneInitInfo {
     AudioDirector* audioDirector;
 };
 
-static_assert(sizeof(SceneInitInfo) == 0x248);
-}  // namespace al
+}
+
+static_assert(sizeof(al::SceneInitInfo) == 0x248);

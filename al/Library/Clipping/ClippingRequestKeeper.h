@@ -31,7 +31,7 @@ public:
     void executeRequest();
     void request(LiveActor* actor, ClippingRequestType clippingRequestType);
 
-public:
+private:
     ClippingRequestTable* mRequestTable;
 };
 

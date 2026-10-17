@@ -44,7 +44,12 @@ public:
 
     void setBool145(bool value) { _145 = value; }
 
-public:
+    // custom
+
+    bool isValidateClipping() { return mIsValidateClipping; }
+    al::MtxConnector* getMtxConnector() const { return mMtxConnector; }
+
+private:
     al::NerveStateBase* mNerveStateBase = nullptr;
     al::HitSensor* mHitSensor = nullptr;
     al::MtxConnector* mMtxConnector = nullptr;

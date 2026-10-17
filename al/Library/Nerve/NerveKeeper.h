@@ -26,12 +26,14 @@ public:
 
     NerveActionCtrl* getActionCtrl() const { return mActionCtrl; }
 
-    template <typename T>
+    IUseNerve* getParent() const { return mParent; }
+
+    template <typename T = al::IUseNerve>
     T* getParent() {
         return static_cast<T*>(mParent);
     }
 
-public:
+private:
     IUseNerve* mParent;
     const Nerve* mCurrentNerve = nullptr;
     const Nerve* mNextNerve;

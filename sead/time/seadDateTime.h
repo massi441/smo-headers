@@ -1,6 +1,5 @@
 #pragma once
 
-#include "basis/seadTypes.h"
 #include "time/seadCalendarTime.h"
 #include "time/seadDateSpan.h"
 
@@ -11,7 +10,8 @@ class DateTimeUtc;
 class DateTime
 {
 public:
-    DateTime(u64 unix_time = 0);
+    DateTime() = default;
+    DateTime(u64 unix_time);
     DateTime(const CalendarTime& time);
     DateTime(const CalendarTime::Year& year, const CalendarTime::Month& month,
              const CalendarTime::Day& day, const CalendarTime::Hour& hour,
@@ -57,6 +57,7 @@ DateTime operator+(DateTime time, DateSpan span);
 class DateTimeUtc
 {
 public:
+    DateTimeUtc() = default;
     DateTimeUtc(u64 unix_time);
     DateTimeUtc(const DateTime& time);
     DateTimeUtc(const CalendarTime& time);

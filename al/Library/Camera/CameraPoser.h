@@ -195,6 +195,7 @@ public:
     CameraInputHolder* getInputHolder() const;
     CameraTargetHolder* getTargetHolder() const;
     CameraFlagCtrl* getFlagCtrl() const;
+    SnapShotCameraCtrl* getSnapShotCameraCtrl() const { return mSnapShotCtrl; }
 
     // get
     const sead::Vector3f& getEye() const { return mEye; }
@@ -262,7 +263,7 @@ public:
 
     void setSnapShotCtrl(SnapShotCameraCtrl* ctrl) { mSnapShotCtrl = ctrl; }
 
-public:
+private:
     const char* mPoserName;
     ActiveState mActiveState = ActiveState::Start;
     sead::Vector3f mEye = {0.0f, 0.0f, 0.0f};
@@ -283,7 +284,7 @@ public:
     LocalInterpole* mLocalInterpole = nullptr;
     LookAtInterpole* mLookAtInterpole = nullptr;
     CameraParamMoveLimit* mParamMoveLimit = nullptr;
-    CameraTargetAreaLimitter* mTargetAreaLimitter = nullptr;
+    CameraTargetAreaLimitter* mTargetAreaLimiter = nullptr;
     GyroCameraCtrl* mGyroCtrl = nullptr;
     SnapShotCameraCtrl* mSnapShotCtrl = nullptr;
     AudioKeeper* mAudioKeeper = nullptr;

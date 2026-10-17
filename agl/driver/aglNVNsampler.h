@@ -21,3 +21,5 @@ public:
 };
 
 }  // namespace agl::driver
+
+static_assert(sizeof(agl::driver::NVNsampler_) == 0x10);

@@ -130,7 +130,7 @@ public:
     static s32 calcChildBlockOffset(const sead::Vector3u& block, s32 shift);
     static u32 getBlockData(const u32* data, u32 offset);
 
-public:
+private:
     sead::PtrArray<KCPrismHeader> mModelsData;
     void* mData;
     ByamlIter* mAttributeIter;

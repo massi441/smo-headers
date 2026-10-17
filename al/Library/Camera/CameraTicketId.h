@@ -19,7 +19,7 @@ public:
 
     const char* getSuffix() const { return mSuffix; }
 
-public:
+private:
     const PlacementId* mPlacementId;
     const char* mSuffix;
 };

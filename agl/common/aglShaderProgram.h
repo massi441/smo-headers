@@ -10,8 +10,9 @@ class Heap;
 }
 
 namespace agl {
+    class DrawContext;
 
-class ShaderProgram {
+    class ShaderProgram {
 public:
     class VariationBuffer {
     public:
@@ -36,6 +37,8 @@ public:
     const Shader& getShader(ShaderType) const;
     Shader* getShader(ShaderType);
 
+    void activate(agl::DrawContext*, bool) const;
+
 public:
     u64* _8;
     DisplayList mShaderDisplayList;  // _10
@@ -57,13 +60,16 @@ public:
     u32 _2c8;
     u32 _2cc;
     void* _2d0;
-    VertexShader mVertexShader;
-    FragmentShader mFragmentShader;
-    GeometryShader mGeometryShader;
-    ComputeShader mComputeShader;
+    VertexShader mVertexShader; // 0x2d8
+    FragmentShader mFragmentShader; // 0x2f8
+    GeometryShader mGeometryShader; // 0x318
+    ComputeShader mComputeShader; // 0x338
+    int mUniformBlocksCount;
     u8 _358[0x418 - 0x358];  // todo; what is here?
     void* _418;
     u32 _420;
 };
 
 }  // namespace agl
+
+static_assert(sizeof(agl::ShaderProgram) == 0x428);

@@ -26,8 +26,7 @@ public:
     bool isExistByml(const char* filePath) const;
     u32 getSize() const;
     u32 getEntryNum(const sead::SafeString& directoryPath) const;
-    void getEntryName(sead::BufferedSafeString* outName, const sead::SafeString& directoryPath,
-                      u32 entryNum) const;
+    void getEntryName(sead::BufferedSafeString* outName, const sead::SafeString& directoryPath, u32 entryNum) const;
     u32 getFileSize(const sead::SafeString& filePath) const;
     const u8* getByml(const sead::SafeString& filePath) const;
     const void* getFile(const sead::SafeString& filePath) const;
@@ -53,7 +52,9 @@ public:
 
     nn::g3d::ResFile* getResFile() const { return mResFile; }
 
-public:
+    const sead::FixedSafeString<0x80>& getFullName() const { return mPath; }
+
+private:
     sead::ArchiveRes* mArchive = nullptr;
     sead::ArchiveFileDevice* mDevice = nullptr;
     sead::FixedSafeString<0x80> mPath;

@@ -30,8 +30,7 @@ public:
     void worldPosToCameraPosByMatrix(Vector3f* dst, const Vector3f& world_pos) const;
     void cameraPosToWorldPosByMatrix(Vector3f* dst, const Vector3f& camera_pos) const;
 
-    void projectByMatrix(Vector2f* dst, const Vector3f& world_pos, const Projection& projection,
-                         const Viewport& viewport) const;
+    void projectByMatrix(Vector2f* dst, const Vector3f& world_pos, const Projection& projection, const Viewport& viewport) const;
     void unprojectRayByMatrix(Ray<Vector3f>* dst, const Vector3f& camera_pos) const;
 
     Matrix34f& getMatrix() { return mMatrix; }
@@ -39,7 +38,7 @@ public:
 
     void updateViewMatrix() { doUpdateMatrix(&mMatrix); }
 
-public:
+private:
     Matrix34f mMatrix = Matrix34f::ident;
 };
 
@@ -65,7 +64,7 @@ public:
     void addPos(const Vector3f& pos) { mPos += pos; }
     void addAt(const Vector3f& at) { mAt += at; }
 
-public:
+private:
     Vector3f mPos = {0.0f, 0.0f, 10.0f};
     Vector3f mAt = {0.0f, 0.0f, 0.0f};
     Vector3f mUp = {0.0f, 1.0f, 0.0f};

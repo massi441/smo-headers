@@ -68,7 +68,7 @@ public:
     void startShineCountAnim(bool isAddTenShines);
     bool isEndShineCountAnim() const;
 
-public:
+private:
     CoinCounter* mCoinCounter;
     CounterLifeCtrl* mCounterLifeCtrl;
     ShineCounter* mShineCounter;

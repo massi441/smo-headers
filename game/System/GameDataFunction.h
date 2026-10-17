@@ -1,10 +1,9 @@
 #pragma once
 
 #include "Library/LiveActor/LiveActor.h"
-
+#include "Npc/SessionEventProgress.h"
 #include "System/GameDataFile.h"
 #include "System/GameDataHolder.h"
-#include "System/GameDataHolderAccessor.h"
 #include "System/GameDataHolderWriter.h"
 
 namespace nn::g3d {

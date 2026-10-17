@@ -291,7 +291,7 @@ public:
 
     SaveDataAccessSequence* getSaveDataAccessSequence() const { return mSaveDataAccessSequence; }
 
-public:
+private:
     const al::MessageSystem* mMessageSystem = nullptr;
     GameDataFile** mFiles = nullptr;
     GameDataFile* mPlayingFile = nullptr;

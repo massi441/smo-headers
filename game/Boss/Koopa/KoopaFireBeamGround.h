@@ -9,13 +9,12 @@ public:
     void init(const al::ActorInitInfo& info) override;
     void appear() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self) override;
 
     void appearSign();
 
-    void exeAppearSign();
     void exeWait();
+    void exeAppearSign();
 };
 
-static_assert(sizeof(KoopaFireBeamGround) == 0x108);
+static_assert(sizeof(KoopaFireBeamGround) == sizeof(al::LiveActor));

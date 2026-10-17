@@ -58,7 +58,7 @@ public:
 
     void* at(s32 idx) const
     {
-        if (u32(mPtrNum) <= u32(idx))
+        if (static_cast<u32>(mPtrNum) <= static_cast<u32>(idx))
         {
             SEAD_ASSERT_MSG(false, "index exceeded [%d/%d]", idx, mPtrNum);
             return nullptr;
@@ -368,7 +368,7 @@ template <typename T, s32 N>
 class FixedPtrArray : public PtrArray<T>
 {
 public:
-    FixedPtrArray() : PtrArray<T>(N, mWork) {}
+    FixedPtrArray() : PtrArray<T>(N, mWork), mWork{} {}
 
     // These do not make sense for a *fixed* array.
     void setBuffer(s32 ptrNumMax, void* buf) = delete;

@@ -1,10 +1,8 @@
 #ifndef SEAD_TICKSPAN_H_
 #define SEAD_TICKSPAN_H_
 
-#include <climits>
-
 #include <basis/seadRawPrint.h>
-#include <basis/seadTypes.h>
+#include <climits>
 
 namespace sead
 {
@@ -79,28 +77,28 @@ public:
     friend TickSpan operator*(f32 x, TickSpan a) { return a.mSpan * x; }
     friend TickSpan operator/(TickSpan a, f32 x) { return a.mSpan / x; }
 
-    static TickSpan makeFromNanoSeconds(s64 nsec)
+    static TickSpan FromNanoSeconds(s64 nsec)
     {
         TickSpan span;
         span.setNanoSeconds(nsec);
         return span;
     }
 
-    static TickSpan makeFromMicroSeconds(s64 usec)
+    static TickSpan FromMicroSeconds(s64 usec)
     {
         TickSpan span;
         span.setMicroSeconds(usec);
         return span;
     }
 
-    static TickSpan makeFromMilliSeconds(s64 msec)
+    static TickSpan FromMilliSeconds(s64 msec)
     {
         TickSpan span;
         span.setMilliSeconds(msec);
         return span;
     }
 
-    static TickSpan makeFromSeconds(s64 sec)
+    static TickSpan FromSeconds(s64 sec)
     {
         TickSpan span;
         span.setSeconds(sec);

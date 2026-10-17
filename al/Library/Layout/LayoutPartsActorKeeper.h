@@ -15,7 +15,11 @@ public:
     void update();
     void calcAnim(bool recursive);
 
-public:
+    al::LayoutActor* getLayoutActor(int idx) const { return mPartsActors[idx]; }
+    s32 getNumActors() const { return mNumActors; }
+    s32 getMaxActors() const { return mMaxActors; }
+
+private:
     LayoutActor** mPartsActors = nullptr;
     s32 mNumActors = 0;
     s32 mMaxActors = 0;

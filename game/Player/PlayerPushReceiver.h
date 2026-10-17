@@ -40,7 +40,7 @@ public:
                                        const IUsePlayerCollision* collision,
                                        f32 collisionRadius) const;
 
-public:
+private:
     const al::LiveActor* mActor = nullptr;
     sead::Vector3f mPushMin = {0.0f, 0.0f, 0.0f};
     sead::Vector3f mPushMax = {0.0f, 0.0f, 0.0f};

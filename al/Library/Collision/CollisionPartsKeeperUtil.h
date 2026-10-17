@@ -96,14 +96,14 @@ bool getFirstPolyOnArrow(const al::IUseCollision*, const al::ArrowHitInfo**, con
 const al::ArrowHitInfo& getStrikeArrowInfo(const al::IUseCollision*, u32);
 bool getFirstPolyOnArrow(const al::IUseCollision*, sead::Vector3f*, al::Triangle*,
                          const sead::Vector3f&, const sead::Vector3f&, const char*);
-bool getFirstPolyOnArrow(const al::IUseCollision*, sead::Vector3f*, al::Triangle*,
-                         const sead::Vector3f&, const sead::Vector3f&,
+bool getFirstPolyOnArrow(const al::IUseCollision*, sead::Vector3f* outHitPos, al::Triangle* triangle,
+                         const sead::Vector3f& origin, const sead::Vector3f& ray,
                          const al::CollisionPartsFilterBase*, const al::TriangleFilterBase*);
-bool getHitPosOnArrow(const al::IUseCollision*, sead::Vector3f*, const sead::Vector3f&,
-                      const sead::Vector3f&, const al::CollisionPartsFilterBase*,
+bool getHitPosOnArrow(const al::IUseCollision*, sead::Vector3f* outHitPos, const sead::Vector3f& origin,
+                      const sead::Vector3f& ray, const al::CollisionPartsFilterBase*,
                       const al::TriangleFilterBase*);
-bool getHitPosAndNormalOnArrow(const al::IUseCollision*, sead::Vector3f*, sead::Vector3f*,
-                               const sead::Vector3f&, const sead::Vector3f&,
+bool getHitPosAndNormalOnArrow(const al::IUseCollision*, sead::Vector3f* outHitPos, sead::Vector3f* outNormal,
+                               const sead::Vector3f& origin, const sead::Vector3f& ray,
                                const al::CollisionPartsFilterBase*, const al::TriangleFilterBase*);
 bool getHitPosAndNormalAndSensorOnArrow(const al::IUseCollision*, sead::Vector3f*, sead::Vector3f*,
                                         al::HitSensor**, const sead::Vector3f&,

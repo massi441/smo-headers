@@ -13,6 +13,7 @@ struct CameraStartInfo;
 class CameraVerticalAbsorber : public NerveExecutor {
 public:
     CameraVerticalAbsorber(const CameraPoser* cameraParent, bool isNoCameraPosAbsorb);
+    ~CameraVerticalAbsorber() override;
 
     void load(const ByamlIter& iter);
     void start(const sead::Vector3f& pos, const CameraStartInfo& info);
@@ -46,7 +47,7 @@ public:
         mKeepInFrameOffsetDown = keepInFrameOffsetDown;
     }
 
-public:
+private:
     const CameraPoser* mCameraPoser;
     sead::LookAtCamera mLookAtCamera;
     sead::PerspectiveProjection mProjection;

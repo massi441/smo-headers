@@ -15,8 +15,7 @@ public:
     CapTargetInfo();
 
     void init(const al::LiveActor* actor, const char* name);
-    void setFollowLockOnMtx(const char* jointName, const sead::Vector3f& localTrans,
-                            const sead::Vector3f& localRotate);
+    void setFollowLockOnMtx(const char* jointName, const sead::Vector3f& localTrans, const sead::Vector3f& localRotate);
     void setLockOnStartAnimName(const char* animName);
     void setLockOnAnimName(const char* animName);
     void setHackName(const char* hackName);
@@ -29,8 +28,9 @@ public:
 
     void setIsLockOnOnly() { mIsLockOnOnly = true; }
 
-public:
+private:
     friend CapTargetInfoFunction;
+
     const al::LiveActor* mActor = nullptr;
     const char* mHackName = nullptr;
     IUsePlayerCollision* mPlayerCollision = nullptr;

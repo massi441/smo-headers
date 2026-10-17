@@ -6,6 +6,7 @@
 
 namespace al {
 class ParameterObj;
+class SkyParam;
 
 class IUseRequestParam : public HioNode {
 public:
@@ -19,5 +20,23 @@ public:
 };
 
 static_assert(sizeof(IUseRequestParam) == 0x8);
+
+class ParamRequestInterp {
+public:
+    ParamRequestInterp();
+
+public:
+    s32 mRequestIndex;
+    s32 mCurrentIndex;
+    s32 mInterpMode;
+    u32 mInterpFrames;
+    SkyParam* mSkyParam1;
+    SkyParam* mSkyParam2;
+    SkyParam* mSkyParam3;
+    s32 mPreviousIndex;
+    SkyParam* mSkyParam4;
+};
+
+static_assert(sizeof(ParamRequestInterp) == 0x38);
 
 }  // namespace al

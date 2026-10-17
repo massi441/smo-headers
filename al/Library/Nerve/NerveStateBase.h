@@ -19,6 +19,8 @@ public:
 
     bool isDead() const { return mIsDead; }
 
+    bool isAlive() const { return !mIsDead; }
+
 public:
     bool mIsDead = true;
 };

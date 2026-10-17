@@ -24,13 +24,17 @@ public:
     void initLayout(nn::ui2d::Layout* layout, LayoutResource* resource);
     void initDrawInfo(nn::ui2d::DrawInfo*);
     void initTagProcessor(CustomTagProcessor*);
-    LayoutPaneGroup* getGroup(const char*) const;
-    LayoutPaneGroup* getGroup(s32) const;
-    s32 getGroupNum() const;
+
     void calcAnim(bool);
     void draw();
 
-public:
+    LayoutPaneGroup* getGroup(const char*) const;
+    LayoutPaneGroup* getGroup(s32) const;
+    s32 getGroupNum() const;
+
+    nn::ui2d::Layout* getLayout() const { return mLayout; }
+
+private:
     CustomTagProcessor* mTagProcessor;
     nn::ui2d::DrawInfo* mDrawInfo;
     nn::ui2d::Layout* mLayout;

@@ -13,16 +13,14 @@ class HitSensor;
 
 class MapObjStatePlayerHold : public al::ActorStateBase {
 public:
-    MapObjStatePlayerHold(al::LiveActor* actor, const sead::Vector3f& localOffset,
-                          const sead::Vector3f& localRotate);
+    MapObjStatePlayerHold(al::LiveActor* actor, const sead::Vector3f& localOffset, const sead::Vector3f& localRotate);
 
     void initUseColliderPush(f32 pushForce);
     void initShadowMaskDropLengthCtrl(const char* shadowMaskName);
     void appear() override;
     void kill() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other);
-    bool receiveMsgNoRelease(const al::SensorMsg* message, al::HitSensor* other,
-                             al::HitSensor* self);
+    bool receiveMsgNoRelease(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self);
     bool receiveMsgRelease(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self);
     void prepareThrowCollide();
     bool receiveMsgCancel(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self);

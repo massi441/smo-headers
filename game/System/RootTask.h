@@ -14,7 +14,7 @@ public:
     void calc() override;
     void prepare() override;
 
-public:
+private:
     GameSystem* mGameSystem = nullptr;
     sead::hostio::Node* mHostIoNode = nullptr;
     sead::DrawContext* mDrawContext = nullptr;

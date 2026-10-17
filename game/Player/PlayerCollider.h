@@ -18,8 +18,8 @@ class CollisionMultiShape;
 
 class PlayerCollider : public al::HioNode, public al::IUseCollision {
 public:
-    PlayerCollider(al::CollisionDirector*, const sead::Matrix34f*, const sead::Vector3f*,
-                   const sead::Vector3f*, bool);
+    PlayerCollider(al::CollisionDirector*, const sead::Matrix34f*, const sead::Vector3f*, const sead::Vector3f*, bool);
+
     void onInvalidate();
     void setCollisionShapeKeeper(CollisionShapeKeeper*);
     void calcBoundingRadius(f32*) const;
@@ -31,18 +31,13 @@ public:
     void resetPose(const sead::Quatf&);
     sead::Vector3f collide(const sead::Vector3f&);
     bool calcMovePowerByContact(sead::Vector3f*, const sead::Vector3f&);
-    void moveCollide(sead::Vector3f*, f32*, sead::Quatf*, const sead::Vector3f&, f32,
-                     const sead::Quatf&, const sead::Vector3f&, f32, bool);
+    void moveCollide(sead::Vector3f*, f32*, sead::Quatf*, const sead::Vector3f&, f32, const sead::Quatf&, const sead::Vector3f&, f32, bool);
     bool findCollidePos(al::SpherePoseInterpolator*);
     void calcResultVec(sead::Vector3f*, sead::Vector3f*, const sead::Vector3f&);
-    void calcGroundArrowAverage(bool*, sead::Vector3f*, bool*, sead::Vector3f*,
-                                const CollisionShapeKeeper*);
-    void calcResultVecArrow(sead::BitFlag32*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*,
-                            sead::Vector3f*, const CollidedShapeResult*);
-    void calcResultVecSphere(sead::BitFlag32*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*,
-                             sead::Vector3f*, const CollidedShapeResult*);
-    void calcResultVecDisk(sead::BitFlag32*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*,
-                           sead::Vector3f*, const CollidedShapeResult*);
+    void calcGroundArrowAverage(bool*, sead::Vector3f*, bool*, sead::Vector3f*, const CollisionShapeKeeper*);
+    void calcResultVecArrow(sead::BitFlag32*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, const CollidedShapeResult*);
+    void calcResultVecSphere(sead::BitFlag32*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, const CollidedShapeResult*);
+    void calcResultVecDisk(sead::BitFlag32*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, sead::Vector3f*, const CollidedShapeResult*);
     void collectHitInfoArray(const al::HitInfo&, s32);
     bool isNeedWallBorderCheck(const al::HitInfo&) const;
     void setWallBorderCheckTypeNone();
@@ -59,7 +54,7 @@ public:
 
     void set1b0(f32 value) { _1b0 = value; }
 
-public:
+private:
     al::CollisionDirector* mCollisionDirector;
     const sead::Matrix34f* mMtxPtr;
     const sead::Vector3f* mTransPtr;

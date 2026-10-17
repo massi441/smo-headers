@@ -1,6 +1,5 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <common/aglRenderBuffer.h>
 #include <gfx/seadCamera.h>
 #include <heap/seadHeap.h>

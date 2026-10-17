@@ -14,7 +14,7 @@ public:
     void update(const sead::Vector3f* positions, s32 posCount);
     void update(const sead::Vector3f& position);
 
-public:
+private:
     AreaObjGroup* mAreaObjGroup;
 };
 

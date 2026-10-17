@@ -1,5 +1,7 @@
 #pragma once
 
+#include <basis/seadTypes.h>
+
 #include "Library/Nerve/NerveExecutor.h"
 
 namespace al {
@@ -44,6 +46,16 @@ public:
     bool isSelectNewGame() const;
     s32 calcPartsIndex(s32 selection) const;
 
+    al::LayoutActor* getFullLayout() const { return mLayoutActor; }
+    al::LayoutActor* getLayout(Selection selection) const { return mLayoutArray[selection]; }
+    al::LayoutActor* getSelectedLayout() const { return mLayoutArray[this->calcPartsIndex(mCursorItemIndex)]; }
+
+    al::LiveActor* getMarioActor() const { return mMarioActor; }
+    al::LiveActor* getCapActor() const { return mCapActor; }
+
+    s32 getSelectedIndex() const { return mCursorItemIndex; }
+    s32 getMenuItemCount() const { return mMenuItemAmount; }
+
     void exeHide();
     void exeAppear();
     void startActionMarioSelectIndex();
@@ -56,13 +68,13 @@ public:
 
     void setMainMenu(bool isMainMenu) { mIsMainMenu = isMainMenu; }
 
-public:
+private:
     al::LayoutActor* mLayoutActor;
     s32 mMenuItemAmount = 0;
     s32 mCursorItemIndex = 0;
     s32 mMax;
     al::LayoutActor** mLayoutArray = nullptr;
-    al::LayoutActor* mCursorActor = nullptr;
+    al::LayoutActor* mMenuLayout = nullptr;
     s32 mDefaultIndex = 0;
     al::LiveActor* mMarioActor = nullptr;
     al::LiveActor* mCapActor = nullptr;

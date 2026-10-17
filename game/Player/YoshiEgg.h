@@ -2,38 +2,32 @@
 
 #include "Library/LiveActor/LiveActor.h"
 
-namespace al {
-struct ActorInitInfo;
-class HitSensor;
-class SensorMsg;
-}  // namespace al
-
 class IUsePlayerCollision;
 class FukankunZoomCapMessage;
 
 class YoshiEgg : public al::LiveActor {
 public:
-    YoshiEgg(const al::LiveActor* parent, const IUsePlayerCollision* playerCollision);
+    YoshiEgg(const al::LiveActor* actor, const IUsePlayerCollision* collisionUser);
 
     void init(const al::ActorInitInfo& info) override;
     void initAfterPlacement() override;
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
-    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
-                    al::HitSensor* self) override;
+    bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other, al::HitSensor* self) override;
 
     void initPlacementEgg();
     void appearEgg();
-    bool isEndAppear() const;
-    bool isBreak() const;
 
-    void exeAppear();
+    bool isBreak() const;
+    bool isEndAppear() const;
+
     void exeWait();
+    void exeAppear();
     void exeBreak();
 
-public:
-    const al::LiveActor* mParent;
-    const IUsePlayerCollision* mPlayerCollision;
-    FukankunZoomCapMessage* mFukankunZoomCapMessage;
+private:
+    const al::LiveActor* mYoshiActor;
+    const IUsePlayerCollision* mCollisionUser;
+    FukankunZoomCapMessage* mZoomCapMessage;
 };
 
 static_assert(sizeof(YoshiEgg) == 0x120);

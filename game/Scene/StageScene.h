@@ -172,7 +172,7 @@ public:
     void exeTimeBalloon();
     bool isOpenEndWorldMapWipe() const;
 
-public:
+private:
     sead::FixedSafeString<64> mStageName;
     s32 mScenarioNo = 0;
     StageSceneStateWorldMap* mStateWorldMap = nullptr;

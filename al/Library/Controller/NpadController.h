@@ -5,10 +5,11 @@
 #include <nn/hid.h>
 
 namespace nn::hid {
-struct VibrationDeviceHandle;
+    struct VibrationDeviceHandle;
 }
 
 namespace al {
+
 class NpadController : public sead::Controller {
     SEAD_RTTI_OVERRIDE(NpadController, Controller)
 public:
@@ -25,9 +26,7 @@ public:
 
     s64 getSixAxisSensorCount() const { return mSixAxisSensorCount; }
 
-public:
-    void calcImpl_() override;
-
+private:
     s32 mControllerModeIndex = -1;
     s32 mNpadId = -1;
     nn::hid::NpadStyleTag mNpadStyleIndex = nn::hid::NpadStyleTag::NpadStyleInvalid;
@@ -35,7 +34,10 @@ public:
     s32 _188 = 0;
     bool mIsConnected = false;
     s64 mSamplingNumber = 0;
+
+    void calcImpl_() override;
 };
 
-static_assert(sizeof(NpadController) == 0x198);
-}  // namespace al
+}
+
+static_assert(sizeof(al::NpadController) == 0x198);

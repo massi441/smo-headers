@@ -34,7 +34,7 @@ public:
     bool isJudgedToClipFrustumObb(const sead::Matrix34f* mtx, const sead::BoundBox3f& bound,
                                   f32 idx, s32 idy) const;
 
-public:
+private:
     const ClippingFarAreaObserver* mFarAreaObserver;
     FrustumRadar** mFrustumRadars = nullptr;
     const SceneCameraInfo* mCameraInfo;

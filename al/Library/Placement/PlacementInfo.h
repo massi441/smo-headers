@@ -13,12 +13,11 @@ public:
 
     const ByamlIter& getZoneIter() const { return mZoneIter; }
 
-public:
     void setPlacementIter(const ByamlIter& placementIter) { mPlacementIter = placementIter; }
 
     void setZoneIter(const ByamlIter& zoneIter) { mZoneIter = zoneIter; }
 
-public:
+private:
     ByamlIter mPlacementIter;
     ByamlIter mZoneIter;
 };

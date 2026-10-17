@@ -30,13 +30,13 @@ public:
             mLocked->unlock();
     }
 
-public:
+private:
     bool mEngaged = true;
     T* mLocked;
 };
 
 template <typename T>
-[[nodiscard]] inline ScopedLock<T> makeScopedLock(T& lock)
+[[nodiscard]] ScopedLock<T> makeScopedLock(T& lock)
 {
     return ScopedLock<T>{&lock};
 }

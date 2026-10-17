@@ -1,6 +1,5 @@
 #pragma once
 
-#include <nn/fs/fs_types.h>
 #include "filedevice/seadFileDevice.h"
 #include "prim/seadSafeString.h"
 
@@ -23,8 +22,7 @@ public:
     bool doFlush_(FileHandle* handle) override;
     bool doRemove_(const SafeString& path) override;
     bool doRead_(u32* bytesRead, FileHandle* handle, u8* outBuffer, u32 bytesToRead) override;
-    bool doWrite_(u32* bytesWritten, FileHandle* handle, const u8* inBuffer,
-                  u32 bytesToWrite) override;
+    bool doWrite_(u32* bytesWritten, FileHandle* handle, const u8* inBuffer, u32 bytesToWrite) override;
     bool doSeek_(FileHandle* handle, s32 offset, SeekOrigin origin) override;
     bool doGetCurrentSeekPos_(u32* seekPos, FileHandle* handle) override;
     bool doGetFileSize_(u32* fileSize, const SafeString& path) override;
@@ -33,8 +31,7 @@ public:
     bool doIsExistDirectory_(bool* exists, const SafeString& path) override;
     FileDevice* doOpenDirectory_(DirectoryHandle* handle, const SafeString& path) override;
     bool doCloseDirectory_(DirectoryHandle* handle) override;
-    bool doReadDirectory_(u32* entriesRead, DirectoryHandle* handle, DirectoryEntry* entries,
-                          u32 entriesToRead) override;
+    bool doReadDirectory_(u32* entriesRead, DirectoryHandle* handle, DirectoryEntry* entries, u32 entriesToRead) override;
     bool doMakeDirectory_(const SafeString& path, u32 u_32) override;
     s32 doGetLastRawError_() const override;
     void doResolvePath_(BufferedSafeString* out, const SafeString& path) const override;

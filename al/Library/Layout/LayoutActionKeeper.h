@@ -17,7 +17,7 @@ public:
     void setMainGroupName(const char* groupName);
     LayoutPaneGroup* getLayoutPaneGroup(const char* groupName) const;
 
-public:
+private:
     bool mHasStartedAction;
     LayoutPaneGroup* mLayoutPaneGroups;
     u32 mPaneGroupNum;

@@ -17,7 +17,7 @@ void calcAnimFrontGravityPos(LiveActor* actor, const sead::Vector3f& front);
 const sead::Vector3f& getGravity(const LiveActor* actor);
 const sead::Vector3f& getTrans(const LiveActor* actor);
 const sead::Vector3f& getScale(const LiveActor* actor);
-void copyPose(LiveActor* actor, const LiveActor* target);
+void copyPose(LiveActor* destination, const LiveActor* source);
 void updatePoseTrans(LiveActor* actor, const sead::Vector3f& trans);
 void updatePoseRotate(LiveActor* actor, const sead::Vector3f& rotate);
 void updatePoseQuat(LiveActor* actor, const sead::Quatf& quat);
@@ -29,8 +29,7 @@ void calcUpDir(sead::Vector3f* up, const LiveActor* actor);
 void calcDownDir(sead::Vector3f* down, const LiveActor* actor);
 void calcFrontDir(sead::Vector3f* front, const LiveActor* actor);
 void calcBackDir(sead::Vector3f* back, const LiveActor* actor);
-void calcPoseDir(sead::Vector3f* side, sead::Vector3f* up, sead::Vector3f* front,
-                 const LiveActor* actor);
+void calcPoseDir(sead::Vector3f* side, sead::Vector3f* up, sead::Vector3f* front, const LiveActor* actor);
 void calcQuat(sead::Quatf* quat, const LiveActor* actor);
 f32 calcDistanceSignLocalXDir(const LiveActor* actor, const sead::Vector3f& pos);
 f32 calcDistanceSignLocalYDir(const LiveActor* actor, const sead::Vector3f& pos);
@@ -84,16 +83,13 @@ void setFront(LiveActor* actor, const sead::Vector3f& front);
 const sead::Vector3f& getUp(const LiveActor* actor);
 sead::Vector3f* getUpPtr(LiveActor* actor);
 void setUp(LiveActor* actor, const sead::Vector3f& up);
-void multVecPoseNoTrans(sead::Vector3f* posOut, const LiveActor* actor,
-                        const sead::Vector3f& posIn);
+void multVecPoseNoTrans(sead::Vector3f* posOut, const LiveActor* actor, const sead::Vector3f& posIn);
 void multVecPose(sead::Vector3f* posOut, const LiveActor* actor, const sead::Vector3f& posIn);
-void multVecPoseAndScale(sead::Vector3f* posOut, const LiveActor* actor,
-                         const sead::Vector3f& posIn);
+void multVecPoseAndScale(sead::Vector3f* posOut, const LiveActor* actor, const sead::Vector3f& posIn);
 void multVecInvPose(sead::Vector3f* posOut, const LiveActor* actor, const sead::Vector3f& posIn);
 void multVecInvQuat(sead::Vector3f* posOut, const LiveActor* actor, const sead::Vector3f& posIn);
 void multMtxInvPose(sead::Matrix34f* mtxOut, const LiveActor* actor, const sead::Matrix34f& mtxIn);
-void calcTransLocalOffset(sead::Vector3f* transOut, const LiveActor* actor,
-                          const sead::Vector3f& transIn);
+void calcTransLocalOffset(sead::Vector3f* transOut, const LiveActor* actor, const sead::Vector3f& transIn);
 
 }  // namespace al
 

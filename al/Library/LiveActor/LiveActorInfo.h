@@ -112,3 +112,5 @@ public:
 };
 
 }  // namespace al
+
+static_assert(sizeof(al::SubActorInfo) == 0x18);

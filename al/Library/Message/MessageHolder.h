@@ -72,7 +72,7 @@ void replaceMessageTagString(sead::WBufferedSafeString*, const IUseMessageSystem
                              const char16*);
 void replaceMessageTagTimeDirectRaceTime(sead::WBufferedSafeString*, const IUseMessageSystem*,
                                          ReplaceTimeInfo&);
-const char16* getSystemMessageString(const IUseMessageSystem*, const char*, const char*);
+const char16* getSystemMessageString(const IUseMessageSystem*, const char* category, const char* messageName);
 void replaceMessageTagTimeDirectDate(sead::WBufferedSafeString*, const IUseMessageSystem*,
                                      ReplaceTimeInfo&);
 void replaceMessageTagTimeDirectDateDetail(sead::WBufferedSafeString*, const IUseMessageSystem*,

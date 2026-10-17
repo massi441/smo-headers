@@ -19,6 +19,7 @@ public:
     static const ResTexture* ToAccessor(const value_type*);
     static const ResTexture& ToAccessor(const value_type&);
 
+    // TODO: remove this? Where did this even come from (symbols dont exist)?
     TextureInfo* GetTextureInfo();
     const TextureInfo* GetTextureInfo() const;
     detail::Caster<void> GetTexture();

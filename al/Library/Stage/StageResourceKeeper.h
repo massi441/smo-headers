@@ -17,15 +17,11 @@ public:
         return mResourceList[resourceType];
     }
 
-    StageResourceList* getMapStageInfo() const { return mResourceList[(s32)ResourceType::Map]; }
+    StageResourceList* getMapStageInfo() const { return mResourceList[static_cast<s32>(ResourceType::Map)]; }
+    StageResourceList* getDesignStageInfo() const { return mResourceList[static_cast<s32>(ResourceType::Stage)]; }
+    StageResourceList* getSoundStageInfo() const { return mResourceList[static_cast<s32>(ResourceType::Sound)]; }
 
-    StageResourceList* getDesignStageInfo() const {
-        return mResourceList[(s32)ResourceType::Stage];
-    }
-
-    StageResourceList* getSoundStageInfo() const { return mResourceList[(s32)ResourceType::Sound]; }
-
-public:
+private:
     StageResourceList** mResourceList = nullptr;
     const char* mStageName = nullptr;
     s32 mScenarioNo = -1;

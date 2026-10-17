@@ -38,8 +38,7 @@ public:
         cHeapDirection_Reverse = -1
     };
 
-    Heap(const SafeString& name, Heap* parent, void* address, size_t size, HeapDirection direction,
-         bool);
+    Heap(const SafeString& name, Heap* parent, void* address, size_t size, HeapDirection direction, bool);
     ~Heap() override;
 
     SEAD_RTTI_BASE(Heap)

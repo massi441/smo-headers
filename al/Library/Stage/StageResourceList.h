@@ -1,13 +1,6 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <container/seadPtrArray.h>
-#include <prim/seadSafeString.h>
-
-#include "Library/Execute/IUseExecutor.h"
-#include "Library/Scene/ISceneObj.h"
-
-#include "Scene/SceneObjFactory.h"
 
 namespace al {
 class Resource;
@@ -35,7 +28,7 @@ public:
     s32 getStageResourceNum() const;
     StageInfo* getStageInfo(s32 index) const;
 
-public:
+private:
     sead::PtrArray<StageInfo> mStageResources;
 };
 

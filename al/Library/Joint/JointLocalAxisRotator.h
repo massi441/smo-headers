@@ -15,10 +15,11 @@ public:
     void calcJointCallback(s32, sead::Matrix34f*) override;
     const char* getCtrlTypeName() const override;
 
-    void setVector28(const sead::Vector3f& v) { _28.set(v); }
+    sead::Vector3f* getAxisPtr() { return &mAxis; }
+    void setAxis(const sead::Vector3f& axis) { mAxis = axis; }
 
-public:
-    sead::Vector3f _28;
+private:
+    sead::Vector3f mAxis;
     f32* _38;
     bool _40;
 };

@@ -15,7 +15,11 @@ public:
     void registerDefaultTicket(CameraTicket* ticket);
     CameraTicket* tryFindEntranceTicket(const PlacementId* placementId, const char* suffix) const;
 
-public:
+    int getTicketCount() const { return mNumTickets; }
+    int getMaxTickets() const { return mMaxTickets; }
+    CameraTicket* getDefaultTicket() const { return mDefaultTicket; }
+
+private:
     CameraTicket** mTickets;
     s32 mNumTickets = 0;
     s32 mMaxTickets;

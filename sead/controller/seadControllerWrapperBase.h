@@ -18,18 +18,17 @@ public:
 
     virtual void calc(u32 prev_hold, bool prev_pointer_on) = 0;
     virtual void setIdle();
-
-public:
     virtual bool isIdle_();
 
-public:
+    bool isEnable() const { return mIsEnable; }
+
     void registerWith(Controller* controller, bool copy_repeat_setting);
     void unregister();
     void copyRepeatSetting(const Controller* controller);
     void setEnable(bool enable);
     void setEnableOtherWrappers(bool enable) const;
 
-public:
+private:
     Controller* mController;
     bool mIsEnable;
     ListNode mListNode;

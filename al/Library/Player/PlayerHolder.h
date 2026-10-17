@@ -15,12 +15,13 @@ public:
     LiveActor* getPlayer(s32 index) const;
     LiveActor* tryGetPlayer(s32 index) const;
     s32 getPlayerNum() const;
+    s32 getPlayerNumMax() const;
     s32 getBufferSize() const;
     bool isFull() const;
     bool isExistPadRumbleKeeper(s32 index) const;
     PadRumbleKeeper* getPadRumbleKeeper(s32 index) const;
 
-public:
+private:
     struct Player {
         LiveActor* actor = nullptr;
         PadRumbleKeeper* padRumbleKeeper = nullptr;

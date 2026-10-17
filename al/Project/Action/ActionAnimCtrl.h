@@ -2,6 +2,8 @@
 
 #include <basis/seadTypes.h>
 
+#include "ActionAnimInfo.h"
+
 namespace al {
 class LiveActor;
 class ActorResource;
@@ -26,7 +28,10 @@ public:
     f32 getFrame() const;
     f32 getFrameRate() const;
 
-public:
+    s32 getInfoCount() const { return mInfoCount; }
+    const char* getActionName(s32 index) { return mInfos[index].actionName; }
+
+private:
     LiveActor* mParentActor;
     const char* mPlayingAnimName = nullptr;
     s32 mInfoCount = 0;

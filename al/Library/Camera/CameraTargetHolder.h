@@ -40,9 +40,11 @@ public:
     void addPlacementSubTarget(CameraSubTargetBase* subTarget);
     void removePlacementSubTarget(CameraSubTargetBase* subTarget);
 
+    int getTargetCount() const { return mViewTargetSize; }
+
     const ViewSubTargetInfo& getTopSubTargetInfo() const { return mTopSubTargetInfo; }
 
-public:
+private:
     s32 mViewTargetSize = 0;
     CameraTargetBase** mViewTargetArray = nullptr;
     ViewTargetInfo* mViewTargetInfo = nullptr;

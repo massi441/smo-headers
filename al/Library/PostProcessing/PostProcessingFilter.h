@@ -43,9 +43,7 @@ public:
     void update();
     PostProcessingFilterPreset* findPreset(s32) const;
     void updateViewGpu(s32, const sead::Camera*, const Projection*);
-    void drawFilter(agl::DrawContext*, s32, SimpleModelEnv*, const agl::RenderBuffer&,
-                    const agl::TextureData&, const agl::TextureData&, const agl::TextureData&,
-                    const sead::Camera&, const Projection&, f32, f32, f32) const;
+    void drawFilter(agl::DrawContext*, s32, SimpleModelEnv*, const agl::RenderBuffer&, const agl::TextureData&, const agl::TextureData&, const agl::TextureData&, const sead::Camera&, const Projection&, f32, f32, f32) const;
 
     void validate() { mIsValid = true; }
 
@@ -53,7 +51,9 @@ public:
 
     s32 getPresetId() const { return mPresetId; }
 
-public:
+    void setPresetId(s32 id) { mPresetId = id; }
+
+private:
     bool mIsValid;
     ShaderHolder* mShaderHolder;
     DepthOfFieldDrawer* mDepthOfFieldDrawer;

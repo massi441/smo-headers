@@ -30,7 +30,7 @@ public:
 
     const char* getCommonId() const { return mCommonId; }
 
-public:
+private:
     const char* mId = nullptr;
     const char* mUnitConfigName = nullptr;
     const char* mZoneId = nullptr;

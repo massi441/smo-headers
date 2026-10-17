@@ -20,6 +20,9 @@ enum class ForceCollisionFlag : u8 {
     ScaleOne,
 };
 
+// Notes: CollisionParts is the KCL of an actor. It provides the geometry that other actors
+// can collide into (with their Colliders)
+
 class CollisionParts {
 public:
     CollisionParts(void* kcl, const void* byml);
@@ -71,9 +74,7 @@ public:
     void setSyncCollisionMtx(const sead::Matrix34f* mtx) { mSyncCollisionMtx = mtx; }
 
     const sead::Matrix34f& getBaseMtx() const { return mBaseMtx; }
-
     const sead::Matrix34f& getBaseInvMtx() const { return mBaseInvMtx; }
-
     const sead::Matrix34f& getPrevBaseMtx() const { return mPrevBaseMtx; }
 
     const sead::Matrix34f& getPrevBaseInvMtx() const { return mPrevBaseInvMtx; }
@@ -104,7 +105,7 @@ public:
 
     void setForceCollisionScaleOne() { mForceCollisionFlag = ForceCollisionFlag::ScaleOne; }
 
-public:
+private:
     void* unk[2];
     CollisionParts* _10;  // self-reference
     sead::TList<CollisionParts*>* mPartsList;
@@ -119,7 +120,7 @@ public:
     f32 mInvMtxScale;
     s32 mPriority;
     KCollisionServer* mKCollisionServer;
-    HitSensor* mConnectedSensor;
+    HitSensor* mConnectedSensor; // sensor that receives messages when something collides with the KCL
     const char* mSpecialPurpose;
     const char* mOptionalPurpose;
     sead::Vector3f _150;  // same as mMtxScaleVec?

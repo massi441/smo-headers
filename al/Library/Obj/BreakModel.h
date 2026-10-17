@@ -6,11 +6,10 @@ namespace al {
 
 class BreakModel : public LiveActor {
 public:
-    BreakModel(const LiveActor* rootActor, const char* objName, const char* modelName,
-               const char* fileSuffixName, const sead::Matrix34f* rootMtx,
-               const char* breakActionName);
-    void init(const ActorInitInfo& info);
-    void appear();
+    BreakModel(const LiveActor* rootActor, const char* objName, const char* modelName, const char* fileSuffixName, const sead::Matrix34f* rootMtx, const char* breakActionName);
+    void init(const ActorInitInfo&) override;
+    void appear() override;
+
     void exeWait();
     void exeBreak();
 
@@ -25,6 +24,6 @@ public:
     s32 mStep = 0;
 };
 
-static_assert(sizeof(BreakModel) == 0x140, "al::BreakModel Size");
+static_assert(sizeof(BreakModel) == 0x140);
 
 }  // namespace al

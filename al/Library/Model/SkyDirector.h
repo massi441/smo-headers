@@ -35,7 +35,7 @@ public:
 
 public:
     ParameterObj* mParameterObj;
-    ParameterString64* mSkyName;
+    ParameterString64* mName;
     ParameterV3f* mRotate;
     ParameterF32* mStarIntensity;
 };
@@ -60,9 +60,11 @@ public:
 
 public:
     ParamRequestInterp* mParamRequestInterp;
-    void* _8[1];
-    sead::PtrArray<Sky> _10;
-    void* _20[2];
+    void* _08;
+    sead::PtrArray<Sky> mSkyArray;
+    bool mIsInitialized;
+    u8 _21[3];
+    sead::Vector3f mBaseAngle;
     sead::FixedSafeString<64> _30;
 };
 

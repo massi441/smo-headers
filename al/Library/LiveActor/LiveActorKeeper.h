@@ -18,13 +18,18 @@ public:
 
     s32 getCurActorCount() const { return mCurActorCount; }
 
-    SubActorInfo* getActorInfo(s32 index) const { return mBuffer[index]; }
+    const SubActorInfo* getActorInfo(s32 index) const { return mSubActorInfos[index]; }
 
 public:
-    LiveActor* mRootActor;
+    friend class alSubActorFunction;
+
+private:
+    LiveActor* mParentActor;
     s32 mMaxActorCount = 0;
     s32 mCurActorCount = 0;
-    SubActorInfo** mBuffer = nullptr;
+    SubActorInfo** mSubActorInfos = nullptr;
 };
 
 }  // namespace al
+
+static_assert(sizeof(al::SubActorKeeper) == 0x18);

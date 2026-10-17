@@ -29,7 +29,9 @@ public:
     void changeShaderType(ShaderMode mode, ShaderOptimizeType optimizeType);
     void setCommandBufferTemporary();
 
-public:
+    const RenderBuffer* getRenderBuffer() const { return mBoundRenderBuffer; }
+
+private:
     void* gap[5];
     DisplayList* mCommandBuffer;
     const RenderBuffer* mBoundRenderBuffer;

@@ -20,6 +20,10 @@ bool isWallPolygon(const sead::Vector3f&, const sead::Vector3f&);
 bool isFloorPolygon(const sead::Vector3f&, const sead::Vector3f&);
 bool isCeilingPolygon(const sead::Vector3f&, const sead::Vector3f&);
 
+// Notes: A collider is a sphere that lets an actor know if they are colliding with something
+// it is what feeds al::isCollidedGround() and company. it is not a KCL, but collision are
+// checked against other KCL's in the world (which are CollisionParts under the hood)
+
 class Collider : public HioNode, public IUseCollision {
 public:
     Collider(CollisionDirector*, const sead::Matrix34f*, const sead::Vector3f*,
@@ -35,8 +39,7 @@ public:
     const sead::Vector3f& getRecentOnGroundNormal(u32) const;
     void obtainMomentFixReaction(SphereHitInfo*, sead::Vector3f*, sead::Vector3f*, bool, u32);
     void onInvalidate();
-    void preCollide(SphereInterpolator*, sead::Vector3f*, f32*, const sead::Vector3f&,
-                    SphereHitInfo*, u32);
+    void preCollide(SphereInterpolator*, sead::Vector3f*, f32*, const sead::Vector3f&, SphereHitInfo*, u32);
     void setCollisionPartsFilter(const CollisionPartsFilterBase*);
     void setTriangleFilter(const TriangleFilterBase*);
     void storeContactPlane(SphereHitInfo*);
@@ -47,9 +50,18 @@ public:
 
     const sead::Vector3f* getActorGravityPtr() const { return mActorGravityPtr; }
 
-    f32 getRadius() { return mRadius; };
+    float getRadius() const {
+        return mRadius;
+    }
 
-    void setRadius(f32 radius) { mRadius = radius; };
+    void setRadius(f32 radius) {
+        mRadius = radius;
+    }
+
+    void scaleRadiusY(f32 scale) {
+        mRadius *= scale;
+        mOffsetY *= scale;
+    }
 
     f32 getOffsetY() { return mOffsetY; };
 
@@ -86,7 +98,7 @@ public:
 
     bool isCollidedWallFace() { return mFlag >> 5 & 1; }
 
-public:
+private:
     CollisionDirector* mCollisionDirector;
     const TriangleFilterBase* mTriangleFilter;
     const CollisionPartsFilterBase* mCollisionPartsFilter;

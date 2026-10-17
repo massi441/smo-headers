@@ -5,15 +5,15 @@
 #include "Player/IUsePlayerHack.h"
 
 namespace al {
-class DemoActor;
+    class DemoActor;
 }
 
 class IUsePlayerCollision;
 class PlayerAnimator;
 class PlayerInfo;
-class PlayerInitInfo;
 class PlayerHackKeeper;
 class PlayerPuppet;
+struct PlayerInitInfo;
 
 class PlayerActorBase : public al::LiveActor, public IUsePlayerHack {
 public:
@@ -23,10 +23,10 @@ public:
 
     void movement() override;
 
-    virtual void initPlayer(const al::ActorInitInfo& actorInitInfo,
-                            const PlayerInitInfo& playerInitInfo) {}
+    virtual void initPlayer(const al::ActorInitInfo& actorInitInfo, const PlayerInitInfo& playerInitInfo) {}
 
     virtual u32 getPortNo() const;
+
     virtual sead::Matrix34f* getViewMtx() const;
 
     virtual IUsePlayerCollision* getPlayerCollision() const { return nullptr; }
@@ -76,11 +76,12 @@ public:
     virtual PlayerInfo* getPlayerInfo() const { return nullptr; }
 
     virtual bool checkDeathArea();
-    virtual void sendCollisionMsg();
-    virtual bool receivePushMsg(const al::SensorMsg* msg, al::HitSensor* other, al::HitSensor* self,
-                                f32 maxPush);
 
-public:
+    virtual void sendCollisionMsg();
+
+    virtual bool receivePushMsg(const al::SensorMsg* msg, al::HitSensor* other, al::HitSensor* self, f32 maxPush);
+
+private:
     sead::Matrix34f* mViewMtx = nullptr;
     u32 mPortNo = 0;
 };

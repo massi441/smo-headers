@@ -41,7 +41,7 @@ public:
     void executeList(const char* listName) const;
     bool isActive() const;
 
-    const char* getName() { return mName; }
+    const char* getName() const { return mName; }
 
 public:
     const char* mName = nullptr;

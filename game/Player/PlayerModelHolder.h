@@ -23,8 +23,11 @@ public:
     al::LiveActor* tryFindModelActor(const char* name) const;
     bool isCurrentModelLabel(const char* name) const;
     bool isCurrentModelLabelSubString(const char* name) const;
+    al::LiveActor* getCurrentActor() const { return mCurrentModel->actor; }
+    Entry* getCurrentEntry() const { return mCurrentModel; }
+    bool isFull() const { return mBuffer.isFull(); }
 
-public:
+private:
     sead::PtrArray<Entry> mBuffer;
     Entry* mCurrentModel = nullptr;
     sead::FixedSafeString<128> _18 = sead::FixedSafeString<128>("");

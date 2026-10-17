@@ -149,7 +149,12 @@ public:
     void resetHoldInfo3D();
     void resetHoldInfo2D();
 
-public:
+    // custom section
+
+    void enable() { mIsDisableInput = false; }
+    void disable() { mIsDisableInput = true; }
+
+private:
     const al::LiveActor* mLiveActor;
     const IUsePlayerCollision* mPlayerCollision;
     const IUseDimension* mDimension;

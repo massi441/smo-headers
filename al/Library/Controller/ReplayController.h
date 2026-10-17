@@ -27,7 +27,7 @@ public:
 
     void setPadDataWriter(IUsePadDataWriter* writer) { mPadDataWriter = writer; }
 
-public:
+private:
     IUsePadDataReader* mPadDataReader = nullptr;
     bool mIsReplaying = false;
     IUsePadDataWriter* mPadDataWriter = nullptr;
@@ -35,4 +35,5 @@ public:
     bool mIsValidPadReplay = true;
     bool mIsReadPadReplayData = false;
 };
-}  // namespace al
+
+}

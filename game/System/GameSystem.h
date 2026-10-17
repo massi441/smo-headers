@@ -29,9 +29,12 @@ public:
     bool tryChangeSequence(const char*);
     void drawMain();
 
+    al::Sequence* getSequence() const { return mSequence; }
+    al::GamePadSystem* getGamePadSystem() const { return mGamePadSystem; }
+
     void exePlay();
 
-public:
+private:
     al::Sequence* mSequence;
     al::GameSystemInfo* mSystemInfo;
     al::AudioSystem* mAudioSystem;
@@ -50,5 +53,5 @@ public:
 };
 
 namespace GameSystemFunction {
-GameSystem* getGameSystem();
+    GameSystem* getGameSystem();
 }

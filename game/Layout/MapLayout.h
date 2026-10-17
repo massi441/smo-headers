@@ -8,8 +8,7 @@ class IUseSceneObjHolder;
 }
 
 namespace rs {
-void calcTransOnMap(sead::Vector2f*, const sead::Vector3f&, const sead::Matrix44f&,
-                    const sead::Vector2f&, f32, f32);
+void calcTransOnMap(sead::Vector2f*, const sead::Vector3f&, const sead::Matrix44f&, const sead::Vector2f&, f32, f32);
 bool tryCalcMapNorthDir(sead::Vector3f*, const al::IUseSceneObjHolder*);
 const sead::Matrix44f& getMapViewProjMtx(const al::IUseSceneObjHolder*);
 const sead::Matrix44f& getMapProjMtx(const al::IUseSceneObjHolder*);

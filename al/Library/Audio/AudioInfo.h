@@ -81,6 +81,8 @@ public:
 
     s32 getSize() const { return mList->size(); }
 
+    const sead::PtrArray<const T>* getInfos() const { return mList; }
+
     bool isValidIndex(s32 index) const { return index < getSize(); }
 
 public:

@@ -4,18 +4,7 @@
 
 #include "Library/Base/Macros.h"
 #include "Library/LiveActor/ActorSensorFunction.h"
-
-namespace al {
-class HitSensor;
-class ComboCounter;
-
-class SensorMsg {
-    SEAD_RTTI_BASE(SensorMsg)
-
-public:
-    virtual ~SensorMsg() = default;
-};
-}  // namespace al
+#include "Project/HitSensor/SensorMsg.h"
 
 /*
 
@@ -53,7 +42,7 @@ Creating a SensorMsg class called SensorMsgTest2 that holds a string referenced 
                                                                                                    \
         virtual ~SensorMsg##Type() = default;                                                      \
                                                                                                    \
-    public:                                                                                       \
+    private:                                                                                       \
         DECL_MEMBER_VAR_MULTI(__VA_ARGS__);                                                        \
     };
 
@@ -81,7 +70,7 @@ SENSOR_MSG_WITH_DATA_CUSTOM_CTOR(MyVecMsg, ((sead::Vector3f, Vec)), ((const sead
                                                                                                    \
         virtual ~SensorMsg##Type() = default;                                                      \
                                                                                                    \
-    public:                                                                                       \
+    private:                                                                                       \
         DECL_MEMBER_VAR_MULTI SensorMsgParams;                                                     \
     };                                                                                             \
     inline SensorMsg##Type::SensorMsg##Type(PARAM_LIST CtorParams)
@@ -105,7 +94,7 @@ types differ from the constructor argument types
                                                                                                    \
         virtual ~SensorMsg##Type() = default;                                                      \
                                                                                                    \
-    public:                                                                                       \
+    private:                                                                                       \
         DECL_MEMBER_VAR_MULTI SensorMsgParams;                                                     \
     };                                                                                             \
     inline SensorMsg##Type::SensorMsg##Type(PARAM_LIST CtorParams)
@@ -122,7 +111,7 @@ SensorMsgTest or SensorMsgTest2: IS_MSG_MULTIPLE_IMPL(TestAll, Test, Test2);
 */
 
 #define IS_MSG_MULTIPLE_IMPL(Name, ...)                                                            \
-    bool isMsg##Name(const al::SensorMsg* msg) {                                                   \
+    inline bool isMsg##Name(const al::SensorMsg* msg) {                                            \
         return FOR_EACH_DELIM(MSG_TYPE_CHECK_, LOGICAL_OR, msg, __VA_ARGS__);                      \
     }
 
@@ -135,7 +124,7 @@ Creating a function called isMsgX that checks if the message is of type SensorMs
 */
 
 #define IS_MSG_IMPL_(Name, Type)                                                                   \
-    bool isMsg##Name(const al::SensorMsg* msg) {                                                   \
+    inline bool isMsg##Name(const al::SensorMsg* msg) {                                            \
         return MSG_TYPE_CHECK_(msg, Type);                                                         \
     }
 
@@ -158,7 +147,7 @@ Creating a function called sendMsgX that sends a SensorMsgTest2:
 */
 
 #define SEND_MSG_IMPL_(Name, Type)                                                                 \
-    bool sendMsg##Name(al::HitSensor* receiver, al::HitSensor* sender) {                           \
+    inline bool sendMsg##Name(al::HitSensor* receiver, al::HitSensor* sender) {                    \
         SensorMsg##Type msg;                                                                       \
         return alActorSensorFunction::sendMsgSensorToSensor(msg, sender, receiver);                \
     }
@@ -177,7 +166,7 @@ of the target actor:
 */
 
 #define SEND_MSG_TO_ACTOR_IMPL_(Name, Type)                                                        \
-    bool sendMsg##Name(al::LiveActor* receiver) {                                                  \
+    inline bool sendMsg##Name(al::LiveActor* receiver) {                                           \
         SensorMsg##Type msg;                                                                       \
         return alActorSensorFunction::sendMsgToActorUnusedSensor(msg, receiver);                   \
     }
@@ -186,7 +175,7 @@ of the target actor:
 
 // Same as SEND_MSG_TO_ACTOR_IMPL but also includes data like the macro above
 #define SEND_MSG_DATA_TO_ACTOR_IMPL(Name, DataType, DataName)                                      \
-    bool sendMsg##Name(al::LiveActor* receiver, DataType DataName) {                               \
+    inline bool sendMsg##Name(al::LiveActor* receiver, DataType DataName) {                        \
         SensorMsg##Name msg(DataName);                                                             \
         return alActorSensorFunction::sendMsgToActorUnusedSensor(msg, receiver);                   \
     }
@@ -200,10 +189,10 @@ char*, String), (s32, Number));
 
 */
 
-#define SEND_MSG_DATA_IMPL_(Name, Type, ...)                                                       \
-    bool sendMsg##Name(al::HitSensor* receiver, al::HitSensor* sender, PARAM_LIST(__VA_ARGS__)) {  \
-        SensorMsg##Type msg(CALL_PARAM_LIST(__VA_ARGS__));                                         \
-        return alActorSensorFunction::sendMsgSensorToSensor(msg, sender, receiver);                \
+#define SEND_MSG_DATA_IMPL_(Name, Type, ...)                                                                \
+    inline bool sendMsg##Name(al::HitSensor* receiver, al::HitSensor* sender, PARAM_LIST(__VA_ARGS__)) {    \
+        SensorMsg##Type msg(CALL_PARAM_LIST(__VA_ARGS__));                                                  \
+        return alActorSensorFunction::sendMsgSensorToSensor(msg, sender, receiver);                         \
     }
 
 // Same as above, but a shorter version

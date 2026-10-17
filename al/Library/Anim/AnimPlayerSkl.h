@@ -72,7 +72,9 @@ public:
 
     void setRetargettingInfo(SklAnimRetargettingInfo* info) { mRetargettingInfo = info; }
 
-public:
+    float* getBlendWeights() const { return mBlendWeightStack; }
+
+private:
     void* _18;
     u32 mAnimObjCount0;
     nn::g3d::SkeletalAnimObj* mSkelAnimObjStack0;
@@ -81,7 +83,7 @@ public:
     ModelAnimInterp* mModelAnimInterp;
     nn::g3d::SkeletalAnimBlender* mSkelAnimBlender;
     u32 mBlendWeightCount;
-    void* mBlendWeightStack;
+    float* mBlendWeightStack;
     u32 mPartialAnimObjCount;
     nn::g3d::SkeletalAnimObj* mPartialAnimObjStack;
     void* _70;

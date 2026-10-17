@@ -12,7 +12,7 @@ public:
 
     void exeMove();
 
-public:
+private:
     f32 mSpeed = 10.0f;
     MoveType mMoveType = MoveType::Loop;
 };

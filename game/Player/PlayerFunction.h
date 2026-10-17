@@ -5,9 +5,10 @@
 
 namespace al {
 class LiveActor;
-struct ActorInitInfo;
 class Resource;
 class AudioKeeper;
+class ActorDitherAnimator;
+struct ActorInitInfo;
 }  // namespace al
 
 class PlayerConst;
@@ -26,6 +27,7 @@ void syncMarioHeadStrapVisibility(al::LiveActor*);
 bool isNeedHairControl(const PlayerBodyCostumeInfo*, const char*);
 bool isInvisibleCap(const PlayerCostumeInfo*);
 void hideHairVisibility(al::LiveActor*);
+al::ActorDitherAnimator* createPlayerDitherAnimator(al::LiveActor* actor, float sphereRadius);
 
 PlayerConst* createMarioConst(const char*);
 void createCapModelName(sead::BufferedSafeStringBase<char>*, const char*);
@@ -35,7 +37,7 @@ void initMarioModelActor2D(al::LiveActor* actor, const al::ActorInitInfo& initIn
 al::Resource* initCapModelActor(al::LiveActor*, const al::ActorInitInfo&, const char*);
 al::Resource* initCapModelActorDemo(al::LiveActor*, const al::ActorInitInfo&, const char*);
 PlayerCostumeInfo* initMarioModelActor(al::LiveActor* player, const al::ActorInitInfo& initInfo,
-                                       const char* modelName, const char* capType,
+                                       const char* bodyName, const char* capType,
                                        al::AudioKeeper* keeper, bool isCloset);
 PlayerCostumeInfo* initMarioModelActorDemo(PlayerJointControlPartsDynamics** jointCtrlPtr,
                                            al::LiveActor* player, const al::ActorInitInfo& initInfo,

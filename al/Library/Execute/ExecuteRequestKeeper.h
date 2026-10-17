@@ -9,7 +9,7 @@ class ExecuteRequestInfo {
 public:
     ExecuteRequestInfo();
 
-public:
+private:
     u64 _0 = 0;
 };
 
@@ -42,7 +42,7 @@ public:
 
     LiveActor* getRequest(s32 index) const { return mRequests[index]; };
 
-public:
+private:
     s32 mMaxSize = 0;
     s32 mSize = 0;
     LiveActor** mRequests = nullptr;
@@ -67,8 +67,8 @@ public:
     void executeRequestActorDrawAllOff();
     void request(LiveActor* actor, s32 requestType);
 
-public:
-    ExecuteRequestTable* mRequestTables[4];
+private:
+    ExecuteRequestTable* mRequestTables[4]; // removeFromMovement, movement, removeFromDraw, draw
 };
 
 static_assert(sizeof(ExecuteRequestKeeper) == 0x20);

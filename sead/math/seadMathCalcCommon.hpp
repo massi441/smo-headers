@@ -567,7 +567,7 @@ inline bool MathCalcCommon<T>::chase(T* value, T target, T step)
 }
 
 template <typename T, typename T2>
-inline T lerp(T a, T b, T2 t)
+T lerp(T a, T b, T2 t)
 {
     return a + (b - a) * t;
 }

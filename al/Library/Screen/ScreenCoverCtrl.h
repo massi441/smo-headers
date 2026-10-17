@@ -18,7 +18,7 @@ public:
 
     void resetRequestCapture() { mIsRequestCapture = false; }
 
-public:
+private:
     s32 mCoverFrames = -1;
     bool mIsRequestCapture = false;
 };

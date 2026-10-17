@@ -21,9 +21,9 @@ public:
     bool isCollideGround() const override;
     bool isInWater() const override;
 
-    const LiveActor* getActor() const { return mActor; }
+    const LiveActor* getActor() const { return mActor; } // custom
 
-public:
+private:
     const LiveActor* mActor;
     const sead::Vector3f* mLocalOffset;
     f32 mYOffset;

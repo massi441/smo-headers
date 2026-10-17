@@ -25,7 +25,7 @@ public:
     void addListener(StageSwitchListener* listener, StageSwitchAccesser* accesser);
     void execute() override;
 
-public:
+private:
     StageSwitchInfo* mSwitchInfos = nullptr;
     s32 mSwitchInfoCapacity = 128;
     s32 mSwitchInfoCount = 0;

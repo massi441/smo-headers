@@ -62,6 +62,8 @@ public:
 
     s32 getResShaderSourceNum() const { return getResShaderSourceArray().getNum(); }
 
+    void* FindShadingModel(char const*);
+
     bool setUp();
 };
 

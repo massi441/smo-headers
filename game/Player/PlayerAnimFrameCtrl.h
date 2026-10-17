@@ -21,7 +21,7 @@ public:
     f32 getRate() const;
     bool isActionEnd() const;
 
-public:
+private:
     sead::FixedSafeString<64> mActionName = {""};
     bool mIsActionRepeat = false;
     f32 mCurrentFrame = 0.0f;

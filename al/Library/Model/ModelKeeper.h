@@ -62,13 +62,15 @@ public:
 
     AnimPlayerVis* getAnimVisForAction() const { return mAnimVisForAction; }
 
+    ActorResource* getActorResource() const { return mActorRes; }
+
     bool isFixedModel() const { return mIsFixedModel; }
 
     bool isIgnoreUpdateDrawClipping() const { return mIsIgnoreUpdateDrawClipping; }
 
     bool isNeedSetBaseMtxAndCalcAnim() const { return mIsNeedSetBaseMtxAndCalcAnim; }
 
-public:
+private:
     const char* mName;
     ModelCtrl* mModelCtrl;
     ActorResource* mActorRes;
@@ -79,10 +81,13 @@ public:
     AnimPlayerMat* mAnimMat;
     AnimPlayerVis* mAnimVisForAction;
     AnimPlayerVis* mAnimVis;
-    char gap_58[9];
+    sead::Matrix34f* mJointMatrices;
+    char gap_58[1];
     bool mIsFixedModel;
     bool mIsIgnoreUpdateDrawClipping;
     bool mIsNeedSetBaseMtxAndCalcAnim;
 };
 
 }  // namespace al
+
+static_assert(sizeof(al::ModelKeeper) == 0x68);
