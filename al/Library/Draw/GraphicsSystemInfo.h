@@ -209,6 +209,10 @@ public:
 
     SubCameraRenderer* getSubCameraRenderer() const { return mSubCameraRenderer; }
 
+    GraphicsPresetDirector* getGraphicsPresetDirector() const { return mGraphicsPresetDirector; }
+
+    HdrCompose* getHdrCompose() const { return mHdrCompose; }
+
 private:
     sead::StrTreeMap<128, const sead::PtrArray<UniformBlock>*> mViewIndexedUboArrayTree;
     GraphicsInitArg mInitArg;
