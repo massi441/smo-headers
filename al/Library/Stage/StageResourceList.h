@@ -16,7 +16,7 @@ public:
 
     Resource* getResource() const { return mResource; }
 
-public:
+private:
     Resource* mResource;
     PlacementInfo* mPlacementInfo = nullptr;
 };
