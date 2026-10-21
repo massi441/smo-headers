@@ -213,6 +213,10 @@ public:
 
     HdrCompose* getHdrCompose() const { return mHdrCompose; }
 
+    FogDirector* getFogDirector() const { return mFogDirector; }
+
+    DirectionalLightKeeper* getDirectionalLightKeeper() const { return mDirectionalLightKeeper; }
+
 private:
     sead::StrTreeMap<128, const sead::PtrArray<UniformBlock>*> mViewIndexedUboArrayTree;
     GraphicsInitArg mInitArg;
